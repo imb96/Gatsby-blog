@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import GlobalStyle from "./GlobalStyle";
 import Footer from "./Footer";
 import { Helmet } from 'react-helmet'
-
 type TemplateProps = {
   title: string
   description: string
@@ -15,15 +14,15 @@ type TemplateProps = {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
 `
 
-const Template: FunctionComponent<TemplateProps> = function ({ 
+const Template: FunctionComponent<TemplateProps> = function ({
   title,
   description,
   url,
   image,
-  children, 
+  children,
 }) {
   return (
     <Container>
