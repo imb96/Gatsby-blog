@@ -3,7 +3,7 @@ module.exports = {
     title: `Minlog`,
     description: `Minjae's Dev Blog`,
     author: `MinjaeKim`,
-    siteUrl: `https://my-website-link.com`, // 배포 후 변경 예정
+    siteUrl: `https://imb96.github.io/`,
   },
   plugins: [
     {
@@ -83,7 +83,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://my-website.com/`,
+        siteUrl: `https://imb96.github.io/`,
         stripQueryString: true,
       },
     },
