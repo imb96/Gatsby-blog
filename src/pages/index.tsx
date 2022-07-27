@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useMemo } from 'react'
-import styled from '@emotion/styled'
-import GlobalStyle from '../components/Common/GlobalStyle'
-import Footer from '../components/Common/Footer'
+// import styled from '@emotion/styled'
+// import GlobalStyle from '../components/Common/GlobalStyle'
+// import Footer from '../components/Common/Footer'
 import CategoryList, { CategoryListProps } from '../components/Main/CategoryList'
 import Introduction from '../components/Main/Introduction'
-import PostList from '../components/Main/PostList'
+import PostList, { PostType } from '../components/Main/PostList'
 import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { PostListItemType } from '../types/PostItem.types'
@@ -35,11 +35,11 @@ type IndexPageProps = {
   }
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`
+// const Container = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+// `
 
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   location: { search },
