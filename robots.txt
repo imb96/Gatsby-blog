@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://imb96.github.io/sitemap/sitemap-index.xml
+Host: https://imb96.github.io
