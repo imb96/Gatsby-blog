@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta data-react-helmet="true" name="naver-site-verification" content="85439973861206f261be8e209d26b2215ded88be"/><meta data-react-helmet="true" name="google-site-verification" content="2iQCD8mbMmwhEhQnrYibeMnJCMHXLcP8DgGNFr6cIcM"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:image" content="/static/6debff272d2c20c872d26e59273efe81/DeepDive.png"/><meta data-react-helmet="true" name="twitter:description" content="Promise에 대해"/><meta data-react-helmet="true" name="twitter:title" content="Promise"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" property="og:site_name" content="Promise"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:image" content="/static/6debff272d2c20c872d26e59273efe81/DeepDive.png"/><meta data-react-helmet="true" property="og:description" content="Promise에 대해"/><meta data-react-helmet="true" property="og:title" content="Promise"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" name="description" content="Promise에 대해"/><meta name="generator" content="Gatsby 4.19.2"/><style data-href="/styles.811b76fa2f764e4356d7.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><title data-react-helmet="true">Promise</title><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="canonical" href="https://imb96.github.io/Promise/" data-baseprotocol="https:" data-basehost="imb96.github.io"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 13ku56z">.css-13ku56z{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;}</style><main class="css-13ku56z e1strnqo0"><style data-emotion="css-global kxm5mf">@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Nanum Myeongjo',serif;}html,body,#___gatsby{height:100%;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css 16cz9yp">.css-16cz9yp{position:relative;width:100%;height:400px;}@media (max-width: 768px){.css-16cz9yp{height:300px;}}</style><div class="css-16cz9yp e1opi4mu1"><style data-emotion="css 1bjn9yo">.css-1bjn9yo{z-index:-1;width:100%;height:400px;object-fit:cover;-webkit-filter:brightness(0.25);filter:brightness(0.25);}@media (max-width: 768px){.css-1bjn9yo{height:300px;}}</style><div data-gatsby-image-wrapper="" style="position:absolute" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-1bjn9yo e1opi4mu0"><div style="max-width:900px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height=&#x27;550&#x27; width=&#x27;900&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27; version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABOklEQVQoz62TO0sDQRSF92f6L/IDREzjKkgKSxHEIiKIJGIRjIUvUgSXNMZKY1JEN2Cjiehudh6f7GP2ERJUyIXDmZk9c/beuTMWSw7r71KdstYxotnM2MpPlFIFmDUpZcRGlxqpcF0WTK286NccjVliPu97mqHrjuh0Ory+DOl2uxFc143YcRwGg0GkM5kq9U3vrkbtYJ2b23pmGJYTRrPZZHWtzOV1C9veYHNrm0bjnEqlQqlU4rBaTTMZPT1wZK9wslemfrxL//kxM0Sr+Li9e3hvwLgNXy2YXMB0SKDBF1MSFVPf43R/h/bVGePJeHHJKvhAeS7aG6L8N5Q3QgWfBEISCIEQItZJSb/XK3S/0BSdP+wZLGpKGOEPjFHh2mBEISfQOZ63KT82W022/7rYi02zmqxlP70f4ZCgaM3vkUoAAAAASUVORK5CYII=" alt=""/><picture><source type="image/webp" data-srcset="/static/6debff272d2c20c872d26e59273efe81/70899/DeepDive.webp 225w,/static/6debff272d2c20c872d26e59273efe81/c3b7d/DeepDive.webp 450w,/static/6debff272d2c20c872d26e59273efe81/32725/DeepDive.webp 900w" sizes="(min-width: 900px) 900px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 900px) 900px, 100vw" decoding="async" loading="lazy" data-src="/static/6debff272d2c20c872d26e59273efe81/9356b/DeepDive.png" data-srcset="/static/6debff272d2c20c872d26e59273efe81/98341/DeepDive.png 225w,/static/6debff272d2c20c872d26e59273efe81/94571/DeepDive.png 450w,/static/6debff272d2c20c872d26e59273efe81/9356b/DeepDive.png 900w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/6debff272d2c20c872d26e59273efe81/70899/DeepDive.webp 225w,/static/6debff272d2c20c872d26e59273efe81/c3b7d/DeepDive.webp 450w,/static/6debff272d2c20c872d26e59273efe81/32725/DeepDive.webp 900w" sizes="(min-width: 900px) 900px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 900px) 900px, 100vw" decoding="async" loading="lazy" src="/static/6debff272d2c20c872d26e59273efe81/9356b/DeepDive.png" srcSet="/static/6debff272d2c20c872d26e59273efe81/98341/DeepDive.png 225w,/static/6debff272d2c20c872d26e59273efe81/94571/DeepDive.png 450w,/static/6debff272d2c20c872d26e59273efe81/9356b/DeepDive.png 900w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><style data-emotion="css m1156n">.css-m1156n{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;height:100%;margin:0 auto;padding:60px 0;color:#ffffff;}@media (max-width: 768px){.css-m1156n{width:100%;padding:40px 20px;}}</style><div class="css-m1156n e1st1jau1"><style data-emotion="css gywgo7">.css-gywgo7{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffff;color:#000000;font-size:22px;cursor:pointer;box-shadow:0 0 10px rgba(0, 0, 0, 0.3);}@media (max-width: 768px){.css-gywgo7{width:30px;height:30px;font-size:18px;}}</style><div class="css-gywgo7 e1st1jau0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path></svg></div><style data-emotion="css gn4qtp">.css-gn4qtp{display:-webkit-box;overflow:hidden;overflow-wrap:break-word;margin-top:auto;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:45px;font-weight:800;}@media (max-width: 768px){.css-gn4qtp{font-size:30px;}}</style><div class="css-gn4qtp e1st1jau3">Promise</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau2"><div>JS</div><div>2022.08.01</div></div></div></div><style data-emotion="css uo146q">.css-uo146q{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;padding:100px 0;word-break:break-all;line-height:1.8;font-size:16px;font-weight:400;}.css-uo146q p{padding:3px 0;}.css-uo146q h1,.css-uo146q h2,.css-uo146q h3{font-weight:800;margin-bottom:30px;}.css-uo146q *+h1,.css-uo146q *+h2,.css-uo146q *+h3{margin-top:80px;}.css-uo146q hr+h1,.css-uo146q hr+h2,.css-uo146q hr+h3{margin-top:0;}.css-uo146q h1{font-size:30px;}.css-uo146q h2{font-size:25px;}.css-uo146q h3{font-size:20px;}.css-uo146q blockquote{margin:30px 0;padding:5px 15px;border-left:2px solid #000000;font-weight:800;}.css-uo146q ol,.css-uo146q ul{margin-left:20px;padding:30px 0;}.css-uo146q hr{border:1px solid #000000;margin:100px 0;}.css-uo146q a{color:#4263eb;-webkit-text-decoration:underline;text-decoration:underline;}.css-uo146q pre[class*='language-']{margin:30px 0;padding:15px;font-size:15px;}.css-uo146q pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-uo146q code[class*='language-'],.css-uo146q pre[class*='language-']{tab-size:2;}@media (max-width: 768px){.css-uo146q{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-uo146q h1{font-size:23px;}.css-uo146q h2{font-size:20px;}.css-uo146q h3{font-size:17px;}.css-uo146q img{width:100%;}.css-uo146q hr{margin:50px 0;}}</style><div class="css-uo146q e1ijh0y10"><blockquote>
+<p>JavaScrpitDeepDive를 읽고 정리한 글입니다.</p>
+</blockquote>
+<h1>Promise</h1>
+<p>자바스크립트는 비동기 처리를 위한 하나의 패턴으로 콜백 함수를 사용한다. 하지만 콜백 패턴은 콜백 헬로 인해 가독성이 나쁘고 비동기 처리 중 발생한 에러의 처리가 곤란하며 여러 개의 비동기 처리를 한 번에 처리하는 데도 한계가 있다.</p>
+<p>ES6에서 비동기 처리를 위한 또 다른 패턴으로 Promise를 도입했다. 프로미스는 전통적인 콜백 패턴이 가진 단점을 보완하며 비동기 처리 시점을 명확하게 표현할 수 있다는 장점이 있다.</p>
+<p>Promise 생성자 함수를 new 연산자와 함꼐 호출하면 프로미스(Promise 객체)를 생성한다. ES6에서 도입된 Promise는 호스트 객체가 아닌 ECMAScript 사양에 정의된 표준 빌트인 객체다.
+Promise 생성자 함수는 비동기 처리를 수행할 콜백 함수를 인수로 전달받는데 이 콜백 함수는 resolve와 reject 함수를 인수로 받는다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// 프로미스 생성
+const promise = new Promise((resolve, reject) => {
+  // Promise 함수의 콜백 함수 내부에서 비동기 처리를 수행한다.
+  if (/* 비동기 처리 성공 */) {
+    resolve('result');
+  }else { /* 비동기 처리 실패 */
+    reject('failure reason');
+  }
+});</code></pre></div>
+<p>Promise 생성자 함수가 인수로 전달받은 콜백 함수 내부에서 비동기 처리를 수행한다. 이때 비동기 처리가 성공하면 콜백 함수의 인수로 전달받은 resolve 함수를 호출하고, 비동기 처리가 실패하면 reject 함수를 호출한다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// GET 요청을 위한 비동기 함수
+const promiseGet = url => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+
+    xhr.onload = () => {
+      if(xhr.status === 200) {
+        // 성공적으로 응답을 전달받으면 resolve 함수를 호출한다.
+        resolve(JSON.parse(xhr.response));
+      }else {
+        // 에러 처리를 위해 reject 함수를 호출한다.
+        reject(new Error(xhr.status));
+      }
+    };
+  });
+};
+
+// promiseGet 함수는 프로미스를 반환한다.
+promiseGet('http://jsonplaceholder.typicode.com/posts/1');</code></pre></div>
+<p>비동기 함수인 promiseGet은 함수 내부에서 프로미스를 생성하고 반환한다. 비동기 처리는 Promise 생성자 함수가 인수로 전달받은 콜백 함수 내부에서 수행한다. 만약 비동기 처리가 성공하면 비동기 처리 결과를 resolve 함수에 인수로 전달하면서 호출하고, 비동기 처리가 실패하면 reject 함수에 인수로 전달하면서 호출한다.</p>
+<p>프로미스는 다음과 같이 현재 비동기 처리가 어떻게 진행되고 있는지를 나타내는 상태(state)정보를 갖는다.</p>
+<table>
+<thead>
+<tr>
+<th align="left">프로미스의 상태 정보</th>
+<th align="left">의미</th>
+<th align="left">상태 변경 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">pending</td>
+<td align="left">비동기 처리가 아직 수행되지 않은 상태</td>
+<td align="left">프로미스가 생성된 직후 기본상태</td>
+</tr>
+<tr>
+<td align="left">fulfilled</td>
+<td align="left">비동기 처리가 수행된 상태(성공)</td>
+<td align="left">resolve 함수 호출</td>
+</tr>
+<tr>
+<td align="left">rejected</td>
+<td align="left">비동기 처리가 수행된 상태(실패)</td>
+<td align="left">reject 함수 호출</td>
+</tr>
+</tbody>
+</table>
+<p>생성된 직후의 프로미스는 기본적으로 pending 상태다. 이후 비동기 처리가 수행되면 비동기 처리 결과에 따라 다음과 같이 프로미스의 상태가 변경된다.</p>
+<ul>
+<li>비동기 처리 성공: resolve 함수를 호출해 프로미스를 fulfilled 상태로 변경한다.</li>
+<li>비동기 처리 실패: reject 함수를 호출해 프로미스를 rejected 상태로 변경한다.</li>
+</ul>
+<p>이처럼 <strong>프로미스 상태는 resolve 또는 reject 함수를 호출하는 것으로 결정된다.</strong></p>
+<p>fulfilled 또는 rejected 상태를 settled 상태라고 한다. settled 상태는 fulfilled 또는 rejected 상태와 상관없이 pending이 아닌 상태로 비동기 처리가 수행된 상태를 말한다.</p>
+<p>프로미스는 pending tkdxodptj settled 상태로 변화할 수 있지만 일단 settled 상태가 되면 더는 다른 상태로 변화할 수 없다.
+프로미스는 비동기 처리 상태와 더불어 비동기 처리 결과도 상태로 갖는다.
+즉, <strong>프로미스는 비동기 처리 상태와 처리 결과를 관리하는 객체다.</strong></p>
+<h2>프로미스의 후속 처리 메서드</h2>
+<p>프로미스의 비동기 처리 상태가 변화하면 이에 따른 후속 처리를 해야 한다.
+이를 위해 프로미스는 후속 메서드 then, catch, finally를 제공한다.
+<strong>프로미스의 비동기 처리 상태가 변화하면 후속 처리 메서드에 인수로 전달한 콜백 함수가 선택적으로 호출된다</strong> 이때 후속 처리 메서드의 콜백 함수에 프로미스의 처리 결과가 인수로 전달된다.
+모든 후속 처리 메서드는 프로미스를 반환하며, 비동기로 동작한다.</p>
+<h3>Promise.prototype.then</h3>
+<p>then 메서드는 두 개의 콜백 함수를 인수로 전달받는다.</p>
+<ul>
+<li>첫 번째 콜백 함수는 프로미스가 fulfilled 상태가 되면 호출된다. 이때 콜백 함수는 프로미스의 비동기 처리 결과를 인수로 전달받는다.</li>
+<li>두 번째 콜백 함수는 프로미스가 rejected 상태가 되면 호출된다. 이때 콜백 함수는 프로미스의 에러를 인수로 전달받는다.</li>
+</ul>
+<p>즉, 첫 번째 콜백 함수는 비동기 처리가 성공했을 때 호출되는 성공 처리 콜백 함수이며, 두 번째 콜백 함수는 비동기 처리가 실패했을 때 호출되는 실패 처리 콜백 함수다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// fulfilled
+new Promise(resolve => resolve('fulfilled'))
+	.then(v => console.log(v), e => console.error(e)); // fulfilled
+
+// rejected
+new Promise((_, reject) => reject(new Error('rejected')))
+	.then(v => console.log(v), e => console.error(e)); // Error: rejected</code></pre></div>
+<p>then 메서드는 언제나 프로미스를 반환한다. 만약 then 메서드의 콜백 함수가 프로미스를 반환하면 그 프로미스를 그대로 반환하고, 콜백 함수가 프로미스가 아닌 값을 반환하면 그 값을 암묵적으로 resolve 또는 reject하여 프로미스를 생성해 반환한다.</p>
+<h3>Promise.prototype.catch</h3>
+<p>catch 메서드는 한 개의 콜백 함수를 인수로 전달받는다. catch 메서드의 콜백 함수는 프로미스가 rejected 상태인 경우만 호출된다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// rejected
+new Promise((_, reject) => reject(new Error('rejected')))
+	.catch(e => console.log(e)); // Error: rejected</code></pre></div>
+<p>catch 메서드는 then(undefined, onRejected)과 동일하게 동작한다. 따라서 then 메서드와 마찬가지로 언제나 프로미스를 반환한다.</p>
+<h3>Promise.prototype.finally</h3>
+<p>finally 메서드는 한 개의 콜백 함수를 인수로 전달받는다. finally 메서드의 콜백 함수는 프로미스읭 성공 또는 실패와 상광벗이 무조건 한 번 호출된다. finally 메서드는 프로미스의 상태와 상관없이 공통적으로 수행해야 할 처리 내용이 있을 때 유용하다. finally도 언제나 프로미스를 반환한다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">new Promise(() => {})
+	.finally(() => console.log('finally')); // finally</code></pre></div>
+<h2>프로미스의 에러 처리</h2>
+<p>비동기 처리에서 발생한 에러는 then 메서드의 두 번째 콜백 함수로 처리하거나 프로미스의 후속 처리 메서드 catch를 사용해 처리할 수도 있다.
+catch 메서드를 then 메서드를 호출한 이후에 호출하면 비동기 처리에서 발생한 에러뿐만 아니라 then 메서드 내부에서 발생한 에러까지 모두 캐치할 수 있다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">promiseGet('https://jsonplaceholder.typicode.com/todos/1')
+  .then(res => console.xxx(res))
+  .catch(err => console.error(err)); // TypeError: console.xxx is not a function</code></pre></div>
+<p>또한 then 메서드에 두 번째 콜백 함수를 전달하는 것보다 catch 메서드를 사용하는 것이 가독성이 좋고 명확하다. 따라서 에러 처리는 then 메서드 보다 catch 메서드에서 하는 것을 권장한다.</p>
+<h2>프로미스 체이닝</h2>
+<p>then, catch, finally 후속 처리 메서드는 언제나 프로미스를 반환하므로 연속적으로 호출할 수 있다. 이를 프로미스 체이닝(promise chaining)이라 한다.
+프로미스는 프로미스 체이닝을 통해 비동기 처리 결과를 전달받아 후속 처리를 하므로 비동기 처리를 위한 콜백 패턴에서 발생하던 콜백 헬이 발생하지 않는다. 다만 프로미스도 콜백 패턴을 사용하므로 콜백 함수를 사용하지 않는 것은 아니다.
+콜백 패턴은 가독성이 좋지 않다. 이 문제는 ES8 에서 도입된 async/await를 통해 해결할 수 있다.</p>
+<h2>프로미스의 정적 메서드</h2>
+<p>Promise는 주로 생성자 함수로 사용되지만 함수도 객체이므로 메서드를 가질 수 있다. Promise는 5가지 정적 메서드를 제공한다.</p>
+<p>Promise.resolve와 Promise.reject 메서드는 이미 존재하는 값을 래핑하여 프로미스를 생성하기 위해 사용한다.
+Promise.resolve 메서드에 인수로 전달받은 값을 resolve하는 프로미스를 생성한다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// 배열을 resolve하는 프로미스를 생성
+const resolvedPromise = Promise.resolve([1,2,3]);
+resolvedPromise.then(console.log); // [1,2,3]</code></pre></div>
+<p>위 예제는 다음 예제와 동일하게 동작한다</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const resolvedPromise = new Promise(resolve => resolve([1,2,3]));
+resolvedPromise.then(console.log); // [1,2,3]</code></pre></div>
+<p>Promise.reject 메서드는 인수로 전달받은 값을 reject하는 프로미스를 생성한다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// 에러 객체를 reject하는 프로미스를 생성
+const rejectedPromise = Promise.reject(new Error('Error!'));
+rejectedPromise.catch(console.log); // Error: Error!</code></pre></div>
+<p>위 예제는 다음 예제와 동일하게 동작한다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const rejectedPromise = new Promise((_, reject) => reject(new Error('Error!')));
+rejectedPromise.catch(console.log); // Error: Error!
+</code></pre></div>
+<h3>Promise.all</h3>
+<p>Promise.all 메서드는 여러 개의 비동기 처리를 모두 병렬 처리할 때 사용한다.
+다음 예제를 살펴보자</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const rD1 = () => new Promise(resolve => setTimeout(() => resolve(1), 3000));
+const rD2 = () => new Promise(resolve => setTimeout(() => resolve(2), 2000));
+const rD3 = () => new Promise(resolve => setTimeout(() => resolve(3), 1000));
+
+// 세 개의 비동기 처리를 순차적으로 처리
+const res = [];
+rD1()
+  .then(data => {
+    res.push(data);
+    return rD2();
+  })
+  .then(data => {
+    res.push(data);
+    return rD3();
+  })
+  .then(data => {
+    res.push(data);
+    console.log(res); // [1,2,3] => 약 6초 소요
+  })
+  .catch(console.error);</code></pre></div>
+<p>위 예제는 세 개의 비동기 처리를 순차적으로 처리한다. 위 예제의 경우 앞선 비동기 처리 결과를 다음 비동기 처리가 사용하지 않는다. 따라서 위 예제의 경우 세 개의 비동기 처리를 순차적으로 처리할 필요가 없다.</p>
+<p>Promise.all 메서드는 여러개의 비동기 처리를 모두 병렬 처리할 떄 사용된다. 메서드를 사용해 세 개의 비동기 처리를 병렬로 처리해보자.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const requestData1 = () =>
+	new Promise(resolve => setTimeout(() => resolve(1), 3000));
+const requestData2 = () =>
+	new Promise(resolve => setTimeout(() => resolve(2), 2000));
+const requestData3 = () =>
+	new Promise(resolve => setTimeout(() => resolve(3), 1000));
+
+// 세 개의 비동기 처리를 병렬로 처리
+Promise.all([requestData1(), requestData2(), requestData3()])
+	.then(console.log) // [1,2,3] => 약 3초 소요
+	.catch(console.error);</code></pre></div>
+<p>Promise.all 메서드는 프로미스를 요소로 갖는 배열 등의 이터러블을 인수로 전달받는다. 그리고 전달받은 모든 프로미스가 모두 fulfilled 상태가 되면 모든 처리 결과를 배열에 저장해 새로운 프로미스를 반환한다.</p>
+<p>Promise.all 메서드는 인수로 전달받은 배열의 프로미스가 하나라도 rejected 상태가 되면 나머지 프로미스가 fulfilled 상태가 되는 것을 기다리지 않고 즉시 종료한다.</p>
+<p>다음은 깃허브 아이디로 깃허브 사용자 이름을 취득하는 3개의 비동기 처리를 모두 병렬로 처리하는 예제다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// GET 요청을 위한 비동기 함수
+const promiseGet = url => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        // 성공적으로 응답을 전달받으면 resolve 함수를 호출한다.
+        resolve(JSON.parse(xhr.response));
+      }else {
+        // 에러 처리를 위해 reject 함수를 호출한다.
+        reject(new Error(xhr.status));
+      }
+    };
+  });
+};
+
+const githubIds = ['jeresig', 'ahejlsberg', 'imb96'];
+
+Promise.all(githubIds.map(id => promiseGet(`https://api.github.com/users/${id}`)))
+  .then(users => users.map(user => user.name))
+  // [userInfo, userInfo, userInfo]
+  // -> Promise ['John Resig', 'Anders Hejlsberg', 'Minjae Kim']
+  .then(console.log)
+  .catch(console.error);
+</code></pre></div>
+<p>위 예제의 Promise.all 메서드는 promiseGet 함수가 반환한 3개의 프로미스로 이루어진 배열을 인수로 전달 받고 이 프로미스들이 모두 fulfilled 상태가 되면 처리 결과를 배열에 저장해 새로운 프로미스를 반환한다. 이때 Promise.all 메서드가 반환한 프로미스는 세 개의 사용자 객체로 이루어진 배열로 담고 있다. 이 배열은 첫 번째 then 메서드에 인수로 전달된다.</p>
+<h3>Promise.race</h3>
+<p>Promise.race 메서드는 Promise.all 메서드와 동일하게 프로미스를 요소로 갖는 배열 등의 이터러블을 인수로 전달받는다. Promise.race는 가장 먼저 fulfilled 상태가 된 프로미스의 처리 결과를 resolve하는 새로운 프로미스를 반환한다.
+Promise.race 메서드에 전달된 프로미스가 하나라도 rejected 상태가 되면 에러를 reject하는 프로미스를 즉시 반환한다.</p>
+<h3>Promise.allSettled</h3>
+<p>Promise.allSettled 메서드는 프로미스를 요소로 갖는 배열 등의 이터러블을 인수로 전달받는다. 그리고 전달받은 프로미스가 모두 settled 상태 (비동기 처리가 수행된 상태, 즉 fulfilled or rejected 상태)가 되면 처리 결과를 배열로 반환한다.</p>
+<h2>마이크로태스크 큐</h2>
+<p>다음 예제를 살펴보고 어떤 순서로 로그가 출력될지 생각해보자.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">setTimeout(() => console.log(1), 0);
+
+Promise.resolve()
+	.then(() => console.log(2))
+	.then(() => console.log(3));</code></pre></div>
+<p>프로미스의 후속 처리 메서드도 비동기로 동작하므로 1 -> 2 -> 3의 순으로 출력될 것처럼 보이지만 2 -> 3 -> 1 순으로 출력된다. 그 이유는 프로미스의 후속 처리 메서드의 콜백함수는 태스크 큐가 아니라 마이크로태스크 큐에 저장되기 때문이다. 마이크로태스크 큐는 태스크 큐보다 우선순위가 높다.</p>
+<h2>fetch</h2>
+<p>fetch 함수는 XMLHttpRequest 객체와 마찬가지로 HTTP 요청 전송 기능을 제공하는 클라이언트 사이드 Web API다. fetch 함수는 XMLHttpRequest 객체보다 사용법이 간단하고 프로미스를 지원하기 때문에 비동기 처리를 위한 콜백 패턴의 단점에서 자유롭다.</p>
+<p>fetch 함수에는 HTTP 요청을 전송할 URL과 HTTP 요청 메서드, HTTP 요청 헤더, 페이로드 등을 설정한 객체를 전달한다.</p>
+<p><code class="language-text">const promise = fetch(url [, options])</code></p>
+<p><strong>fetch 함수는 HTTP 응답을 나타내는 Response 객체를 래핑한 Promise 객체를 반환한다.</strong></p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Promise/";window.___webpackCompilationHash="16dccce1a22f075683ce";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-610843a780addf1dfaa5.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-35f676e2b085f909d320.js" async=""></script></body></html>
