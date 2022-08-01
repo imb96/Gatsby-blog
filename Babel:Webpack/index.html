@@ -13,34 +13,34 @@
 </ul>
 <h2>Babel</h2>
 <p>다음 예제에서는 ES6의 화살표 함수와 ES7의 지수 연산자를 사용하고 있다.</p>
-<p><code class="language-text">[1,2,3].map(n => n ** n);</code></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">n</span> <span class="token operator">=></span> n <span class="token operator">**</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>Babel을 사용하면 위 코드를 다음과 같이 ES5 사양으로 변환할 수 있다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">"use strict";
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span>
 
-[1,2,3].map(function (n) {
-  return Math.pow(n, n);
-});</code></pre></div>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>이처럼 Babel은 ES6+/ES.NEXT로 구현된 최신 사양의 소스코드를 구형 브라우저에서도 동작하는 ES5 사양의 소스코드로 변환(트랜스파일링)할 수 있다. Babel을 사용하기 위한 개발 환경을 구축해 보자.</p>
 <h3>Babel 설치</h3>
 <p>npm을 사용하여 Babel을 설치해 보자. 터미널에서 다음과 같이 명령어를 입력하여 Babel을 설치한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"># 프로젝트 폴더 생성
-$ mkdir esnext-project &amp;&amp; cd esnext-project
-# package.json 생성
-$ npm init -y
-# babel-core, babel-cli 설치
-$ npm install --save-dev @babel/core @babel/cli</code></pre></div>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># 프로젝트 폴더 생성</span>
+$ <span class="token function">mkdir</span> esnext-project <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> esnext-project
+<span class="token comment"># package.json 생성</span>
+$ <span class="token function">npm</span> init -y
+<span class="token comment"># babel-core, babel-cli 설치</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev @babel/core @babel/cli</code></pre></div>
 <p>설치가 완료된 이후 package.json 파일은 다음과 같다. 불필요한 설정은 삭제했다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-  "name": "esnext-project",
-  "version": "1.0.0",
-  "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3"
-  }
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"esnext-project"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@babel/cli"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"@babel/core"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>참고로 Babel, Webpack, 플러그인의 버전은 빈번하게 업그레이드된다. npm.install은 언제나 최신 버전의 패키지를 설치하므로 만약 위 버전 그대로 설치하고 싶다면 다음과 같이 패키지 이름 뒤에 @과 설치하고 싶은 버전을 지정한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"># 버전 지정 설치
-npm install --save-dev @babel/core@7.10.3 @babel/cli@7.10.3</code></pre></div>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># 버전 지정 설치</span>
+<span class="token function">npm</span> <span class="token function">install</span> --save-dev @babel/core@7.10.3 @babel/cli@7.10.3</code></pre></div>
 <h3>Babel 프리셋 설치와 babel.config.json 설정 파일 작성</h3>
 <p>Babel을 사용하려면 @babel/preset-env를 설치해야 한다. @babel/preset-env는 함께 사용되어야 하는 Babel 플러그인을 모아 둔 것으로 Babel 프리셋이라고 부른다. Babel이 제공하는 공식 Babel 프리셋은 다음과 같다.</p>
 <ul>
@@ -50,76 +50,76 @@ npm install --save-dev @babel/core@7.10.3 @babel/cli@7.10.3</code></pre></div>
 <li>@babel/preset-typescript</li>
 </ul>
 <p>@babel/preset-env는 필요한 플러그인들을 프로젝트 지원 환경에 맞춰 동적으로 결정해 준다. 프로젝트 지원 환경은 Browserlist 형식으로 .browserlistrc 파일에 상세히 설정할 수 있다. 생략하면 기본값으로 설정된다. 기본 설정은 모든 ES6+/ES.NEXT 사양의 소스코드를 변환한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"># @babel/preset-env 설치
-$ npm install --save-dev @babel/preset-env</code></pre></div>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># @babel/preset-env 설치</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev @babel/preset-env</code></pre></div>
 <p>설치 완료된 이후 package.json 파일은 다음과 같다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-  "name": "esnext-project",
-  "version": "1.0.0",
-  "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
-	"@babel/preset-env"- "^7.10.3"
-  }
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"esnext-project"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@babel/cli"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"@babel/core"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+	<span class="token string">"@babel/preset-env"</span>- <span class="token string">"^7.10.3"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>설치가 완료되면 프로젝트 루트 폴더에 babel.config.json 설정 파일을 생성하고 다음과 같이 작성한다. 지금 설치한 @babel/preset-env를 사용하겠다는 의미다.</p>
-<p>{
-“preset”: [“@babel/preset-env”]
-}</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"preset"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"@babel/preset-env"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h3>트랜스파일링</h3>
 <p>Babel을 사용하여 ES6+/ES.NEXT 사양의 ES5 사양의 소스코드로 트랜스파일링해보자.
 Babel CLI 명령어를 사용할 수도 있지만 npm scripts에 Babel CLI 명령어를 등록해 사용하다</p>
 <p>package.json 파일에 scripts를 추가한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-  "name": "esnext-project",
-  "scripts": {
-	"build": "babel src/js -w dist/js"
-  }
-  "version": "1.0.0",
-  "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
-	"@babel/preset-env"- "^7.10.3"
-  }
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"esnext-project"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"babel src/js -w dist/js"</span>
+  <span class="token punctuation">}</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@babel/cli"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"@babel/core"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+	<span class="token string">"@babel/preset-env"</span>- <span class="token string">"^7.10.3"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>위 npm scripts의 buid는 src/js 폴더(타깃 폴더)에 있는 모든 자바스크립트 파일들을 트랜스파일링한 결과물을 dist/js 폴더에 저장한다. 사용한 옵션의 의미는 다음과 같다.</p>
 <ul>
 <li>-w: 타깃 폴더에 있는 모든 자바스크립트 파일들의 변경을 감지하여 자동으로 트랜스파일한다.(–watch)</li>
 <li>-d: 트랜스파일링된 결과물이 저장될 폴더를 지정한다. 지정된 폴더가 존재하지 않으면 자동 생성한다.(–out-dir)</li>
 </ul>
 <p>트랜스파일링을 테스트 하기 위해 ES6+/ES.NEXT 사양의 자바스크립트 파일을 작성해 보자. 프로젝트 루트 폴더에 src/js 폴더를 생성한 후 lib.js와 main.js를 추가한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// src/js/lib.js
-export const pi = Math.PI; // ES6 모듈
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// src/js/lib.js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> pi <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">;</span> <span class="token comment">// ES6 모듈</span>
 
-export function power(x,y) {
-  return x ** y; // ES7 지수 연산자
-}
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">power</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> x <span class="token operator">**</span> y<span class="token punctuation">;</span> <span class="token comment">// ES7 지수 연산자</span>
+<span class="token punctuation">}</span>
 
-// ES6 클래스
-export class Foo {
-  #private = 10; // stage 3: 클래스 필드 정의 제안
+<span class="token comment">// ES6 클래스</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+  #<span class="token keyword">private</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">// stage 3: 클래스 필드 정의 제안</span>
 
-  foo() {
-    // stage 4: 객체 Rest/Spread 프로퍼티 제안
-    const { a, b, ...x } = { ...{ a: 1, b: 2 }, c: 3, d: 4};
-    return {a, b, x};
-  }
+  <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// stage 4: 객체 Rest/Spread 프로퍼티 제안</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">...</span>x <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span><span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token literal-property property">d</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> x<span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  bar() {
-    return this.#private;
-  }
-}</code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// src/js/main.js
-import { pi, power, Foo} from './lib';
+  <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#<span class="token keyword">private</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// src/js/main.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> pi<span class="token punctuation">,</span> power<span class="token punctuation">,</span> Foo<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./lib'</span><span class="token punctuation">;</span>
 
-console.log(pi);
-console.log(power(pi, pi));
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>pi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">power</span><span class="token punctuation">(</span>pi<span class="token punctuation">,</span> pi<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-const f = new Foo();
-console.log(f.foo());
-console.log(f.bar());</code></pre></div>
+<span class="token keyword">const</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>터미널에서 다음과 같이 명령어를 입력하여 트랜스파일링을 실행한다.</p>
-<p><code class="language-text">$ npm run build</code></p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">$ <span class="token function">npm</span> run build</code></pre></div>
 <h3>Babel 플러그인 설치</h3>
 <p>설치가 필요한 Babel 플러그인은 Babel 홈페이지에서 검색할 수 있다.</p>
 <h2>Webpack</h2>
@@ -128,85 +128,86 @@ console.log(f.bar());</code></pre></div>
 Webpack이 자바스크립트 파일을 번들링하기 전에 Babel을 로드하여 ES6+/ES.NEXT 사양의 소스코드를 ES5 사양의 소스코드로 트랜스파일링하는 작업을 실행하도록 설정할 것이다.</p>
 <h3>Webpack 설치</h3>
 <p>터미널에서 다음과 같이 명령어를 입력하여 Webpack을 설치한다.</p>
-<p><code class="language-text">$ npm install --save-dev webpack webpack-cli</code></p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev webpack webpack-cli</code></pre></div>
 <h3>babel-loader 설치</h3>
 <p>Webpack이 모듈 번들링할 때 Babel을 사용하여 트랜스파일링하도록 babel-loader를 설치한다.</p>
-<p>$ npm install -save-dev babel-loader</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">$ <span class="token function">npm</span> <span class="token function">install</span> -save-dev babel-loader</code></pre></div>
 <p>npm scripts를 변경하여 Babel 대신 Webpack을 실행하도록 수정하자.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-  "name": "esnext-project",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "webpack -w"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
-    "@babel/plugin-proposal-class-properties": "^7.10.1",
-    "@babel/preset-env": "^7.10.3",
-    "babel-loader": "^8.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
-  }
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"esnext-project"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack -w"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"@babel/cli"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"@babel/core"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"@babel/plugin-proposal-class-properties"</span><span class="token operator">:</span> <span class="token string">"^7.10.1"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"@babel/preset-env"</span><span class="token operator">:</span> <span class="token string">"^7.10.3"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"babel-loader"</span><span class="token operator">:</span> <span class="token string">"^8.1.0"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^4.43.0"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"webpack-cli"</span><span class="token operator">:</span> <span class="token string">"^3.3.12"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h3>webpack.config.js 설정 파일 작성</h3>
 <p>webpack.config.js는 Webpack이 실행될 때 참조하는 설정 파일이다. 프로젝트 루트 폴더에 webpack.config.js 파일을 생성하고 다음과 같이 작성한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const path = require('path');
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-module.exports = {
-  // entry file
-  // https://webpack.js.org/configuration/entry-context/#entry
-  entry: './src/js/main.js',
-  // 번들링돤 js 파일의 이름과 저장될 경로 지정
-  // https://webpack.js.org/configuration/output/#outputpath
-  // https://webpack.js.org/configuration/output/#outputfilename
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js'
-  },
-  // https://webpack.js.org/configuration/module
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include: [
-          path.resolve(__dirname, 'src/js')
-        ],
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            preset: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties']
-          }
-        }
-      }
-    ]
-  },
-  devtool: 'source-map',
-  // https://webpack.js.org/configuration/mode
-  mode: 'development'
-};</code></pre></div>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// entry file</span>
+  <span class="token comment">// https://webpack.js.org/configuration/entry-context/#entry</span>
+  <span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token string">'./src/js/main.js'</span><span class="token punctuation">,</span>
+  <span class="token comment">// 번들링돤 js 파일의 이름과 저장될 경로 지정</span>
+  <span class="token comment">// https://webpack.js.org/configuration/output/#outputpath</span>
+  <span class="token comment">// https://webpack.js.org/configuration/output/#outputfilename</span>
+  <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">'js/bundle.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// https://webpack.js.org/configuration/module</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.js$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">include</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/js'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">exclude</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">node_modules</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">preset</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/plugin-proposal-class-properties'</span><span class="token punctuation">]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">devtool</span><span class="token operator">:</span> <span class="token string">'source-map'</span><span class="token punctuation">,</span>
+  <span class="token comment">// https://webpack.js.org/configuration/mode</span>
+  <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'development'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <p>Webpack을 실행하여 트랜스파일링 및 번들링을 실행해보자. 트랜스파일링은 Babel이 수행하고 번들링은 Webpack이 수행한다.</p>
-<p><code class="language-text">$ npm run build</code></p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">$ <span class="token function">npm</span> run build</code></pre></div>
 <h3>babel-polyfill 설치</h3>
 <p>Babel을 사용하여 ES6+/ES.NEXT 사양의 소스코드를 ES5 사양의 소스코드로 트랜스파일링해도 브라우저가 지원하지 않는 코드가 남아 있을 수 있다.
 Promise, Object.assign, Array.from 등과 같이 ES5 사양으로 대체할 수 없는 기능은 트랜스파일링 되지 않는다. 따라서 이런 객체나 메서드를 사용하기 위해서는 @babel/polyfill을 설치해야 한다.</p>
-<p><code class="language-text">$ npm install @babel/polyfill</code></p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">$ <span class="token function">npm</span> <span class="token function">install</span> @babel/polyfill</code></pre></div>
 <p>@babel-polyfill은 개발 환경에서만 사용하는 것이 아니라 실제 운영 환경에서도 사용해야 한다. 따라서 개발용 의존성으로 설치하는 –save-dev 옵션을 지정하지 않는다.</p>
 <p>ES6의 import를 사용하는 경우에는 진입점의 선두에서 먼저 폴리필을 로드하도록 한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// src/js/main.js
-import "@babel/polyfill";
-import { pi, power, Foo } from './lib';
-...</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// src/js/main.js</span>
+<span class="token keyword">import</span> <span class="token string">"@babel/polyfill"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> pi<span class="token punctuation">,</span> power<span class="token punctuation">,</span> Foo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./lib'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span></code></pre></div>
 <p>Webpack을 사용하는 경우에는 위 방법 대신 webpack.config.js 파일의 entry 배열에 폴리필을 추가한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const path = require('path');
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-module.exports = {
-  // entry file
-  // https://webpack.js.org/configuration/entry-context/#entry
-  entry: ['@babel/polyfill', './src/js/main.js'],
-...</code></pre></div>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// entry file</span>
+  <span class="token comment">// https://webpack.js.org/configuration/entry-context/#entry</span>
+  <span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/polyfill'</span><span class="token punctuation">,</span> <span class="token string">'./src/js/main.js'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token operator">...</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>위와 같이 webpack.config.js 파일을 수정하여 폴리필을 반영해보자. 빌드 명령이 실행중이면 정지시키고 다음과 같이 명령어를 입력하여 Webpack을 실행한다.</p>
-<p><code class="language-text">$ npm run build</code></p>
-<p>dist/js/bundle.js를 확인해보면 폴리필이 추가된 것을 확인할 수 있다.</p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Babel:Webpack/";window.___webpackCompilationHash="16dccce1a22f075683ce";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-610843a780addf1dfaa5.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-35f676e2b085f909d320.js" async=""></script></body></html>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">$ <span class="token function">npm</span> run build</code></pre></div>
+<p>dist/js/bundle.js를 확인해보면 폴리필이 추가된 것을 확인할 수 있다.</p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Babel:Webpack/";window.___webpackCompilationHash="10302bfff02a213d24be";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-f203223de7be83f9fa0b.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-710fd73505beb8403b06.js" async=""></script></body></html>

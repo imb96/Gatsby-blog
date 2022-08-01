@@ -4,48 +4,48 @@
 <p>Set 객체는 중복되지 않는 유일한 값 들의 집합이다.
 Set 객체는 배열과 유사하지만 Set 객체는 동일한 값을 중복하여 포함할 수 없고 요소 순서에 의미가 없다. 또한 인덱스로 요소에 접근할 수 없다.</p>
 <p>Set 객체는 Set 생성자 함수로 생성한다. Set 생성자 함수에 인수를 전달하지 않으면 빈 Set 객체가 생성된다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const set = new Set();
-console.log(set);    // Set(0) {}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Set(0) {}</span>
 </code></pre></div>
 <p>Set 생성자 함수는 이터러블을 인수로 전달받아서 Set 객체를 생성한다. 이때 이터러블의 중복된 값은 Set 객체에 요소로 저장되지 않는다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const set1 = new Set([1,2,3,4,4,5]);
-console.log(set1)    // Set(3) {1,2,3,4,5}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> set1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set1<span class="token punctuation">)</span>    <span class="token comment">// Set(3) {1,2,3,4,5}</span>
 
-const set2 = new Set('javascript');
-console.log(set2);    // Set(9) { 'j', 'a', 'v', 's', 'c', 'r', 'i', 'p', 't' }
+<span class="token keyword">const</span> set2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token string">'javascript'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set2<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Set(9) { 'j', 'a', 'v', 's', 'c', 'r', 'i', 'p', 't' }</span>
 </code></pre></div>
 <p>Set 객체의 요소 개수를 확인할 때는 Set.prototype.size 프로퍼티를 사용한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const {size} = new Set([1,4,3,4,3,2,4,5]);
-console.log(size)    // 5
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span>size<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span>    <span class="token comment">// 5</span>
 </code></pre></div>
 <p>size 프로퍼티는 setter 함수 없이 getter 함수만 존재하는 접근자 프로퍼티 이기 때문에 size 프로퍼티에 숫자를 할당하여 Set 객체의 요소 개수를 변경할 수 없다.</p>
 <p>Set 객체에 요소를 추가할 때는 Set.prototype.add 메서드를 사용한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const set = new Set();
-set.add(10);
-console.log(set)    // Set(1) { 10 }
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set<span class="token punctuation">)</span>    <span class="token comment">// Set(1) { 10 }</span>
 </code></pre></div>
 <p>add 메서드는 새로운 요소가 추가된 Set 객체를 반환하기 때문에 add 메서드를 연속적으로 호출할 수 있다.
 Set 객체에 중복된 요소를 추가하려고 하면 에러가 발생되지 않고 무시된다.
 Set 객체는 객체나 배열과 같이 자바스크립트의 모든 값을 요소로 저장할 수 있다.</p>
 <p>Set 객체에 특정 요소가 존재하는지 확인하려면 Set.prototype.has 메서드를 사용한다.
 has 메서드는 특정 요소의 존재 여부를 확인하여 Boolean 값을 반환한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const set = new Set([1,2]);
-console.log(set.has(1));    // true
-console.log(set.has(3));    // false
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// false</span>
 </code></pre></div>
 <p>Set 객체의 특정 요소를 삭제하려면 Set.prototype.delete 메서드를 사용한다.
 delete 메서드는 특정 요소의 존재 여부를 확인하여 Boolean 값을 반환한다.
 Set 객체는 순서에 의미가 없기 때문에 delete 메서드는 인수로 삭제하려는 요소값을 전달 받아야 한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const set = new Set([1,2]);
-set.delete(1);
-console.log(set);    // Set(1) { 2 }
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+set<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Set(1) { 2 }</span>
 </code></pre></div>
 <p>delete 메서드는 삭제 성공 여부를 Boolean 값으로 반환하기 때문에 연속적으로 호출할 수 없다.</p>
 <p>Set 객체의 모든 요소를 일괄적으로 삭제하려면 Set.prototype.clear 메서드를 사용한다.
 clear 메서드는 항상 undefined를 반환한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const set = new Set([1,3,5,7,9,2,4,6,8]);
-set.clear();
-console.log(set);    // Set(0) {}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+set<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Set(0) {}</span>
 </code></pre></div>
 <p>Set 객체의 요소를 순회하려면 Set.prototype.forEach 메서드를 사용한다.
 Array.prototype.forEach와 유사하게 콜백 함수와 forEach 메서드의 콜백 함수 내부에서 this로 사용될 객체를 인수로 전달한다.
@@ -54,19 +54,19 @@ Array.prototype.forEach와 유사하게 콜백 함수와 forEach 메서드의 �
 두 번째 인수: 현재 순회 중인 요소값
 세 번째 인수: 현재 순회 중인 Set 객체 자체
 Set 객체는 이터러블이기 때문에 for…of 문으로 순회할 수 있고 스프레드 문법과 배열 디스트럭처링의 대상이 될 수도 있다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const set = new set([1,2,3]);
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// Set 객체는 Set.prototype의 Symbol.iterator 메서드를 상속받는 이터러블이다.
-console.log(Symbol.iterator in set);    // true
+<span class="token comment">// Set 객체는 Set.prototype의 Symbol.iterator 메서드를 상속받는 이터러블이다.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Symbol<span class="token punctuation">.</span>iterator <span class="token keyword">in</span> set<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
 
-// 이터러블인 Set 객체는 for...of 문으로 순회할 수 있다.
-for(const value of set) {
-    console.log(value);    // 1 2 3
-}
+<span class="token comment">// 이터러블인 Set 객체는 for...of 문으로 순회할 수 있다.</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> value <span class="token keyword">of</span> set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 1 2 3</span>
+<span class="token punctuation">}</span>
 
-// 이터러블인 Set 객체는 스프레드 문법의 대상이 될 수 있다.
-console.log([...set]);    // [1,2,3]
+<span class="token comment">// 이터러블인 Set 객체는 스프레드 문법의 대상이 될 수 있다.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>set<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// [1,2,3]</span>
 
-// 이터러블인 Set 객체는 배열 디스트럭처링 할당의 대상이 될 수 있다.
-const [a, ...rest] = set;
-console.log(a, rest);    // 1, [2, 3]</code></pre></div></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Set/";window.___webpackCompilationHash="16dccce1a22f075683ce";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-610843a780addf1dfaa5.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-35f676e2b085f909d320.js" async=""></script></body></html>
+<span class="token comment">// 이터러블인 Set 객체는 배열 디스트럭처링 할당의 대상이 될 수 있다.</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> <span class="token operator">...</span>rest<span class="token punctuation">]</span> <span class="token operator">=</span> set<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> rest<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 1, [2, 3]</span></code></pre></div></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Set/";window.___webpackCompilationHash="10302bfff02a213d24be";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-f203223de7be83f9fa0b.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-710fd73505beb8403b06.js" async=""></script></body></html>

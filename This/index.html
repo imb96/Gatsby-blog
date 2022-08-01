@@ -10,57 +10,57 @@
 <p>생성자 함수 내부의 this는 생성자 함수가 생성할 인스턴스를 가리킨다.
 이처럼 this는 상황에 따라 가리키는 대상이 다르다.</p>
 <p><strong>자바스크립트의 this는 함수가 호출되는 방식에 따라 this에 바인딩될 값, 즉 this 바인딩이 동적으로 결정된다.</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// this는 어디서든지 참조 가능하다.
-// 전역에서 this는 전역 객체 window를 가리킨다.
-console.log(this);	//	window
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// this는 어디서든지 참조 가능하다.</span>
+<span class="token comment">// 전역에서 this는 전역 객체 window를 가리킨다.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//	window</span>
 </code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">function square(number) {
-  // 일반 함수 내부에서 this는 전역 객체 window를 가리킨다.
-  console.log(this)	//	window
-  return number * number;
-}
-square(2);</code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const person = {
-  name: 'Kim',
-  getName() {
-    // 메서드 내부에서 this는 메서드를 호출한 객체를 가리킨다.
-    console.log(this);	//	{name: 'Kim', getName: f}
-    return this.name;
-  }
-};
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 일반 함수 내부에서 this는 전역 객체 window를 가리킨다.</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>	<span class="token comment">//	window</span>
+  <span class="token keyword">return</span> number <span class="token operator">*</span> number<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">square</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Kim'</span><span class="token punctuation">,</span>
+  <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 메서드 내부에서 this는 메서드를 호출한 객체를 가리킨다.</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//	{name: 'Kim', getName: f}</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-console.log(person.getName());	//	Kim
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//	Kim</span>
 </code></pre></div>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">function Person(name) {
-	this.name = name;
-    // 생성자 함수 내부에서 this는 생성자 함수가 생성할 인스턴스를 가리킨다.
-    console.log(this);	//	Person {name: 'Kim'}
-}
-const me = new Person('Kim');</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token comment">// 생성자 함수 내부에서 this는 생성자 함수가 생성할 인스턴스를 가리킨다.</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//	Person {name: 'Kim'}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> me <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'Kim'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <h2>함수 호출 방식과 this 바인딩</h2>
 <p>this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.
-const foo = function () {
-  console.dir(this);
-};
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.</span>
+<span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-// 동일한 함수도 다양한 방식으로 호출할 수 있다.
+<span class="token comment">// 동일한 함수도 다양한 방식으로 호출할 수 있다.</span>
 
-// 1. 일반 함수 호출
-// foo 함수를 일반적인 방식으로 호출
-// foo 함수 내부의 this는 전역 객체 window를 가리킨다.
-foo();	//	window
+<span class="token comment">// 1. 일반 함수 호출</span>
+<span class="token comment">// foo 함수를 일반적인 방식으로 호출</span>
+<span class="token comment">// foo 함수 내부의 this는 전역 객체 window를 가리킨다.</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//	window</span>
 
-// 2. 메서드 호출
-// foo 함수를 프로퍼티 값으로 할당하여 호출
-// foo 함수 내부의 this는 메서드를 호출한 객체 obj를 가리킨다.
-const obj = { foo };
-obj.foo();	//	obj
+<span class="token comment">// 2. 메서드 호출</span>
+<span class="token comment">// foo 함수를 프로퍼티 값으로 할당하여 호출</span>
+<span class="token comment">// foo 함수 내부의 this는 메서드를 호출한 객체 obj를 가리킨다.</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> foo <span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//	obj</span>
 
-// 3. 생성자 함수 호출
-// foo 함수를 new 연산자와 함께 생성자 함수로 호출
-// foo 함수 내부의 this는 생성자 함수가 생성한 인스턴스를 가리킨다.
-new foo();
+<span class="token comment">// 3. 생성자 함수 호출</span>
+<span class="token comment">// foo 함수를 new 연산자와 함께 생성자 함수로 호출</span>
+<span class="token comment">// foo 함수 내부의 this는 생성자 함수가 생성한 인스턴스를 가리킨다.</span>
+<span class="token keyword">new</span> <span class="token class-name">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div>
 <h3>일반 함수 호출</h3>
 <p><strong>기본적으로 this에는 전역 객체가 바인딩 된다.</strong>
@@ -83,4 +83,4 @@ apply와 call 메서드는 호출할 함수에 인수를 전달하는 방식만 
 call 메서드는 호출할 함수의 인수를 쉼표로 구분한 리스트 형식으로 전달한다.</p>
 <p>apply와 call 메서드의 대표적인 용도는 arguments 객체와 같은 유사 배열 객체에 배열 메서드를 사용하는 경우다. arguments 객체는 배열이 아니기 때문에 배열의 메서드를 사용할 수 없으나 apply와 call 메서드를 이용하면 가능하다.</p>
 <p>bind 메서드는 apply와 call 메서드와 달리 함수를 호출하지 않는다. 다만 첫 번째 인수로 전달한 값으로 this 바인딩이 교체된 함수를 새롭게 생성해 반환한다.</p>
-<p>bind 메서드는 메서드의 this와 메서드 내부의 중첩 함수 또는 콜백 함수의 this가 불일치하는 문제를 해결하기 위해 유용하게 사용된다.</p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/This/";window.___webpackCompilationHash="16dccce1a22f075683ce";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-610843a780addf1dfaa5.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-35f676e2b085f909d320.js" async=""></script></body></html>
+<p>bind 메서드는 메서드의 this와 메서드 내부의 중첩 함수 또는 콜백 함수의 this가 불일치하는 문제를 해결하기 위해 유용하게 사용된다.</p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/This/";window.___webpackCompilationHash="10302bfff02a213d24be";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-f203223de7be83f9fa0b.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-710fd73505beb8403b06.js" async=""></script></body></html>
