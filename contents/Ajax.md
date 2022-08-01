@@ -22,7 +22,8 @@ JSON(JavaScript Object Notation)은 클라이언트와 서버 간의 HTTP 통신
 자바스크립트에 종속되지 않은 언어 독립형 데이터 포맷으로, 대부분의 프로그래밍 언어에서 사용할 수 있다.
 
 JSON은 자바스크립트의 객체 리터럴과 유사하게 키와 값으로 구성된 순수한 텍스트다.
-```
+
+```js
 {
   "name": "Lee",
   "age": 20,
@@ -34,7 +35,7 @@ JSON의 키는 반드시 큰따옴표로 묶어야 한다. 값은 객체 리터�
 
 JSON.stringfy 메서드는 객체를 JSON 포맷의 문자열로 변환한다. 클라이언트가 서버로 객체를 전송하려면 객체를 문자열화해야 하는데 이를 직렬화(serializing)라 한다.
 
-```
+```js
 const obj = {
   name: 'Lee',
   age: 20,
@@ -81,7 +82,7 @@ console.log(typeof strFilteredObject, strFilteredObject);
  * }
  */
 
-JSON.stringify 메서드는 객체뿐만 아니라 배열도 JSON 포맷의 문자열로 변환한다.
+// JSON.stringify 메서드는 객체뿐만 아니라 배열도 JSON 포맷의 문자열로 변환한다.
 
 const todos = [
   {id: 1, content: 'HTML', completed: false},
@@ -112,7 +113,8 @@ console.log(typeof json, json);
  */
 ```
 JSON.parse 메서드는 JSON 포맷의 문자열을 객체로 변환한다. 서버로부터 클라이언트에게 전송된 JSON 데이터는 문자열이다. 이 문자열을 객체로서 사용하려면 JSON 포맷의 문자열을 객체화해야 하는데 이를 역질렬화(deserializing)라 한다.
-```
+
+```js
 const obj = {
   name: 'Lee',
   age: 20,
@@ -133,7 +135,7 @@ console.log(typeof parsed, parsed);
 브라우저는 주소창이나 HTML의 form 태그 또는 a 태그를 통해 HTTP 요청 전송 기능을 기본 제공한다. 자바스크립트를 사용하여 HTTP 요청을 전송하려면 XMLHttpRequest 객체를 사용한다. Web API인 XMLHttpRequest 객체는 HTTP 요청 전송과 HTTP 응답 수신을 위한 다양한 메서드와 프로퍼티를 제공한다.
 
 XMLHttpRequest 객체는 XMLHttpRequest 생성자 함수를 호출하여 생성한다. XMLHttpRequest 객체는 브라우저에서 제공하는 Web API이므로 브라우저 환경에서만 정상적으로 실행된다.
-```
+```js
 // XMLHttpRequest 객체의 생성
 const xhr = new XMLHttpRequest();
 ```
@@ -144,7 +146,7 @@ HTTP 요청을 전송하는 경우 다음 순서를 따른다.
 2. 필요에 따라 XMLHttpRequest.prototype.setRequestHeader 메서드로 특정 HTTP 요청의 헤더 값을 설정한다.
 3. XMLHttpRequest.prototype.send 메서드로 HTTP 요청을 전송한다.
 
-```
+```js
 // XMLHttpRequest 객체 생성
 const xhr = new XMLHttpRequest();
 
@@ -198,7 +200,7 @@ Content-type은 요청 몸체에 담아 전송할 데이터의 MIME 타입의 �
 
 다음은 요청 몸체에 담아 서버로 전송할 페이로드의 MIME 타입을 지정하는 예다.
 
-```
+```js
 // XMLHttpRequest 객체 생성
 const xhr = new XMLHttpRequest();
 
@@ -215,7 +217,7 @@ xhr.send(JSON.stringfy({id:1, content: 'HTML', completed: false}));
 
 HTTP 클라이언트가 서버에 요청할 때 서버가 응답할 데이터의 MIME 타입을 Accept로 지정할 수 있다.
 
-```
+```js
 // 서버가 응답할 데이터의 MIME 타입 지정: json
 xhr.setRequestHeader('accept', 'application/json');
 ```
@@ -223,7 +225,7 @@ xhr.setRequestHeader('accept', 'application/json');
 
 서버가 전송한 응답을 처리하려면 XMLHttpRequest 객체가 발생시키는 이벤트를 캐치해야 한다. XMLHttpRequest 객체는 onreadystatechange, onload, onerror 같은 이벤트 핸들러 프로퍼티를 갖는다. 이 이벤트 핸들러 프로퍼티 중에서 HTTP 요청의 현재 상태를 나타내는 readyState 프로퍼티 값이 변경된 경우 발생하는 readystatechange 이벤트를 캐치하여 다음과 같이 HTTP 응답을 처리할 수 있다. XMLHttpRequest 객체는 브라우저에서 제공하는 Web API이므로 다음 예제는 반드시 브라우저 환경에서 실행해야 한다.
 
-```
+```js
 // XMLHttpRequest 객체 생성
 const xhr = new XMLHttpRequest();
 

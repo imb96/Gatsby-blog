@@ -82,7 +82,7 @@ js파싱과 실행은 브라우저 렌더링 엔진이 아닌 js엔진이 처리
 ## script 태그의 async/defer 어트리뷰트
 자바스크립트 파싱에 의한 DOM 생성이 중단되는 문제를 근본적으로 해결하기 위해 HTML5부터 script 태그에 async와 defer 어트리뷰트가 추가되었다.
 async, defer 어트리뷰트는 src 어트리뷰트를 통해 외부 자바스크립트 파일을 로드하는 경우에만 사용할 수 있다.
-```
+```html
 <script async src = "app.js"></script>
 <script defer src = "app.js"></script>
 ```

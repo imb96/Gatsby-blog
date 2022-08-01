@@ -38,7 +38,7 @@ person();
 
 
 
-```
+```js
 function person() {
   let age = 27;
 

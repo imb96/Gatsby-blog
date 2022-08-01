@@ -11,7 +11,7 @@ thumbnail: './DeepDive.png'
 ## 에러 처리의 필요성
 에러는 언제나 발생할 수 있다. 발생한 에러에 대해 대처하지 않고 방치하면 프로그램은 강제 종료된다.
 
-```
+```js
 console.log('[Start]');
 foo(); // ReferenceError: foo is not defined
 // 발생한 에러를 방치하면 프로그램은 강제 종료된다.
@@ -22,7 +22,7 @@ console.log('[End]');
 
 try...catch 문을 사용해 발생한 에러에 적절하게 대응하면 프로그램이 강제 종료되지 않고 계속해도 코드를 실행시킬 수 있다.
 
-```
+```js
 console.log('[Start]');
 try {
   foo();
@@ -37,7 +37,7 @@ console.log('[End]');
 
 직접적으로 에러를 발생하지는 않는 예외적인 상황이 발생할 수도 있다. 예외적인 상황에 적절하게 대응하지 않으면 에러로 이어질 가능성이 크다.
 
-```
+```js
 // DOM에 button 요소가 존재하지 않으면 querySelector 메서드는 에러를 발생시키지 않고 null을 반환한다.
 const $button = document.querySelector('button'); // null
 
@@ -49,7 +49,7 @@ $button.classList.add('disabled');
 
 하지만 querySelector 메서드는 인수로 전달한 CSS 선택자 문자열로 DOM에서 요소 노드를 찾을 수 없는 경우 에러를 발생시키지 않고 null을 반환한다. 이때 if 문으로 querySelector 메서드의 반환값을 확인하거나 단축 평가 또는 옵셔널 체이닝 연산자 ?. 를 사용하지 않으면 에러로 이어질 가능성이 크다.
 
-```
+```js
 // DOM에 button 요소가 존재하는 경우 querySelector 메서드는 에러를 발생시키지 않고 null을 반환한다.
 const $button = document.querySelector('button'); // null
 $button?.classList.add('disabled');
@@ -65,7 +65,7 @@ $button?.classList.add('disabled');
 try...catch...finally 문은 두 번째 방법이다. 일반적으로 이 방법을 에러 처리라고 한다.
 try...catch...finally 문은 다음과 같이 3개의 블록으로 구성된다. finally 문은 생략 가능하다.
 
-```
+```js
 try {
   // 샐행할 코드(에러가 발생할 가능성이 있는 코드)
 } catch (err) {
@@ -78,9 +78,9 @@ try {
 
 ## Error 객체
 Error 생성자 함수는 에러 객체를 생성한다. Error 생성자 함수에는 에러를 상세히 설명하는 에러 메시지를 인수로 전달할 수 있다.
-
-`const error = new Error('invalid');`
-
+```js
+const error = new Error('invalid');
+```
 Error 생성자 함수가 생성한 에러 객체는 message 프로퍼티와 stack 프로퍼티를 갖는다.
 message 프로퍼티의 값은 Error 생성자 함수에 인수로 전달한 에러 메시지이고,
 stack 프로퍼티 값은 에러를 발생시킨 콜스택의 호출 정보를 나타내는 문자열이며 디버깅 목적으로 사용한다.
@@ -102,13 +102,13 @@ SyntaxError, ReferenceError, TypeError, RangeError, URIError, EvalError 생성�
 Error 생성자 함수로 에러 객체를 생성한다고 에러가 발생하는 것은 아니다. 즉, 에러 객체 생성과 에러발생은 의미가 다르다.
 
 에러를 발생시키려면 try 코드 블록에서 throw 문으로 에러 객체를 던져야 한다.
-
-`throw 표현식;`
-
+```js
+throw 표현식;
+```
 throw 문의 표현식은 어떤 값이라도 상관없지만 일반적으로 에러 객체를 지정한다. 
 에러를 던지면 catch 문의 에러 변수가 생성되거 던져진 에러 객체가 할당된다. 그리고 catch 코드 블록이 실행되기 시작한다.
 
-```
+```js
 try {
   // 에러 객체를 던지면 catch 코드가 실행되기 시작한다.
   throw new Error('something wrong');

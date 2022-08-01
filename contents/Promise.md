@@ -16,7 +16,7 @@ ES6에서 비동기 처리를 위한 또 다른 패턴으로 Promise를 도입�
 Promise 생성자 함수를 new 연산자와 함꼐 호출하면 프로미스(Promise 객체)를 생성한다. ES6에서 도입된 Promise는 호스트 객체가 아닌 ECMAScript 사양에 정의된 표준 빌트인 객체다.
 Promise 생성자 함수는 비동기 처리를 수행할 콜백 함수를 인수로 전달받는데 이 콜백 함수는 resolve와 reject 함수를 인수로 받는다.
 
-```
+```js
 // 프로미스 생성
 const promise = new Promise((resolve, reject) => {
   // Promise 함수의 콜백 함수 내부에서 비동기 처리를 수행한다.
@@ -30,7 +30,7 @@ const promise = new Promise((resolve, reject) => {
 
 Promise 생성자 함수가 인수로 전달받은 콜백 함수 내부에서 비동기 처리를 수행한다. 이때 비동기 처리가 성공하면 콜백 함수의 인수로 전달받은 resolve 함수를 호출하고, 비동기 처리가 실패하면 reject 함수를 호출한다.
 
-```
+```js
 // GET 요청을 위한 비동기 함수
 const promiseGet = url => {
   return new Promise((resolve, reject) => {
@@ -90,7 +90,7 @@ then 메서드는 두 개의 콜백 함수를 인수로 전달받는다.
 
 즉, 첫 번째 콜백 함수는 비동기 처리가 성공했을 때 호출되는 성공 처리 콜백 함수이며, 두 번째 콜백 함수는 비동기 처리가 실패했을 때 호출되는 실패 처리 콜백 함수다.
 
-```
+```js
 // fulfilled
 new Promise(resolve => resolve('fulfilled'))
 	.then(v => console.log(v), e => console.error(e)); // fulfilled
@@ -105,7 +105,7 @@ then 메서드는 언제나 프로미스를 반환한다. 만약 then 메서드�
 ### Promise.prototype.catch
 catch 메서드는 한 개의 콜백 함수를 인수로 전달받는다. catch 메서드의 콜백 함수는 프로미스가 rejected 상태인 경우만 호출된다.
 
-```
+```js
 // rejected
 new Promise((_, reject) => reject(new Error('rejected')))
 	.catch(e => console.log(e)); // Error: rejected
@@ -116,7 +116,7 @@ catch 메서드는 then(undefined, onRejected)과 동일하게 동작한다. 따
 ### Promise.prototype.finally
 finally 메서드는 한 개의 콜백 함수를 인수로 전달받는다. finally 메서드의 콜백 함수는 프로미스읭 성공 또는 실패와 상광벗이 무조건 한 번 호출된다. finally 메서드는 프로미스의 상태와 상관없이 공통적으로 수행해야 할 처리 내용이 있을 때 유용하다. finally도 언제나 프로미스를 반환한다.
 
-```
+```js
 new Promise(() => {})
 	.finally(() => console.log('finally')); // finally
 ```
@@ -125,7 +125,7 @@ new Promise(() => {})
 비동기 처리에서 발생한 에러는 then 메서드의 두 번째 콜백 함수로 처리하거나 프로미스의 후속 처리 메서드 catch를 사용해 처리할 수도 있다.
 catch 메서드를 then 메서드를 호출한 이후에 호출하면 비동기 처리에서 발생한 에러뿐만 아니라 then 메서드 내부에서 발생한 에러까지 모두 캐치할 수 있다.
 
-```
+```js
 promiseGet('https://jsonplaceholder.typicode.com/todos/1')
   .then(res => console.xxx(res))
   .catch(err => console.error(err)); // TypeError: console.xxx is not a function
@@ -143,21 +143,21 @@ Promise는 주로 생성자 함수로 사용되지만 함수도 객체이므로 
 
 Promise.resolve와 Promise.reject 메서드는 이미 존재하는 값을 래핑하여 프로미스를 생성하기 위해 사용한다.
 Promise.resolve 메서드에 인수로 전달받은 값을 resolve하는 프로미스를 생성한다.
-```
+```js
 // 배열을 resolve하는 프로미스를 생성
 const resolvedPromise = Promise.resolve([1,2,3]);
 resolvedPromise.then(console.log); // [1,2,3]
 ```
 위 예제는 다음 예제와 동일하게 동작한다
 
-```
+```js
 const resolvedPromise = new Promise(resolve => resolve([1,2,3]));
 resolvedPromise.then(console.log); // [1,2,3]
 ```
 
 Promise.reject 메서드는 인수로 전달받은 값을 reject하는 프로미스를 생성한다.
 
-```
+```js
 // 에러 객체를 reject하는 프로미스를 생성
 const rejectedPromise = Promise.reject(new Error('Error!'));
 rejectedPromise.catch(console.log); // Error: Error!
@@ -165,7 +165,7 @@ rejectedPromise.catch(console.log); // Error: Error!
 
 위 예제는 다음 예제와 동일하게 동작한다.
 
-```
+```js
 const rejectedPromise = new Promise((_, reject) => reject(new Error('Error!')));
 rejectedPromise.catch(console.log); // Error: Error!
 
@@ -174,7 +174,7 @@ rejectedPromise.catch(console.log); // Error: Error!
 Promise.all 메서드는 여러 개의 비동기 처리를 모두 병렬 처리할 때 사용한다.
 다음 예제를 살펴보자
 
-```
+```js
 const rD1 = () => new Promise(resolve => setTimeout(() => resolve(1), 3000));
 const rD2 = () => new Promise(resolve => setTimeout(() => resolve(2), 2000));
 const rD3 = () => new Promise(resolve => setTimeout(() => resolve(3), 1000));
@@ -200,7 +200,7 @@ rD1()
 
 Promise.all 메서드는 여러개의 비동기 처리를 모두 병렬 처리할 떄 사용된다. 메서드를 사용해 세 개의 비동기 처리를 병렬로 처리해보자.
 
-```
+```js
 const requestData1 = () =>
 	new Promise(resolve => setTimeout(() => resolve(1), 3000));
 const requestData2 = () =>
@@ -220,7 +220,7 @@ Promise.all 메서드는 인수로 전달받은 배열의 프로미스가 하나
 
 다음은 깃허브 아이디로 깃허브 사용자 이름을 취득하는 3개의 비동기 처리를 모두 병렬로 처리하는 예제다.
 
-```
+```js
 // GET 요청을 위한 비동기 함수
 const promiseGet = url => {
   return new Promise((resolve, reject) => {
@@ -261,7 +261,7 @@ Promise.allSettled 메서드는 프로미스를 요소로 갖는 배열 등의 �
 
 ## 마이크로태스크 큐
 다음 예제를 살펴보고 어떤 순서로 로그가 출력될지 생각해보자.
-```
+```js
 setTimeout(() => console.log(1), 0);
 
 Promise.resolve()

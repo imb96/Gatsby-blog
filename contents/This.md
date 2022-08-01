@@ -22,13 +22,13 @@ thumbnail: './DeepDive.png'
 
 **자바스크립트의 this는 함수가 호출되는 방식에 따라 this에 바인딩될 값, 즉 this 바인딩이 동적으로 결정된다.**
 
-```
+```js
 // this는 어디서든지 참조 가능하다.
 // 전역에서 this는 전역 객체 window를 가리킨다.
 console.log(this);	//	window
 
 ```
-```
+```js
 function square(number) {
   // 일반 함수 내부에서 this는 전역 객체 window를 가리킨다.
   console.log(this)	//	window
@@ -37,7 +37,7 @@ function square(number) {
 square(2);
 ```
 
-```
+```js
 const person = {
   name: 'Kim',
   getName() {
@@ -51,7 +51,7 @@ console.log(person.getName());	//	Kim
 
 ```
 
-```
+```js
 function Person(name) {
 	this.name = name;
     // 생성자 함수 내부에서 this는 생성자 함수가 생성할 인스턴스를 가리킨다.
@@ -63,7 +63,7 @@ const me = new Person('Kim');
 ## 함수 호출 방식과 this 바인딩
 this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.
 
-```
+```js
 // this 바인딩은 함수 호출 방식에 따라 동적으로 결정된다.
 const foo = function () {
   console.dir(this);

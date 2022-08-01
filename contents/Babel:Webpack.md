@@ -21,12 +21,12 @@ thumbnail: './DeepDive.png'
 
 ## Babel
 다음 예제에서는 ES6의 화살표 함수와 ES7의 지수 연산자를 사용하고 있다.
-
-`[1,2,3].map(n => n ** n);`
-
+```js
+[1,2,3].map(n => n ** n);
+```
 Babel을 사용하면 위 코드를 다음과 같이 ES5 사양으로 변환할 수 있다.
 
-```
+```js
 "use strict";
 
 [1,2,3].map(function (n) {
@@ -39,7 +39,7 @@ Babel을 사용하면 위 코드를 다음과 같이 ES5 사양으로 변환할 
 ### Babel 설치
 npm을 사용하여 Babel을 설치해 보자. 터미널에서 다음과 같이 명령어를 입력하여 Babel을 설치한다.
 
-```
+```shell
 # 프로젝트 폴더 생성
 $ mkdir esnext-project && cd esnext-project
 # package.json 생성
@@ -50,7 +50,7 @@ $ npm install --save-dev @babel/core @babel/cli
 
 설치가 완료된 이후 package.json 파일은 다음과 같다. 불필요한 설정은 삭제했다.
 
-```
+```json
 {
   "name": "esnext-project",
   "version": "1.0.0",
@@ -63,7 +63,7 @@ $ npm install --save-dev @babel/core @babel/cli
 
 참고로 Babel, Webpack, 플러그인의 버전은 빈번하게 업그레이드된다. npm.install은 언제나 최신 버전의 패키지를 설치하므로 만약 위 버전 그대로 설치하고 싶다면 다음과 같이 패키지 이름 뒤에 @과 설치하고 싶은 버전을 지정한다.
 
-```
+```shell
 # 버전 지정 설치
 npm install --save-dev @babel/core@7.10.3 @babel/cli@7.10.3
 ```
@@ -78,14 +78,14 @@ Babel을 사용하려면 @babel/preset-env를 설치해야 한다. @babel/preset
 
 @babel/preset-env는 필요한 플러그인들을 프로젝트 지원 환경에 맞춰 동적으로 결정해 준다. 프로젝트 지원 환경은 Browserlist 형식으로 .browserlistrc 파일에 상세히 설정할 수 있다. 생략하면 기본값으로 설정된다. 기본 설정은 모든 ES6+/ES.NEXT 사양의 소스코드를 변환한다.
 
-```
+```shell
 # @babel/preset-env 설치
 $ npm install --save-dev @babel/preset-env
 ```
 
 설치 완료된 이후 package.json 파일은 다음과 같다.
 
-```
+```json
 {
   "name": "esnext-project",
   "version": "1.0.0",
@@ -98,11 +98,11 @@ $ npm install --save-dev @babel/preset-env
 ```
 
 설치가 완료되면 프로젝트 루트 폴더에 babel.config.json 설정 파일을 생성하고 다음과 같이 작성한다. 지금 설치한 @babel/preset-env를 사용하겠다는 의미다.
-
+```json
 {
   "preset": ["@babel/preset-env"]
 }
-
+```
 ### 트랜스파일링
 
 Babel을 사용하여 ES6+/ES.NEXT 사양의 ES5 사양의 소스코드로 트랜스파일링해보자.
@@ -110,7 +110,7 @@ Babel CLI 명령어를 사용할 수도 있지만 npm scripts에 Babel CLI 명�
 
 package.json 파일에 scripts를 추가한다.
 
-```
+```json
 {
   "name": "esnext-project",
   "scripts": {
@@ -131,7 +131,7 @@ package.json 파일에 scripts를 추가한다.
 
 트랜스파일링을 테스트 하기 위해 ES6+/ES.NEXT 사양의 자바스크립트 파일을 작성해 보자. 프로젝트 루트 폴더에 src/js 폴더를 생성한 후 lib.js와 main.js를 추가한다.
 
-```
+```js
 // src/js/lib.js
 export const pi = Math.PI; // ES6 모듈
 
@@ -155,7 +155,7 @@ export class Foo {
 }
 ```
 
-```
+```js
 // src/js/main.js
 import { pi, power, Foo} from './lib';
 
@@ -168,9 +168,9 @@ console.log(f.bar());
 ```
 
 터미널에서 다음과 같이 명령어를 입력하여 트랜스파일링을 실행한다.
-
-`$ npm run build`
-
+```shell
+$ npm run build
+```
 ### Babel 플러그인 설치
 
 설치가 필요한 Babel 플러그인은 Babel 홈페이지에서 검색할 수 있다. 
@@ -183,17 +183,17 @@ Webpack이 자바스크립트 파일을 번들링하기 전에 Babel을 로드�
 
 ### Webpack 설치
 터미널에서 다음과 같이 명령어를 입력하여 Webpack을 설치한다.
-
-`$ npm install --save-dev webpack webpack-cli`
-
+```shell
+$ npm install --save-dev webpack webpack-cli
+```
 ### babel-loader 설치
 Webpack이 모듈 번들링할 때 Babel을 사용하여 트랜스파일링하도록 babel-loader를 설치한다.
-
+```shell
 $ npm install -save-dev babel-loader
-
+```
 npm scripts를 변경하여 Babel 대신 Webpack을 실행하도록 수정하자.
 
-```
+```js
 {
   "name": "esnext-project",
   "version": "1.0.0",
@@ -215,7 +215,7 @@ npm scripts를 변경하여 Babel 대신 Webpack을 실행하도록 수정하자
 ### webpack.config.js 설정 파일 작성
 webpack.config.js는 Webpack이 실행될 때 참조하는 설정 파일이다. 프로젝트 루트 폴더에 webpack.config.js 파일을 생성하고 다음과 같이 작성한다.
 
-```
+```js
 const path = require('path');
 
 module.exports = {
@@ -255,20 +255,20 @@ module.exports = {
 ```
 
 Webpack을 실행하여 트랜스파일링 및 번들링을 실행해보자. 트랜스파일링은 Babel이 수행하고 번들링은 Webpack이 수행한다.
-
-`$ npm run build`
-
+```shell
+$ npm run build
+```
 ### babel-polyfill 설치
 Babel을 사용하여 ES6+/ES.NEXT 사양의 소스코드를 ES5 사양의 소스코드로 트랜스파일링해도 브라우저가 지원하지 않는 코드가 남아 있을 수 있다.
 Promise, Object.assign, Array.from 등과 같이 ES5 사양으로 대체할 수 없는 기능은 트랜스파일링 되지 않는다. 따라서 이런 객체나 메서드를 사용하기 위해서는 @babel/polyfill을 설치해야 한다.
-
-`$ npm install @babel/polyfill`
-
+```shell
+$ npm install @babel/polyfill
+```
 @babel-polyfill은 개발 환경에서만 사용하는 것이 아니라 실제 운영 환경에서도 사용해야 한다. 따라서 개발용 의존성으로 설치하는 --save-dev 옵션을 지정하지 않는다.
 
 ES6의 import를 사용하는 경우에는 진입점의 선두에서 먼저 폴리필을 로드하도록 한다.
 
-```
+```js
 // src/js/main.js
 import "@babel/polyfill";
 import { pi, power, Foo } from './lib';
@@ -277,7 +277,7 @@ import { pi, power, Foo } from './lib';
 
 Webpack을 사용하는 경우에는 위 방법 대신 webpack.config.js 파일의 entry 배열에 폴리필을 추가한다.
 
-```
+```js
 const path = require('path');
 
 module.exports = {
@@ -285,10 +285,11 @@ module.exports = {
   // https://webpack.js.org/configuration/entry-context/#entry
   entry: ['@babel/polyfill', './src/js/main.js'],
 ...
+}
 ```
 
 위와 같이 webpack.config.js 파일을 수정하여 폴리필을 반영해보자. 빌드 명령이 실행중이면 정지시키고 다음과 같이 명령어를 입력하여 Webpack을 실행한다.
-
-`$ npm run build`
-
+```shell
+$ npm run build
+```
 dist/js/bundle.js를 확인해보면 폴리필이 추가된 것을 확인할 수 있다.

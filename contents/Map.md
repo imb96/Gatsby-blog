@@ -15,7 +15,7 @@ Map 객체는 키와 값의 쌍으로 이루어진 컬렉션이다. Map 객체�
 요소 개수 확인 Object.keys(obj).length map.size
 Map 객체는 Map 생성자 함수로 생성한다. Map 생성자 함수에 인수를 전달하지 않으면 빈 Map 객체가 생성된다.
 
-```
+```js
 const map = new Map();
 console.log(map);	// Map(0) {}
 
@@ -25,7 +25,7 @@ Map 생성자 함수는 이터러블을 인수로 전달받아 Map 객체를 생
 
 이때 인수로 전달되는 이터러블은 키와 값의 쌍으로 이루어진 요소로 구성되어야 한다.
 
-```
+```js
 const map1 = new Map([['key1', 'value1'],['key2', 'value2']]);
 console.log(map1);	// Map(2) {"key1" => "value1", "key2" => "value2"}
 const map2 = new Map([1, 2])	// TypeError: Iterator value 1 is not an entry object
@@ -36,7 +36,7 @@ Map 생성자 함수의 인수로 전달한 이터러블에 중복된 키를 갖
 
 Map 객체에는 중복된 키를 갖는 요소가 존재할 수 없다.
 
-```
+```js
 const map = new Map([['key1', 'value1'],['key1', 'value2']]);
 console.log(map)	// Map(1) {"key1" => "value2"}
 
@@ -44,7 +44,7 @@ console.log(map)	// Map(1) {"key1" => "value2"}
 
 Map 객체의 요소 개수를 확인할 때는 Map.prototype.size 프로퍼티를 사용한다.
 
-```
+```js
 const {size} = new Map([['key1', 'value1'],['key2', 'value2']]);
 console.log(size)	// 2
 
@@ -52,7 +52,7 @@ console.log(size)	// 2
 
 Map 객체에 요소를 추가할 때는 Map.prototype.set 메서드를 사용한다.
 
-```
+```js
 const map = new Map();
 console.log(map)	// Map(0) {}
 map.set('key1', 'value1');
@@ -68,7 +68,7 @@ Map 객체에는 중복된 키를 갖는 요소가 존재할 수 없기 때문�
 
 따라서 객체를 포함한 모든 값을 키로 사용할 수 있다.
 
-```
+```js
 const map = new Map();
 const lee = {name: 'Lee'};
 const kim = {name: 'Kim'};
@@ -84,7 +84,7 @@ Map 객체에 특정 요소가 존재하는지 확인하려면 Map.prototype.has
 
 has 메서드는 특정 요소의 존재 여부를 나타내는 Boolean 값을 반환한다.
 
-```
+```js
 const lee = {name: 'Lee'};
 const kim = {name: 'Kim'};
 const map = new Map([[lee, 'developer'],[kim, 'designer']]);
@@ -97,7 +97,7 @@ Map 객체의 요소를 삭제하려면 Map.prototype.delete 메서드를 사용
 
 delete 메서드는 삭제 성공 여부를 나타내는 Boolean 값을 반환한다.
 
-```
+```js
 const lee = {name: 'Lee'};
 const kim = {name: 'Kim'};
 const map = new Map([[lee, 'developer'],[kim, 'designer']]);
@@ -130,7 +130,7 @@ Map.prototype.keys Map 객체에서 요소키를 값으로 갖는 이터러블�
 Map.prototype.values Map 객체에서 요소값을 값으로 갖는 이터러블이면서 동시에 이터레이터인 객체를 반환한다.
 Map.prototype.entries Map 객체에서 요소키와 요소값을 값으로 갖는 이터러블이면서 동시에 이터레이터인 객체를 반환한다.
 
-```
+```js
 const lee = {name: 'Lee'};
 const kim = {name: 'Kim'};
 const map = new Map([[lee, 'developer'],[kim, 'designer']]);

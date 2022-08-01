@@ -28,9 +28,9 @@ Node.js는 모듈 시스템의 사실상 표준인 CommonJS를 채택했고 독�
 ES6에서는 클라이언트 사이드 자바스크립트에서도 동작하는 모듈 기능을 추가했다.
 ESM의 사용법은 간단하다 script 태그에 type="module" 어트리뷰트를 추가하면 로드된 자바스크립트 파일은 모듈로서 동작한다.
 ESM임을 명확히 하기 위해 ESM의 파일 확장자는 mjs를 사용할 것을 권장한다.
-
-`<script type="module" src="app.mjs"></script>`
-
+```html
+<script type="module" src="app.mjs"></script>
+```
 ### 모듈 스코프
 ESM은 독자적인 모듈 스코프를 갖는다. ESM이 아닌 일반적인 자바스크립트 파일은 script 태그로 분리해서 로드해도 독자적인 모듈 스코프를 갖지 않는다.
 
@@ -41,7 +41,7 @@ ESM은 파일 자체의 독자적인 모듈 스코프를 제공한다.
 export 키워드는 선언문 앞에 사용한다. 이로써 변수, 함수, 클래스 등 모든 식별자를 export할 수 있다.
 선언문 앞에 매번 export 키워드를 붙이는 것이 번거롭다면 export할 대상을 하나의 객체로 구성하여 한 번에 export할 수도 있다.
 
-```
+```js
 // lib.mjs
 const pi = Math.PI;
 
@@ -62,7 +62,7 @@ export {pi, square, Person};
 ### import 키워드
 다른 모듈에게 export한 식별자를 자신의 모듈 스코프 내부로 로드하려면 import 키워드를 사용한다. 다른 모듈이 export한 식별자 이름으로 import해야 하며 ESM의 경우 파일 확장자를 생략할 수 없다.
 
-```
+```js
 // app.mjs
 // 같은 폴더 내의 lib.mjs 모듈이 export한 식별자 이름으로 import 한다.
 import { pi, square, Person} from './lib.mjs';
@@ -72,7 +72,7 @@ console.log(square(10)); // 100
 console.log(new Person('Kim')); // Person { name: 'Kim' }
 ```
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <body>
@@ -85,7 +85,7 @@ console.log(new Person('Kim')); // Person { name: 'Kim' }
 
 모듈이 export한 식별자 이름을 일일이 지정하지 않고 하나의 이름으로 한 번에 import할 수도 있다. 이때 import되는 식별자는 as 뒤에 지정한 이름의 객체에 프로퍼티로 할당된다.
 
-```
+```js
 // app.mjs
 // lib.mjs 모듈이 export한 모든 식별자를 lib 객체의 프로퍼티로 모아 import 한다.
 import * as lib from './lib.mjs';
@@ -97,7 +97,7 @@ console.log(new lib.Person('Kim')); // Person { name: 'Kim' }
 ```
 모듈이 export한 식별자 이름을 변경하여 import할 수도 있다.
 
-```
+```js
 // app.mjs
 // lib.mjs 모듈이 export한 식별자 이름을 변경하여 import한다.
 import { pi as Pick, square as sq, Person as P } from './lib.mjs';
@@ -109,14 +109,14 @@ console.log(new P('Min')) // Person { name: 'Min' }
 ```
 모듈에서 하나의 값만 export한다면 default 키워드를 사용할 수 있다. default 키워드를 사용하는 경우 기본적으로 이름 없이 하나의 값을 export한다.
 
-```
+```js
 // lib.mjs
 export default x => x * x;
 
 ```
 default 키워드를 사용하는 경우 var, let, const 키워드는 사용할 수 없다.
 
-```
+```js
 // lib.mjs
 export default const foo = () => {};
 // => SyntaxError: Unexpected token 'const'
@@ -125,7 +125,7 @@ export default const foo = () => {};
 ```
 default 키워드와 함께 export한 모듈은 {} 없이 임의의 이름으로 import한다.
 
-```
+```js
 // app.mjs
 import square from './lib.mjs';
 

@@ -26,7 +26,7 @@ ES6에서 도입된 클래스는 클래스 기반 객체지향 프로그래밍 �
 
 일반적이지는 않지만 표현식으로 클래스를 정의할 수도 있다.
 
-```
+```js
 // 클래스 선언문
 class Person {};
 // 익명 클래스 표현식
@@ -43,7 +43,7 @@ const Person = class MyClass {};
 함수의 반환값으로 사용할 수 있다.
 클래스 몸체에서 정의할 수 있는 메서드는 constructor(생성자), 프로토타입 메서드, 정적 메서드의 세 가지가 있다.
 
-```
+```js
 // 클래스 선언문
 class Person {
   // 생성자
@@ -92,7 +92,7 @@ var, let, const, function, function*, class 키워드를 사용하여 선언된 
 인스턴스 생성
 클래스는 생성자 함수이며 new 연산자와 함께 호출되어 인스턴스를 생성한다.
 
-```
+```js
 class Person {}
 // 인스턴스 생성
 const me = new Person();
@@ -110,7 +110,7 @@ console.log(me); // Person {}
 constructor
 constructor는 인스턴스를 생성하고 초기화하기 위한 특수한 메서드다. constructor는 이름을 변경할 수 없다.
 
-```
+```js
 class Person {
 	//생성자
     constructor(name) {
@@ -129,7 +129,7 @@ constructor를 생략한 클래스는 빈 constructor에 의해 빈 객체를 �
 프로토타입 메서드
 클래스 몸체에서 정의한 메서드는 생성자 함수에 의한 객체 생성 방식과는 다르게 클래스의 prototype 프로퍼티에 메서드를 추가하지 않아도 기본적으로 프로토타입 메서드가 된다.
 
-```
+```js
 class Person {
   // 생성자
   constructor(name) {
@@ -154,7 +154,7 @@ me.sayHi(); // Hi! My name is Iron Man
 
 클래스에서는 메서드에 static 키워드를 붙이면 정적 메서드(클래스 메서드)가 된다.
 
-```
+```js
 class Person {
   // 생성자
   constructor(name) {
@@ -170,12 +170,12 @@ class Person {
 ```
 
 정적 메서드는 프로토타입 메서드처럼 인스턴스로 호출하지 않고 클래스로 호출한다.
-
-`Person.sayHi(); // Hi`
-
+```js
+Person.sayHi(); // Hi
+```
 정적 메서드는 인스턴스로 호출할 수 없다.
 
-```
+```js
 const me = new Person('Iron Man');
 me.sayHi(); // TypeError: me.sayHi is not a function
 
@@ -193,7 +193,7 @@ for ... in 문이나 Object.keys 메서드 등으로 열거 할 수없다.
 new 연산자와 함께 호출할 수 없다.
 클래스의 인스턴스 생성 과정
 
-```
+```js
 class Person {
   // 생성자
   constructor(name) {
@@ -233,7 +233,7 @@ class Person {
 
 상속을 통해 클래스를 확장하려면 extends 키워드를 사용하여 상속받을 클래스를 정의한다.
 
-```
+```js
 // 수퍼(베이스/부모) 클래스
 class Base {}
 // 서브(파생/자식) 클래스
