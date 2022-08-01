@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta data-react-helmet="true" name="naver-site-verification" content="85439973861206f261be8e209d26b2215ded88be"/><meta data-react-helmet="true" name="google-site-verification" content="2iQCD8mbMmwhEhQnrYibeMnJCMHXLcP8DgGNFr6cIcM"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:image" content="/static/54e28d269b44bfd368e090e8b8a9e5b2/http.png"/><meta data-react-helmet="true" name="twitter:description" content="HTTP 완벽 가이드 1장"/><meta data-react-helmet="true" name="twitter:title" content="HTTP: 웹의 기초"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" property="og:site_name" content="HTTP: 웹의 기초"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:image" content="/static/54e28d269b44bfd368e090e8b8a9e5b2/http.png"/><meta data-react-helmet="true" property="og:description" content="HTTP 완벽 가이드 1장"/><meta data-react-helmet="true" property="og:title" content="HTTP: 웹의 기초"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" name="description" content="HTTP 완벽 가이드 1장"/><meta name="generator" content="Gatsby 4.19.2"/><style data-href="/styles.811b76fa2f764e4356d7.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><title data-react-helmet="true">HTTP: 웹의 기초</title><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="canonical" href="https://imb96.github.io/http1/" data-baseprotocol="https:" data-basehost="imb96.github.io"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 13ku56z">.css-13ku56z{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;}</style><main class="css-13ku56z e1strnqo0"><style data-emotion="css-global kxm5mf">@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Nanum Myeongjo',serif;}html,body,#___gatsby{height:100%;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css 16cz9yp">.css-16cz9yp{position:relative;width:100%;height:400px;}@media (max-width: 768px){.css-16cz9yp{height:300px;}}</style><div class="css-16cz9yp e1opi4mu1"><style data-emotion="css 1bjn9yo">.css-1bjn9yo{z-index:-1;width:100%;height:400px;object-fit:cover;-webkit-filter:brightness(0.25);filter:brightness(0.25);}@media (max-width: 768px){.css-1bjn9yo{height:300px;}}</style><div data-gatsby-image-wrapper="" style="position:absolute" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-1bjn9yo e1opi4mu0"><div style="max-width:400px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height=&#x27;412&#x27; width=&#x27;400&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27; version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEQUlEQVQ4y22TeUzURxTHt1qPqD1CBaFNrJWWioVghYKKB8jVVaBAkYpHYzSx9QAqRatV1EYlppqWROtZ2Is9Wdxll+WwDaBNORRbeyhtiqjtX4CmckggAp/mN7DLrukk85v5vZn3me97b0YG8NvDh8wxmPDRGXjdZCbMYuOtMgsLLTaCyyxi7qczMOt/+st6I9NUGg623JBQyKRPU0cH/kYzCy3lLDBbWGqrwE9vItLuIKLczge19UxTapBdLEb2rcKzFymRnTlPTkPTOLC5o5M3S8sIt9oJNJURYDQzWakRaoPNlwg0W8adn+oTFGpk5y6S29g8Dvypq4sZKg2+WgMzNTq8NFqmKEf/n1OXMKFYxSSFmqlKDVOUaqaqNExWqHlWoRb7JOCuRjeFLZ1dzNIaSK75jqSayyRXXyba7mBjXT0z1FoCSsuILLez2Goj0uYg5JKVSKtNpGOOsRTZ2Qvscld4o6sLL42O+Mpqwq02wi6VE19RidxRxUytXuR3tt7IqqoaIqw2sSfUVkFIeQXzSsuEwk/cFd588IBJxSreMJl51WBiYrFK5MynRI+3Vi/Cmy5Some6ugQvo5m535zF+/QZZuqMyIpUnjm83tnJM0VKXizR85LWwAsaHc+rtaNVvVA0OjrnCjVzNm3i/bQUsvfuISk/n4kFx/n4x8Zx4J//PiL58vdk1l0hs7aetbV1rK2tJ66qhihHNdGV1UTZHcTUXSE4O5uY4EDy83I5sn8fBVnb+aiwkMLbraPAkZERnE2aDw8Pi+5uZ3hYDL9cv8bKsLfJ3bmdnG1b2ZiRTlWlgxE3f6FQMgyNObk3Cey09/T0sHl9JkH+r1Fw+BAHdn/K+dOnxveOCZA5HZ0n3L93l9ZbvzMwMCBsTuAX+/ex/J2FLA4JJjoijD05WXz95XE6OzpcvkgKnbB//r7P3twcYpdEEBUeyuF9n9H/+LFYa2poIDZyEatXriAlIZZV0cv5MCOdkwXH+PXmz65oXCFLqiSH8KBAcndsE44RwfNp+OGq2Hz04AHkUctIfTeOpNhojh3Kp72tTaz19fW5FLqAjnIreVk7aL11SyxaSk34+/lgKFEzNDTEhjVppMrjSZPHE79sCQd25zE4OOhRTGcTVZac3FtLcxNzfb1Fjnp7eshIWk16olwoT46PYUN6KnfvtI2FOuSp0EmXoE+ePBHzP1pvM2/2K+Rl7xTANYlyUuVxIneZqe+RnrgKTXGRy88Jc1XZaXCHr14ZRcySRbRcayZNnoB8xVIBzEhOZPO6taiKLnoUwwUceQroDL9Up8Xf15uUhDjCg+YTGhjA0tAFrEtLIWvrFhQXztHd3Y37tRtV+NRLcT/NYjaxZX0mmSnJYjyS/zmnvjrJiYKjVFXYuVpXy522vzyvjbtCxh6RO1TKa093t7joUgGknHY/ekRfby/32tvp73/sUZT/ACwi7LnGMeBYAAAAAElFTkSuQmCC" alt=""/><picture><source type="image/webp" data-srcset="/static/54e28d269b44bfd368e090e8b8a9e5b2/a65eb/http.webp 100w,/static/54e28d269b44bfd368e090e8b8a9e5b2/33cd8/http.webp 200w,/static/54e28d269b44bfd368e090e8b8a9e5b2/4c61b/http.webp 400w" sizes="(min-width: 400px) 400px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 400px) 400px, 100vw" decoding="async" loading="lazy" data-src="/static/54e28d269b44bfd368e090e8b8a9e5b2/c5f32/http.png" data-srcset="/static/54e28d269b44bfd368e090e8b8a9e5b2/48ce7/http.png 100w,/static/54e28d269b44bfd368e090e8b8a9e5b2/613a8/http.png 200w,/static/54e28d269b44bfd368e090e8b8a9e5b2/c5f32/http.png 400w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/54e28d269b44bfd368e090e8b8a9e5b2/a65eb/http.webp 100w,/static/54e28d269b44bfd368e090e8b8a9e5b2/33cd8/http.webp 200w,/static/54e28d269b44bfd368e090e8b8a9e5b2/4c61b/http.webp 400w" sizes="(min-width: 400px) 400px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 400px) 400px, 100vw" decoding="async" loading="lazy" src="/static/54e28d269b44bfd368e090e8b8a9e5b2/c5f32/http.png" srcSet="/static/54e28d269b44bfd368e090e8b8a9e5b2/48ce7/http.png 100w,/static/54e28d269b44bfd368e090e8b8a9e5b2/613a8/http.png 200w,/static/54e28d269b44bfd368e090e8b8a9e5b2/c5f32/http.png 400w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><style data-emotion="css m1156n">.css-m1156n{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;height:100%;margin:0 auto;padding:60px 0;color:#ffffff;}@media (max-width: 768px){.css-m1156n{width:100%;padding:40px 20px;}}</style><div class="css-m1156n e1st1jau1"><style data-emotion="css gywgo7">.css-gywgo7{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffff;color:#000000;font-size:22px;cursor:pointer;box-shadow:0 0 10px rgba(0, 0, 0, 0.3);}@media (max-width: 768px){.css-gywgo7{width:30px;height:30px;font-size:18px;}}</style><div class="css-gywgo7 e1st1jau0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path></svg></div><style data-emotion="css gn4qtp">.css-gn4qtp{display:-webkit-box;overflow:hidden;overflow-wrap:break-word;margin-top:auto;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:45px;font-weight:800;}@media (max-width: 768px){.css-gn4qtp{font-size:30px;}}</style><div class="css-gn4qtp e1st1jau3">HTTP: 웹의 기초</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau2"><div>WEB / HTTP</div><div>2022.08.01</div></div></div></div><style data-emotion="css uo146q">.css-uo146q{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;padding:100px 0;word-break:break-all;line-height:1.8;font-size:16px;font-weight:400;}.css-uo146q p{padding:3px 0;}.css-uo146q h1,.css-uo146q h2,.css-uo146q h3{font-weight:800;margin-bottom:30px;}.css-uo146q *+h1,.css-uo146q *+h2,.css-uo146q *+h3{margin-top:80px;}.css-uo146q hr+h1,.css-uo146q hr+h2,.css-uo146q hr+h3{margin-top:0;}.css-uo146q h1{font-size:30px;}.css-uo146q h2{font-size:25px;}.css-uo146q h3{font-size:20px;}.css-uo146q blockquote{margin:30px 0;padding:5px 15px;border-left:2px solid #000000;font-weight:800;}.css-uo146q ol,.css-uo146q ul{margin-left:20px;padding:30px 0;}.css-uo146q hr{border:1px solid #000000;margin:100px 0;}.css-uo146q a{color:#4263eb;-webkit-text-decoration:underline;text-decoration:underline;}.css-uo146q pre[class*='language-']{margin:30px 0;padding:15px;font-size:15px;}.css-uo146q pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-uo146q code[class*='language-'],.css-uo146q pre[class*='language-']{tab-size:2;}@media (max-width: 768px){.css-uo146q{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-uo146q h1{font-size:23px;}.css-uo146q h2{font-size:20px;}.css-uo146q h3{font-size:17px;}.css-uo146q img{width:100%;}.css-uo146q hr{margin:50px 0;}}</style><div class="css-uo146q e1ijh0y10"><blockquote>
+<p>HTTP 완벽 가이드를 읽고 정리한 글입니다.</p>
+</blockquote>
+<h1>HTTP: 웹의 기초</h1>
+<h2>HTTP (Hypertext Transfer Protocol)</h2>
+<p>웹 브라우저, 서버, 웹 어플리케이션은 모두 HTTP를 통해 서로 대화한다.
+HTTP는 신뢰성 있는 데이터 전송 프로토콜을 사용하기 때문에 신뢰성 있는 전송을 보장한다.</p>
+<h2>웹 클라이언트와 서버</h2>
+<p>웹 콘텐츠는 웹 서버에 존재하며 웹 서버는 인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다.
+HTTP 클라이언트와 HTTP 서버는 월드 와이드 웹의 기본 요소다.</p>
+<h2>리소스</h2>
+<p>웹 서버는 웹 리소스를 관리하고 제공한다.
+리소스는 요청에 따라 정적 파일, 동적 콘텐츠 등 어떤 콘텐츠 소스도 리소스가 될 수 있다.</p>
+<h3>미디어 타입</h3>
+<p>인터넷은 수천 가지 데이터 타입을 다루기 때문에, HTTP는 웹에서 전송되는 객체 각각에 MIME 타입이라는 데이터 포맷 라벨을 붙인다.
+웹 서버는 모든 HTTP 객체 데이터에 MIME 타입을 붙인다. 웹 브라우저는 서버로부터 객체를 돌려받을 때, 다룰 수 있는 객체인지 MIME 타입을 통해 확인한다.
+MIME 타입은 사선(/)으로 주어진 주 타입과 부 타입으로 이루어진 문자열 라벨이다.</p>
+<ul>
+<li>HTML로 작성된 텍스트 문서는 text/html 라벨이 붙는다.</li>
+</ul>
+<h3>URI (Uniform Resource Identifier) - 통합 자원 식별자</h3>
+<p>웹 서버 리소스는 각자 이름을 갖고 있기 때문에, 클라이언트는 관심 있는 리소스를 지목할 수 있다.
+서버 리소스 이름은 자원 식별자(Uniform Resource Identifier, URI) 로 불린다.
+예) 내 블로그 프로필 사진의 리소스에 대한 URI
+<a href="https://imb96.github.io/static/c4278664dc5c5c57593256802fd3d0f9/b5014/profile-image.webp" target="_blank" rel="nofollow">https://imb96.github.io/static/c4278664dc5c5c57593256802fd3d0f9/b5014/profile-image.webp</a></p>
+<p>URI에는 URL과 URN이 있다.</p>
+<h3>URL (Uniform Resource Loactor) - 통합 자원 지시자</h3>
+<p>URL은 리소스 식별자의 가장 흔한 형태다.
+<a href="https://www.naver.com/index.html" target="_blank" rel="nofollow">https://www.naver.com/index.html</a> 네이버 홈페이지의 URL</p>
+<p>대부분의 URL은 세 부분으로 이루어진 표준 포맷을 따른다.
+URL 첫 번째 부분은 스킴(scheme). 리소스에 접근하기 위해 사용되는 프로토콜을 서술. (ex: https://)
+두 번째 부분은 서버의 인터넷 주소를 제공. (ex: <a href="http://www.naver.com" target="_blank" rel="nofollow">www.naver.com</a>)
+마지막은 웹 서버의 리소스를 가리킴(ex: /images/logo.gif)</p>
+<p>오늘날 대부분의 URI는 URL이다.</p>
+<h3>URN (Uniform Resource Name) - 통합 자원 이름</h3>
+<p>URN은 리소스에 대해 리소스의 위치에 영향 받지 않는 유일무이한 이름 역할을 한다.
+URN은 실험중인 상태고 아직 널리 채택되지 않았다.</p>
+<p>통상적으로 URI와 URL은 같은 의미로 쓰인다.</p>
+<h2>트랜잭션</h2>
+<p>HTTP 트랜잭션은 요청 명령과 응답 결과로 구성되어 있다.
+이 상호작용은 HTTP 메시지라고 불리는 정형화된 데이터 덩어리를 이용해 이루어진다.
+HTTP 요청 메시지는 명령과 URI를 포함하며 응답 메시지는 트랜잭션의 결과를 포함한다.</p>
+<h3>메서드</h3>
+<p>HTTP는 HTTP 메서드라고 불리는 여러 가지 종류의 요청 명령을 지원한다.
+모든 HTTP 요청 메시지는 한 개의 메서드를 갖는다.
+메서드는 서버에게 어떤 동작이 취해져야 하는지 말해준다.</p>
+<p>자주 쓰이는 HTTP 메서드</p>
+<table>
+<thead>
+<tr>
+<th align="left">HTTP 메서드</th>
+<th align="left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">서버에서 클라이언트로 지정한 리소스를 보내라.</td>
+</tr>
+<tr>
+<td align="left">PUT</td>
+<td align="left">클라이언트에서 서버로 보낸 데이터를 지정한 이름의 리소스로 저장하라.</td>
+</tr>
+<tr>
+<td align="left">DELETE</td>
+<td align="left">지정한 리소스를 서버에서 삭제하라.</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">클라이언트 데이터를 서버 게이트웨이 애플리케이션으로 보내라.</td>
+</tr>
+<tr>
+<td align="left">HEAD</td>
+<td align="left">지정한 리소스에 대한 응답에서 HTTP 헤더 부분만 보내라.</td>
+</tr>
+</tbody>
+</table>
+<h3>상태 코드</h3>
+<p>HTTP 응답 메시지는 상태 코드와 함꼐 반환된다.</p>
+<p>흔히 쓰이는 HTTP 상태 코드</p>
+<table>
+<thead>
+<tr>
+<th align="left">HTTP 상태 코드</th>
+<th align="left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">200</td>
+<td align="left">문서가 올바르게 반환됨</td>
+</tr>
+<tr>
+<td align="left">302</td>
+<td align="left">다시 보내라. 다른 곳에 가서 리소스를 가져가라.</td>
+</tr>
+<tr>
+<td align="left">404</td>
+<td align="left">리소스를 찾을 수 없음.</td>
+</tr>
+<tr>
+<td align="left">HTTP는 각 상태 코드에 텍스트로 된 사유구절(reason phrase)도 함께 보낸다.</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">이 구문은 단지 설명을 위해서 포함된 것일 뿐 실제 응답 처리에는 숫자로 된 코드가 사용된다.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3>웹페이지는 여러 객체로 이루어질 수 있다.</h3>
+<p>애플리케이션은 보통 하나의 작업을 수행하기 위해 여러 HTTP 트랜잭션을 수행한다.
+웹페이지는 하나의 리소스가 아닌 리소스의 모음이다.
+웹페이지는 첨부된 리소스들에 대해 각각의 HTTP 트랜잭션을 필요로 한다.</p>
+<h2>메시지</h2>
+<p>웹 클라이언트에서 웹 서버로 보낸 HTTP 메시지를 요청 메시지라고 부른다.
+서버에서 클라이언트로 가는 메시지는 응답 메시지라고 부른다.
+HTTP 메시지는 단순한 줄 단위 텍스트 구조를 갖고 있으며 세 부분으로 나누어진다.</p>
+<h4>시작줄</h4>
+<p>메시지의 첫 줄은 시작줄로, 요청이라면 무엇을 해야 하는지 응답이라면 무슨 일이 일어났는지 나타낸다.</p>
+<h4>헤더</h4>
+<p>시작줄 다음에는 0개 이상의 헤더 필드가 이어진다. 각 헤더 필드는 :으로 구분된 이름과 값으로 구성된다.
+헤더 필드를 추가하려면 한 줄을 더하기만 하면 되고 헤더는 빈 줄로 끝난다.</p>
+<h4>본문</h4>
+<p>빈 줄 다음에는 어떤 종류의 데이터든 들어갈 수 있는 메시지 본문이 필요에 따라 올 수 있다.
+요청의 본문은 서버로 데이터를 실어 보내며, 응답의 본문은 클라이언트로 데이터를 반환한다.
+문자열이며 구조적인 시작줄이나 헤더와 달리, 본문은 임의의 이진 데이터를 포함할 수 있다.(이미지,비디오,오디오,텍스트 등)</p>
+<h2>TCP 커넥션</h2>
+<h3>TCP/IP (Transmission Control Protocol, 전송 제어 프로토콜) / (Internet Protocol, 인터넷 프로토콜)</h3>
+<p>HTTP는 애플리케이션 계층 프로토콜이다. HTTP는 네트워크 통신의 핵심적인 세부사항에 대해서 신경 쓰지 않는다.
+대신 대중적이고 신뢰성 있는 인터넷 전송 프로토콜인 TCP/IP에게 맡긴다.
+TCP는 다음을 제공한다.</p>
+<ul>
+<li>오류 없는 데이터 전송</li>
+<li>순서에 맞는 전달 (데이터는 보낸 순서대로 도착)</li>
+<li>조각나지 않는 데이터 스트림(언제든 어떤 크기로든 보낼 수 있다)</li>
+</ul>
+<p>인터넷 자체가 전 세계의 컴퓨터와 네트워크 장치들 사이에서 대중적으로 사용되는 TCP/IP에 기초하고 있다.
+TCP/IP는 TCP와 IP가 층을 이루는, 패킷 교환 네트워크 프로토콜의 집합이다.
+TCP/IP는 각 네트워크와 하드웨어의 특성을 숨기고, 서로 신뢰성 있는 의사소통을 하게 해 준다.
+TCP 커넥션이 맺어지면 클라이언트와 서버 컴퓨터 간에 교환되는 메시지가 없어지거나 손상되거나 순서가 뒤바뀌는 일은 결코 없다.
+네트워크 개념상, HTTP 프로토콜은 TCP위의 계층이다. HTTP는 자신의 메시지 데이터를 전송하기 위해 TCP를 사용한다.</p>
+<p>HTTP 네트워크 프로토콜 스택</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column 1</th>
+<th align="left">Column 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">HTTP</td>
+<td align="left">애플리케이션 계층</td>
+</tr>
+<tr>
+<td align="left">TCP</td>
+<td align="left">전송 계층</td>
+</tr>
+<tr>
+<td align="left">IP</td>
+<td align="left">네트워크 계층</td>
+</tr>
+<tr>
+<td align="left">네트워크를 위한 링크 인터페이스</td>
+<td align="left">데이터 링크 계층</td>
+</tr>
+<tr>
+<td align="left">물리적인 네트워크 하드웨어</td>
+<td align="left">물리 계층</td>
+</tr>
+</tbody>
+</table>
+<h3>접속, IP 주소 그리고 포트번호</h3>
+<p>HTTP 클라이언트가 서버에 메시지를 전송할 수 있게 되기 전에, IP주소와 포트번호를 사용해 클라이언트와 서버 사이에 TCP/IP 커넥션을 맺어야 한다.
+TCP에서는 서버 컴퓨터에 대한 IP 주소와 서버에서 실행 중인 프로그램이 사용중인 포트번호가 필요하다.
+IP 주소와 포트번호를 이용해 클라이언트는 TCP/IP로 쉽게 통신할 수 있다.</p>
+<p>웹브라우저 연결의 기본적인 절차.</p>
+<ol>
+<li>웹브라우저는 서버의 URL에서 호스트 명을 추출한다.</li>
+<li>웹브라우저는 서버의 호스트 명을 IP로 변환한다.</li>
+<li>웹브라우저는 URL에서 포트번호(있다면)를 추출한다.</li>
+<li>웹브라우저는 웹 서버와 TCP 커넥션을 맺는다.</li>
+<li>웹브라우저는 서버에 HTTP 요청을 보낸다.</li>
+<li>서버는 웹브라우저에 HTTP 응답을 돌려준다.</li>
+<li>커넥션이 닫히면, 웹브라우저는 문서를 보여준다.</li>
+</ol>
+<h2>프로토콜 버전</h2>
+<p>HTTP/0.9
+심각한 디자인 결함이 다수 있고 구식 클라이언트하고만 같이 사용할 수 있다.
+금방 HTTP/1.0으로 대체되었다.</p>
+<p>HTTP/1.0
+처음으로 널리 쓰이기 시작한 버전</p>
+<p>HTTP/1.0+
+많은 기능이 공식적이진 않지만 사실상의 표준으로 HTTP에 추가되었다.</p>
+<p>HTTP/1.1
+현재의 HTTP 버전</p>
+<p>HTTP/2.0
+HTTP/1.1 성능 문제를 개선하기 위해 구글의 SPDY 프로토콜을 기반으로 설계가 진행 중.</p>
+<h2>웹의 구성요소</h2>
+<p>프락시: 클라이언트와 서버 사이에 위치한 HTTP 중개자.
+캐시: 많이 찾는 웹페이지를 클라이언트 가까이에 보관하는 HTTP 창고.
+게이트웨이: 다른 애플리케이션과 연결된 웹 서버.
+터널: 단순히 HTTP 통신을 전달하기만 하는 프락시.
+에이전트: 자동화된 HTTP 요청을 만드는 준지능적 웹클라이언트.</p>
+<h3>프락시</h3>
+<p>클라이언트의 모든 HTTP 요청을 받아 서버에 전달한다. 이 애플리케이션은 사용자를 위한 프락시로 동작하며 사용자를 대신해서 서버에 접근한다.
+프락시는 주로 보안을 위해 사용되며 요청과 응답을 필터링한다.</p>
+<h3>캐시</h3>
+<p>웹캐시와 캐시 프락시는 성능 향상을 위해 자신을 거쳐 가는 문서들 중 자주 찾는 것의 사본을 저장해 두는 HTTP 프락시 서버다.
+다음번에 클라이언트가 같은 문서를 요청하면 그 캐시가 갖고 있는 사본을 받을 수 있다.
+HTTP는 캐시를 효율적으로 동작하게 하고 캐시된 콘텐츠를 최신버전으로 유지하면서 동시에 프라이버시도 보호하기 위한 많은 기능을 정의한다.</p>
+<h3>게이트웨이</h3>
+<p>다른 서버들의 중개자로 동작하는 서버. 주로 HTTP 트래픽을 다른 프로토콜로 변환하기 위해 사용된다.</p>
+<h3>터널</h3>
+<p>두 커넥션 사이에서 날(raw) 데이터를 열어보지 않고 그대로 전달해주는 HTTP 애플리케이션.
+HTTP 터널은 주로 비 HTTP 데이터를 하나 이상의 HTTP 연결을 통해 그대로 전송해주기 위해 사용된다.</p>
+<h3>에이전트</h3>
+<p>사용자를 위해 HTTP 요청을 만들어주는 클라이언트 프로그램이다.
+웹 요청을 만드는 애플리케이션은 HTTP 에이전트다.</p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😁<br/>© 2022 Developer Minjae, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/http1/";window.___webpackCompilationHash="16dccce1a22f075683ce";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-4ce863040e14fa7122e7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-242fc5d9fa3a1ced8eea.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-610843a780addf1dfaa5.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-71da94962c5e16bd12de.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7a5fee132cb03dad8e42.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-4ce863040e14fa7122e7.js" async=""></script><script src="/framework-c57a9454c0e3bef16c3b.js" async=""></script><script src="/webpack-runtime-35f676e2b085f909d320.js" async=""></script></body></html>
