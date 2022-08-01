@@ -1,10 +1,11 @@
 ---
 date: '2022-08-01'
 title: 'REST API'
-categories: ['REST API']
+categories: ['API']
 summary: 'REST API에 대해'
 thumbnail: './RESTAPI.jpeg'
 ---
+> JavaScrpitDeepDive를 읽고 정리한 글입니다.
 
 # REST API
 REST는 HTTP를 기반으로 클라이언트가 서버의 리소스에 접근하는 방식을 규정한 아키텍처고, REST의 기본 원칙을 성실히 지킨 서비스 디자인을 "RESTful"이라고 표현한다. REST API는 REST를 기반으로 서비스 API를 구현한 것을 의미한다.
