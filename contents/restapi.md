@@ -3,7 +3,7 @@ date: '2022-08-01'
 title: 'REST API'
 categories: ['API']
 summary: 'REST API에 대해'
-thumbnail: './RESTAPI.jpeg'
+thumbnail: './restapi.jpeg'
 ---
 > JavaScrpitDeepDive를 읽고 정리한 글입니다.
 
@@ -25,7 +25,7 @@ REST에서 가장 중요한 기본적인 원칙은 두 가지다. URI는 리소�
 1. URI는 리소스를 표현해야 한다.
 
 URI는 리소스를 표현하는 데 중점을 두어야 한다. 리소스를 식별할 수 있는 이름은 동사보다는 명사를 사용한다. 따라서 이름에 get 같은 행위에 대한 표현이 들어가서는 안된다.
-```
+```js
 # bad
 GET /getTodos/1
 GET /todos/show/1
