@@ -3,7 +3,7 @@ date: '2022-08-01'
 title: 'REST API'
 categories: ['API']
 summary: 'REST API에 대해'
-thumbnail: './restapi.jpeg'
+thumbnail: './DeepDive.png'
 ---
 > JavaScrpitDeepDive를 읽고 정리한 글입니다.
 
