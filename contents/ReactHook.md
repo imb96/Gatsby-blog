@@ -2,7 +2,7 @@
 date: '2022-08-03'
 title: 'ReactHook의 개요'
 categories: ['React']
-summary: 'React 공식 문서의 Hoo의 개요'
+summary: 'React 공식 문서의 Hook의 개요'
 thumbnail: './react.jpeg'
 ---
 > 리액트 공식문서 (reactjs.org) 읽어보기
