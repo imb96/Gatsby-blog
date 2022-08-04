@@ -1,3 +1,11 @@
+---
+date: '2022-08-04'
+title: 'call,apply,bind'
+categories: ['JS']
+summary: 'call,apply,bind 메서드'
+thumbnail: './js1.png'
+---
+> 자바스크립트 완벽 가이드를 읽고 정리한 글입니다.
 ## call()과 apply() & bind()메서드
 call()과 apply()는 함수를 마치 다른 객체의 메서드인 것처럼 간접적으로 호출한다.
 call()과 apply()의 첫 번째 인자는 함수를 호출할 객체이다.
