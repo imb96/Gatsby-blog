@@ -1,6 +1,6 @@
 ---
 date: '2022-08-04'
-title: 'functional programming'
+title: 'Functional Programming'
 categories: ['Programming']
 summary: '자바스크립트에서 사용할 수 있는 함수형 프로그래밍 기법에 대해'
 thumbnail: './js1.png'

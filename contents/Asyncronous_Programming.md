@@ -1,7 +1,7 @@
 ---
 date: '2022-07-31'
 title: 'Asyncronous_Programming'
-categories: ['JS']
+categories: ['JS', 'Programming']
 summary: '비동기 프로그래밍에 대해'
 thumbnail: './DeepDive.png'
 ---
