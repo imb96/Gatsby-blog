@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Minlog`,
-    description: `Minjae's Dev Blog`,
-    author: `MinjaeKim`,
+    title: `Minter.io`,
+    description: `Minter's Dev Blog`,
+    author: `Minter`,
     siteUrl: `https://imb96.github.io/`,
   },
   plugins: [
