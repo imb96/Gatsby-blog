@@ -13,7 +13,6 @@ module.exports = {
         allExtensions: true,
       },
     },
-    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-emotion',
     `gatsby-plugin-sitemap`,
