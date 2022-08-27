@@ -60,7 +60,7 @@ let head: number = numbers[0]; // no error
 튜플은 각 인덱스에 대해 미리 정의된 길이와 유형이 지정된 배열.
 ```ts
 let Tuple: [number, boolean, string];
-Tuple = [5, false, 'Thanks to visiting my Blog'
+Tuple = [5, false, 'Thanks to visiting my Blog']
 ```
 순서가 중요
 ### readonly tuple
