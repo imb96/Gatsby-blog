@@ -29,13 +29,13 @@ const MarkdownRenderer = styled.div`
   h2,
   h3 {
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 10px;
   }
 
   hr + h1,
@@ -86,7 +86,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Code Style
   pre[class*='language-'] {
     margin: 30px 0;
-    padding: 15px;
+    padding: 10px;
     font-size: 15px;
 
     ::-webkit-scrollbar-thumb {
