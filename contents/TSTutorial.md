@@ -216,3 +216,319 @@ const colorRectangle: ColorRectangle = {
   color: "red"
 };
 ```
+## TypeScript Union Type
+### Union | (OR)
+```ts
+function print(code: string | number) {
+	console.log(`my code is ${code}`)
+}
+print(404);
+print('404');
+```
+### Union Type Error
+```ts
+function print(code: string | number) {
+	console.log(`My code is ${code.toUpperCase()}.`) // error: Property 'toUpperCase' does not exist ontype 'string | number'
+}
+```
+## TypeScript Functions
+TS에는 함수 매개변수 및 반환 값을 입력하기 위한 특정 구문이 있다.
+### Return Type
+```ts
+// 여기서 number는 이 함수가 숫자를 반환하도록 한다.
+function getTime(): number {
+	return new Date().getTime();
+}
+```
+> 반환 유형이 정의되지 않은 경우 TS는 반환된 변수 또는 표현식의 유형을 통해 이를 추론하려 시도한다.
+### Void Return Type
+함수가 값을 반환하지 않을 때 사용
+```ts
+function print(): void {
+	console.log('Hello!');
+}
+```
+### Parameters
+```ts
+function multiply(a: number, b: number) {
+	return a * b;
+}
+```
+### Optional Parameters
+기본적으로 TS는 모든 매개변수가 필수라고 가정하지만 명시적으로 선택사항으로 표시할 수 있다.
+```ts
+function add(a: number, b: number, c?: number) {
+	return a + b + (c || 0);
+}
+```
+### Default Parameters
+기본값이 있는 매개변수의 경우 기본값은 타입 뒤에 온다.
+```ts
+function pow(value: number, exponent: number = 10) {
+	return value ** exponent;
+}
+```
+### Named Parameters
+명명된 매개변수를 입력하는 것은 일반 매개변수를 입력하는 것과 동일한 패턴을 따른다.
+```ts
+function divide({ dividend, divisor }: { dividend: number, divisor: number }) {
+  return dividend / divisor;
+}
+```
+### Rest Parameters
+나머지 매개변수는 일반 매개변수처럼 입력할 수 있지만 나머지 매개변수는 항상 배열이므로 타입은 배열이어야 한다.
+```js
+function add(a: number, b: number, ...rest: number[]) {
+	return a + b + rest.reduce((p,c) => p+c, 0);
+}
+```
+### Type alias
+함수 타입은 alias 타입이 있는 함수와 별도로 지정할 수 있다.
+이러한 유형은 화살표 함수와 유사하게 작성되었다.
+```js
+type Negate = (value: number) => number;
+// 이 함수에서, 매개변수 value는 함수 Negate 타입에서 number타입이 자동으로 할당된다.
+const negateFunction: Negate = (value) => value * -1;
+```
+## TypeScript Casting
+### Casting as
+변수를 캐스팅하는 간단한 방법은 as 키워드를 사용하는 것인데, 이는 주어진 변수의 유형을 직접 변경한다.
+```ts
+let x: unknown = 'hello'
+console.log((x as string).length);
+```
+> 캐스팅은 실제로 변수 내의 데이터 유형을 변경하지 않는다. TS는 정확하지 않은 캐스트를 방지하기 위해 여전히 typecheck 캐스트를 시도한다. 예를 들어 TS는 데이터를 변환하지 않고는 문자열을 숫자로 캐스팅하는 것이 의미가 없다는 것을 알고 에러가 발생한다.
+```ts
+console.log((4 as string).length); // Error
+```
+### Casting <>
+<>를 사용하는 것은 as로 캐스팅하는 것과 동일하게 작동한다.
+```ts
+let x: unknown = 'hello';
+console.log((<string>x).length;)
+```
+> 이러한 타입의 캐스팅은 React 파일 작업과 같이 TSX에서 작동하지 않습니다.
+### Force casting
+캐스팅할 때 TS가 던질 수 있는 타입 오류를 재정의하려면 먼저 unknown으로 캐스트한 다음 대상 타입으로 캐스트한다.
+```ts
+let x = 'hello';
+console.log(((x as unknown) as number).length); // x is not actually a number so this will return undefined
+```
+## TypeScript Classes
+TS는 자바스크립트 클래스에 유형 및 가시성 수정자를 추가한다.
+### Members: Type
+클래스의 멤버(속성 및 메서드)는 변수와 유사한 타입을 사용하여 타입이 지정된다.
+```ts
+class Person {
+	name: string;
+}
+const person = new Person();
+person.name = "Minjae";
+```
+### Members: Visibility
+> TS에는 세 가지 주요 가시성 수정자가 있다.
+- public - (default) 어디에서나 클래스 멤버에 대한 접근을 허용.
+- private - 클래스 내에서 클래스 멤버에 대한 접근만 허용.
+- protected - 자신과 그것을 상속하는 모든 클래스에서 클래스 멤버에 대한 접근을 허용
+```ts
+class Person {
+	private name: string;
+
+	public constructor(name: string) {
+		this.name = name;
+	}
+	public getName(): string {
+		return this.name;
+	}
+}
+const person = new Person("Minjae");
+console.log(person.getName()); // person.name isn't accessible from outside the class since it's private
+```
+> 클래스의 this 키워드는 일반적으로 클래스의 인스턴스를 나타낸다.
+### Parameter Properties
+TS는 매개변수에 가시성 수정자를 추가하여 생성자에서 클래스 멤버를 정의하는 편리한 방법을 제공한다.
+```ts
+class Person {
+	// name 은 private한 멤버 변수
+	public constructor(private name: string) {}
+	public getName(): string {
+		return this.name;
+	}
+}
+const person = new Person("Minjae");
+console.log(person.getName());
+```
+### Readonly
+배열과 유사하게 readonly 키워드는 클래스 멤버가 변경되는 것을 방지할 수 있다.
+```ts
+class Person {
+	private readonly name: string;
+	public constructor(name: string) {
+		// name은 이 초기화 이후에 변경할 수 없다. 이 정의는 선언 또는 생성자에 있어야한다.
+		this.name;
+	}
+	public getName(): string {
+		return this.name;
+	}
+}
+const person = new Person("Minjae");
+console.log(person.getName());
+```
+## TypeScript Basic Generics
+제네릭을 사용하면 사용하는 타입을 명시적으로 정의할 필요가 없는 클래스, 함수 및 타입 alias를 만드는 데 사용할 수 있는 '타입 변수'를 만들 수 있다. 제네릭을 사용하면 재사용 가능한 코드를 더 쉽게 작성할 수 있다.
+### Function
+함수가 있는 제네릭은 사용 및 반환된 타입을 보다 정확하게 나타내는 보다 일반화된 메서드를 만드는 데 도움이 된다.
+```ts
+function createPair<S, T>(v1: s, v2: T): [S, T] {
+	return [v1, v2];
+}
+console.log(createPair<string, number>('minjae', 27)); // ['minjae', 27];
+```
+>TS는 함수 매개변수에서 일반 매개변수의 유형을 추론할 수도 있다.
+### Class
+제네릭을 사용하여 Map과 같은 일반화된 클래스를 만들 수 있다.
+```ts
+class NamedValue<T> {
+	private _value: T | undefined;
+	constructor(private name: string) {}
+	
+	public setValue(value: T) {
+		this._value = value;
+	}
+
+	public getValue(): T | undefined {
+		return this._value;
+	}
+
+	public toString(): string {
+		return `${this.name}: ${this._value}`;
+	}
+}
+let value = new NamedValue<number>('myNumber');
+value.setValue(10);
+console.log(value.toString()); // myNumber: 10
+```
+### Type Alias
+타입 alias를 사용하면 더 재사용 가능한 유형을 만들 수 있다.
+```ts
+type Wrapped<T> = { value : T };
+const wrappedValue: Wrapped<number> = { value: 10 }
+```
+### Default Value
+제네릭에는 다른 값이 지정되거나 추론되지 않는 경우 적용되는 기본값이 할당 될 수있다.
+```ts
+class NamedValue<T = string> {
+	private _value: T | undefined;
+
+	constructor(private name: string) {}
+
+	public setValue(value: T) {
+		this._value = value;
+	}
+
+	public getValue(): T | undefined {
+		return this._value;
+	}
+
+	public toString(): string {
+		return `${this.name}: ${this._value}`
+	}
+}
+let value = new NamedValue('myNumber');
+value.setValue('myValue');
+console.log(value.toString()); // myNumber: myValue
+```
+### Extends
+제약 조건을 제네릭에 추가하여 허용되는 것을 제한할 수 있다. 제약 조건을 사용하면 제네릭 형식을 사용할 때 보다 구체적인 형식에 의존할 수 있다.
+```ts
+function createLoggedPair<S extends string | number, T extends string | number>(v1: S, v2: T): [S, T] {
+	console.log(`creating pair: v1 = '${v1}', ${v2}'`);
+	return [v1, v2];
+}
+```
+## TypeScript Utility Type
+TS는 일반적으로 유틸리티 타입이라고 하는 몇 가지 일반적인 타입 조작에 도움이 되는 많은 타입과 함께 제공된다.
+### Partial
+객체의 모든 속성을 선택 사항으로 변경한다.
+```ts
+interface Point {
+	x: number;
+	y: number;
+}
+let pointPart: Partial<Point> = {}; 'Partial' 은 x 와 y를 선택사항으로 허용한다.
+pointPart.x = 10;
+```
+### Required
+객체의 모든 속성을 필수로 변경한다.
+```ts
+interface Car{
+	make: string;
+	model: string;
+	mileage?: number;
+}
+let myCar: Required<Car> {
+	make: 'Ford',
+	model: 'Focus',
+	mileage: 12000 // Required는 mileage를 강제로 정의한다.
+}
+```
+### Record
+특정 키 타입 및 값 타입으로 객체 타입을 정의하는 바로가기이다.
+```ts
+const nameAgeMap: Record<string, number> = {
+	'Alice': 21,
+	'Bob': 25
+};
+```
+> Record<string, number> 는 동등하다 { [key: string]: number}
+### Omit
+객체 유형에서 키를 제거한다.
+```ts
+interface Person {
+	name: string;
+	age: number;
+	location?: string;
+}
+const bob: Omit<Person, 'age' | 'location'> = {
+	name: 'Bob'
+	// Omit은 타입에서 age, location을 제거했으며 여기에서 정의할 수 없다.
+}
+```
+### Pick
+객체 타입에서 지정된 키를 제외한 모든 키를 제거한다.
+```ts
+interface Person {
+	name: string;
+	age: number;
+	location?: string;
+}
+const bob: Pick<Person, 'name'> = {
+	name: 'Bob'
+	// 'Pick'은 name 만 유지하므로 타입에서 age와 location이 제거되었고 여기에서 정의할 수 없다.
+}
+```
+
+### Exclude
+Union에서 타입을 제거한다.
+```ts
+type Primitive = string | number | boolean
+const value: Exclude<Primitive, string> = true; // Exclude가 타입에서 문자열을 제거했기 때문에 여기에 문자열을 사용할 수 없습니다.
+```
+### ReturnType
+함수 타입의 함수 타입을 반환한다.
+```js
+type PointGenerator = () => { x: number, y: number };
+const point: ReturnType<PointGenerator> = {
+	x: 10,
+	y: 20
+};
+```
+### Parameters
+함수 타입의 매개변수 타입을 배열로 반환한다.
+```js
+type PointPrinter = (p: { x: number; y: number; }) => void;
+const point: Parameters<PointPrinter>[0] = {
+	x: 10,
+	y: 20
+}
+```
