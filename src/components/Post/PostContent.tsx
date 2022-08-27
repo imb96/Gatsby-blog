@@ -86,7 +86,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Code Style
   pre[class*='language-'] {
     margin: 30px 0;
-    padding: 10px;
+    padding: 5px;
     font-size: 15px;
 
     ::-webkit-scrollbar-thumb {
@@ -98,6 +98,9 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+    font-family: 'Inconsolata', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    line-height: 2;
   }
 
   // Markdown Responsive Design

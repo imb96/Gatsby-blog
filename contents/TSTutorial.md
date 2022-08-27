@@ -104,7 +104,7 @@ car.mileage = 2000;
 ```
 ### index signatures
 인덱스 시그니처는 정의된 속성 목록이 없는 객체에 사용할 수 있다.
-```
+```ts
 const nameAgeMap: { [index: string]: number } = {};
 nameAgeMap.Jack = 25; // no error
 nameAgeMap.Mark = "Twenty"; // Error: Type 'string' is not assignable to type 'number'.
