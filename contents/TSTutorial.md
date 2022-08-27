@@ -43,7 +43,7 @@ names.push(3); // Error: Argument of type 'number' is not assignable to paramete
 ```
 ### readonly
 readonly 키워드는 배열이 변경되는 것을 방지한다.
-```
+```ts
 const names: readonly string[] = ["minjae"];
 names.push('minter'); // Error: Property 'push' does not exist on type 'readonly string[]'.
 ```
