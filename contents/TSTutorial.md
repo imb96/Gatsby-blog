@@ -2,7 +2,7 @@
 date: '2022-08-27'
 title: 'TypeScript Tutorials'
 categories: ['TS']
-summary: 'TypeScript Toturials'
+summary: 'W3Schools TypeScript Toturials 따라해보기'
 thumbnail: './ts1.jpeg'
 ---
 # TypeScript Tutorials
@@ -531,4 +531,75 @@ const point: Parameters<PointPrinter>[0] = {
 	x: 10,
 	y: 20
 }
+```
+## TypeScript Keyof
+객체 타입에서 키 타입을 추출하는 데 사용되는 키워드
+### keyof 명시적 키 사용
+명시적 키가 있는 객체 타입에 사용되는 경우 keyof는 해당 키를 사용하여 union 타입을 만든다.
+```ts
+interface Person {
+	name: string;
+	age: number;
+}
+// 여기서 keyof Person은 'name'과 'age'의 union(공용) 타입을 생성하며 다른 문자열은 허용되지 않는다.
+function printPersonProperty(person: Person, property: keyof Person) {
+	console.log(`Printing person property ${property}: "${person[proprty]}"`);
+}
+let person = {
+	name: "Max",
+	age: 27
+};
+printPersonProperty(person, "name"); // Printing person property name: "Max"
+```
+## TypeScript Null 및 Undefined
+TS에는 null 또는 undefined값을 처리하는 강력한 시스템이 있다.
+> 기본적으로 null 과 undefined 처리는 비활성화 되어 있으며 strictNullChecks를 true로 설정하여 활성화 할 수 있다. 
+### Types
+null과 undefined는 기본 타입이며 string 같은 다른 타입처럼 사용할 수 있다.
+```ts
+let value: string | undefined | null = null;
+value = 'hello';
+value = undefined;
+```
+> strictNullChecks가 활성화되면 undefined 값이 타입에 명시적으로 추가되지 않는 한 TS에서 값을 설정해야 한다.
+### Optional Chaining
+옵셔널 체이팅은 TypeScript의 null처리와 잘 작동하는 JS 기능이다. 이를 통해 간결한 구문으로 존재하거나 존재하지 않을 수 있는 객체의 프로퍼티에 접근할 수 있다. 프로퍼티에 접근할떄 .? 연산자와 함께 사용할 수 있다.
+```ts
+interface House {
+	sqft: number;
+	yard?: {
+		sqft: number;
+	};
+}
+function printYardSize(house: House) {
+	const yardSize = house.yard?.sqrt;
+	if(yardSize === undefined) {
+		console.log('No yard');
+	}else {
+		console.log(`Yard is ${yardSize} sqft`);
+	}
+}
+let home: House = {
+	sqft: 500;
+};
+printYardSize(home): // 'No yard'
+```
+### Nullish Coalescence
+TS의 null 처리와도 잘 작동하는 JS 기능이다. null 또는 undefined를 처리할 때 특히 대체할 수 있는 표현식을 작성할 수 있다. 이는 표현식에서 다른 falsy 값이 발생할 수 있지만 여전히 유효한 경우에 유용하다. &&연산자를 사용하는 것과 유사하게 표현식에서 ??연산자를 사용할 수 있다.
+### Null Assertion
+TS의 추론시스템은 완벽하지 않다. null 또는 undefined의 값의 가능성을 무시하는 것이 합리적일 때가 있다. 이를 수행하는 쉬운 방법은 캐스팅을 사용하는 것이지만 편리하게도 TS에도 편리한 연산자 ! 가 있다.
+```ts
+function getValue(): string | undefined {
+	return 'hello';
+}
+let value = getValue();
+console.log('value length: ' + value!.length);
+```
+> 캐스팅과 마찬가지로 이것은 안전하지 않을 수 있으므로 주의해서 사용해야 한다.
+### Array bounds handling
+strictNullChecks가 활성화된 경우에도 기본적으로 TS는 배열이 undefined값을 반환하지 않는다고 가정한다. (undefined가 배열 타입의 일부가 아닌 경우)
+noUncheckedIndexedAccess를 사용하여 이 동작을 변경할 수 있다.
+```ts
+let array: number[] = [1,2,3];
+let value = array[0]; // `noUncheckedIndexedAccess` 를 사용하면 `number | undefined` 타입을 갖는다.
 ```
