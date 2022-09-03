@@ -1,8 +1,8 @@
 ---
-date: '2022-08-30'
+date: '2022-09-03'
 title: '이펙티브 타입스크립트 스터디'
 categories: ['TS', Study]
-summary: '이펙티브 타입스크립트 스터디 1~50p'
+summary: '이펙티브 타입스크립트 스터디 51~100p'
 thumbnail: './EFTS.png'
 ---
 > Effective TypeScript를 읽고 질문하고 답변하며 공부한 내용입니다.
