@@ -68,7 +68,7 @@ const MarkdownRenderer = styled.div`
   ol,
   ul {
     margin-left: 20px;
-    padding: 30px 0;
+    padding: 0px 0;
   }
 
   // Adjust Horizontal Rule style
@@ -98,7 +98,8 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
-    font-family: 'Inconsolata', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-family: 'Inconsolata', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+      monospace;
     font-size: 1em;
     line-height: 2;
   }
@@ -131,7 +132,6 @@ const MarkdownRenderer = styled.div`
     }
   }
 `
-
 
 const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
   return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
