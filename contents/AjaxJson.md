@@ -1,22 +1,46 @@
 ---
 date: '2022-07-14'
-title: 'Ajax'
-categories: ['AJAX','JS']
-summary: 'Ajax에 대해'
+title: 'Ajax / JSON'
+categories: ['JS']
+summary: 'AJAX와 JSON에 대해'
 thumbnail: './DeepDive.png'
 ---
-> JavaScrpitDeepDive를 읽고 정리한 글입니다.
+> JavaScrpitDeepDive를 읽고 다른 래퍼런스를 참고하여 추가한 글입니다.
 
-# Ajax
 ## Ajax 란?
-Ajax(Asynchronous JavaScript and XML)란 자바스크립트를 사용하여 브라우저가 서버에게 비동기 방식으로 데이터를 요청하고, 서버가 응답한 데이터를 수신하여 웹페이지를 동적으로 갱신하는 프로그래밍 방식을 말한다. 
+Ajax(Asynchronous JavaScript and XML)란 자바스크립트를 사용하여 브라우저가 서버에게 비동기 방식으로 데이터를 요청하고, 서버가 응답한 데이터를 수신하여 웹페이지를 동적으로 갱신하는 프로그래밍 방식을 말한다. (여기 XML이 있는 이유는 예전엔 데이터 포맷으로 XML을 많이 사용했기 때문)
 Ajax는 브라우저에서 제공하는 Web API인 XMLHttpRequest 객체를 기반으로 동작한다. XMLHttpRequest는 HTTP 비동기 통신을 위한 메서드와 프로퍼티를 제공한다.
 Ajax의 등장으로 서버로부터 웹페이지의 변경에 필요한 데이터만 비동기 방식으로 전송받아 웹페이지를 변경할 필요가 없는 부분은 다시 렌더링하지 않고, 변경할 필요가 있는 부분만 한정적으로 렌더링하는 방식이 가능해졌다. 이를 통해 브라우저에서도 데스크톱 애플리케이션과 유사한 빠른 퍼포먼스와 부드러운 화면 전환이 가능해졌다.
 Ajax는 전통적인 방식과 비교했을 때 다음과 같은 장점이 있다.
 1. 변경할 부분을 갱신하는 데 필요한 데이터만 서버로 전송받기 때문에 불필요한 데이터 통신이 발생하지 않는다.
 2. 변경할 필요가 없는 부분은 다시 렌더링하지 않는다. 따라서 화면이 순간적으로 깜박이는 현상이 발생하지 않는다.
 3. 클라이언트와 서버와의 통신이 비동기 방식으로 동작하기 때문에 서버에게 요청을 보낸 이후 블로킹이 발생하지 않는다.
-
+### 어떻게 동작?
+사용자가 AJAX가 적용된 UI와 상효작용하면, 서버에 AJAX 요청을 보내게 된다. 서버는 DB에서 데이터를 가져와서 JS파일에 정의되어 있는 대로 HTML/CSS와 데이터를 융합하여 만든 DOM 객체를 UI에 업데이트 시킨다. 비동기로 이루어지며, 기존의 페이지를 전부 로딩하는 방식이 아닌 일부만 업데이트 하는 방식이다.
+### 어떻게 사용?
+XMLHttpRequest
+일반적으로 XMLHttpRequest 객체를 사용하여 인스턴스를 만들어 인스턴스의 open(), send() 등의 메소드를 이용.
+```js
+var ourRequest = new XMLHttpRequest();
+ourRequest.open(
+  "GET",
+  "https://learnwebcode.github.io/json-example/animals-1.json"
+);
+ourRequest.onload = () => {
+  var ourData = JSON.parse(ourRequest.responseText);
+  console.log(ourData[0]);
+};
+ourRequest.send();
+```
+open()으로 요청할 메소드와 URL을 설정한 뒤, 모두 로드되었을 경우의 콜백함수를 초기화한다.
+Fetch API
+XMLHttpRequest 보다 훨씬 직관적이고 Promise를 리턴한다.
+```js
+fetch("https://learnwebcode.github.io/json-example/animals-1.json")
+  .then(res => res.json())
+  .then(resJson => console.log(resJson));
+```
+응답객체는 json(), blob() 과 같은 내장 메서드로 body를 추출해내고 다시 Promise를 리턴한다.
 ## JSON
 JSON(JavaScript Object Notation)은 클라이언트와 서버 간의 HTTP 통신을 위한 텍스트 데이터 포맷이다.
 자바스크립트에 종속되지 않은 언어 독립형 데이터 포맷으로, 대부분의 프로그래밍 언어에서 사용할 수 있다.
