@@ -104,3 +104,11 @@ demo.html:16 Handler for body.
 Handler for paragraph.
 demo.html:16 Handler for body.
 ```
+
+## 버블링 중단하기
+핸들러에게 이벤트를 완전히 처리하고 난 후 버블링을 중단하도록 명령할 수 있다.
+이벤트 객체의 메서드인 event.stopPropagation()을 사용하면 된다.
+한 요소의 특정 이벤트를 처리하는 핸들러가 여러개인 상황에서, 핸들러 중 하나가 버블링을 멈추더라도 나머지 핸들러는 동작한다. 
+event.stopPropagation()은 위쪽으로 일어나는 버블링은 막아주지만, 다른 핸들러의 동작을 막지는 못한다. 
+버블링을 멈추고, 요소에 할당된 다른 핸들러의 동작도 막으려면 event.stopImmediatePropagation()을 사용해야 한다. 이 메서드를 사용하면 요소에 할당된 특정 이벤트를 처리하는 핸들러 모두가 동작하지 않는다.
+> https://ko.javascript.info/bubbling-and-capturing
