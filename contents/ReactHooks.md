@@ -6,7 +6,7 @@ summary: 'Hooks'
 thumbnail: './react.jpeg'
 ---
 
-> 리액트 다루는 기술 8장 Hooks를 읽고 정리한 내용입니다.
+> 리액트 다루는 기술을 읽고 정리한 내용입니다.
 
 # Hooks
 
