@@ -4,8 +4,7 @@ import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { PostFrontmatterType } from '../../types/PostItem.types'
 
-
-type PostItemProps =PostFrontmatterType & { link: string }
+type PostItemProps = PostFrontmatterType & { link: string }
 
 const PostItemWrapper = styled(Link)`
   display: flex;
@@ -89,24 +88,24 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   summary,
   thumbnail: {
     childImageSharp: { gatsbyImageData },
-    },
+  },
   link,
 }) {
   return (
     <PostItemWrapper to={link}>
-    <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
+      <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
 
-    <PostItemContent>
-      <Title>{title}</Title>
-      <Date>{date}</Date>
-      <Category>
-        {categories.map(item => (
-          <CategoryItem key={item}>{item}</CategoryItem>
-        ))}
-      </Category>
-      <Summary>{summary}</Summary>
-    </PostItemContent>
-  </PostItemWrapper>
+      <PostItemContent>
+        <Title>{title}</Title>
+        <Date>{date}</Date>
+        <Category>
+          {categories.map(item => (
+            <CategoryItem key={item}>{item}</CategoryItem>
+          ))}
+        </Category>
+        <Summary>{summary}</Summary>
+      </PostItemContent>
+    </PostItemWrapper>
   )
 }
 

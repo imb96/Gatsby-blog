@@ -36,8 +36,6 @@ const PostData = styled.div`
   }
 `
 
-
-
 export type PostHeadInfoProps = {
   title: string
   date: string
@@ -51,7 +49,7 @@ const PostHeadInfoWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 60px 0;
-  color: #ffffff;
+  color: black;
 
   @media (max-width: 768px) {
     width: 100%;

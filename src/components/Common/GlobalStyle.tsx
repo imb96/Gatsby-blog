@@ -2,13 +2,14 @@ import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
 const defaultStyle = css`
-@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Stylish', sans-serif;
+    background-color: #fff9f0;
   }
 
   html,
