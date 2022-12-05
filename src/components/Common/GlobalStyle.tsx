@@ -9,7 +9,6 @@ const defaultStyle = css`
     margin: 0;
     box-sizing: border-box;
     font-family: 'Stylish', sans-serif;
-    background-color: #fff9f0;
   }
 
   html,
