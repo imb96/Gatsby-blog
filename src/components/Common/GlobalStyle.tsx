@@ -11,27 +11,33 @@ const defaultStyle = css`
     font-family: 'Stylish', sans-serif;
   }
 
-  html,
-  body,
+  html
+  body.light {
+    background: #fff9f0;
+  },
+  body.dark {
+    background: #222831;
+  }
+  
   #___gatsby {
     height: 100%;
   }
 
   .dark {
     -webkit-font-smoothing: antialiased;
-    background: #231f1f;
+    background: ##222831;
     color: #f2a365;
     body {
-      background: #231f1f;
+      background: #222831;
     }
     main {
-      background: #231f1f;
+      background: #222831;
     }
     footer {
-      background: #231f1f;
+      background: #222831;
     }
     .bg {
-      background: #231f1f;
+      background: #222831;
       color: #f2a365;
     }
     .postHead {
