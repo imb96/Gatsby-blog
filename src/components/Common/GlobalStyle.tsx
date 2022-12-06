@@ -40,6 +40,9 @@ const defaultStyle = css`
     .goBack {
       background: #f2a365;
     }
+    p {
+      color: #fff9f0;
+    }
   }
 
   a,

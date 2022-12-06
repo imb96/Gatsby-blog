@@ -62,13 +62,14 @@ const GmailBadge = styled.div`
   margin-left: 15px;
 `
 
-const Introduction: FunctionComponent<IntroductionProps> = function ({
-  profileImage,
-}) {
+const Introduction: FunctionComponent<IntroductionProps> = function () // {
+// profileImage,
+// }
+{
   return (
     <Background className="bg">
       <Wrapper>
-        <ProfileImage profileImage={profileImage} />
+        {/* <ProfileImage profileImage={profileImage} /> */}
         <MyComponent />
         <div>
           <SubTitle>
