@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   width: 768px;
   height: 300px;
   margin: 0 auto;
@@ -62,6 +62,11 @@ const GmailBadge = styled.div`
   margin-left: 15px;
 `
 
+const Block = styled.div`
+  display: flex;
+  justify-content: right;
+`
+
 const Introduction: FunctionComponent<IntroductionProps> = function () // {
 // profileImage,
 // }
@@ -70,7 +75,9 @@ const Introduction: FunctionComponent<IntroductionProps> = function () // {
     <Background className="bg">
       <Wrapper>
         {/* <ProfileImage profileImage={profileImage} /> */}
+        <Block>
         <MyComponent />
+        </Block>
         <div>
           <SubTitle>
             posted by <b>Minter</b>

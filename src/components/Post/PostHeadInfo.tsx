@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import MyComponent from 'components/Main/ThemeSwitch'
 
 const Title = styled.div`
   display: -webkit-box;
@@ -76,6 +77,12 @@ const PrevPageIcon = styled.div`
   }
 `
 
+const Block = styled.div`
+  display: flex;
+  justify-content: right;
+`
+
+
 const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   title,
   date,
@@ -85,6 +92,9 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
 
   return (
     <PostHeadInfoWrapper className="postHead">
+      <Block>
+      <MyComponent />
+      </Block>
       <PrevPageIcon onClick={goBackPage} className="goBack">
         <FontAwesomeIcon icon={faArrowLeft} />
       </PrevPageIcon>
