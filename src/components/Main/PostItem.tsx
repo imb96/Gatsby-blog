@@ -94,7 +94,6 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   return (
     <PostItemWrapper to={link}>
       <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
-
       <PostItemContent>
         <Title>{title}</Title>
         <Date>{date}</Date>

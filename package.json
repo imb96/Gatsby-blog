@@ -14,6 +14,7 @@
     "darkmode-js": "^1.5.7",
     "gatsby": "^4.19.2",
     "gatsby-plugin-canonical-urls": "^4.19.0",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-emotion": "^7.19.0",
     "gatsby-plugin-image": "^2.19.0",
     "gatsby-plugin-offline": "^5.19.0",
@@ -22,6 +23,7 @@
     "gatsby-plugin-sharp": "^4.19.0",
     "gatsby-plugin-sitemap": "^5.19.0",
     "gatsby-plugin-typescript": "^4.19.0",
+    "gatsby-plugin-use-dark-mode": "^2.0.0",
     "gatsby-remark-copy-linked-files": "^5.19.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^6.19.0",
@@ -34,8 +36,11 @@
     "prop-types": "^15.8.1",
     "query-string": "^7.1.1",
     "react": "^18.1.0",
+    "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "^18.1.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-switch": "^7.0.0",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.31.0",

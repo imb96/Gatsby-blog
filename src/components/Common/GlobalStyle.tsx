@@ -17,6 +17,31 @@ const defaultStyle = css`
     height: 100%;
   }
 
+  .dark {
+    -webkit-font-smoothing: antialiased;
+    background: #231f1f;
+    color: #f2a365;
+    body {
+      background: #231f1f;
+    }
+    main {
+      background: #231f1f;
+    }
+    footer {
+      background: #231f1f;
+    }
+    .bg {
+      background: #231f1f;
+      color: #f2a365;
+    }
+    .postHead {
+      color: #f2a365;
+    }
+    .goBack {
+      background: #f2a365;
+    }
+  }
+
   a,
   a:hover {
     color: inherit;

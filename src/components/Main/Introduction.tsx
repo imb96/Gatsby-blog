@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import ProfileImage from './ProfileImage'
+import MyComponent from './ThemeSwitch'
 
 type IntroductionProps = {
   profileImage: IGatsbyImageData
@@ -9,7 +10,8 @@ type IntroductionProps = {
 
 const Background = styled.div`
   width: 100%;
-  background-image: linear-gradient(60deg, #fff9f0 0%, #fff9f0 100%);
+  /* background-image: linear-gradient(60deg, #fff9f0 0%, #fff9f0 100%); */
+  background: #fff9f0;
   color: #100720;
 `
 
@@ -38,15 +40,15 @@ const SubTitle = styled.div`
   }
 `
 
-const Title = styled.div`
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 500;
+// const Title = styled.div`
+//   margin-top: 10px;
+//   font-size: 20px;
+//   font-weight: 500;
 
-  @media (max-width: 768px) {
-    font-size: 25px;
-  }
-`
+//   @media (max-width: 768px) {
+//     font-size: 25px;
+//   }
+// `
 
 const GithubBadge = styled.div`
   margin-top: 15px;
@@ -59,19 +61,21 @@ const GmailBadge = styled.div`
   width: 35px;
   margin-left: 15px;
 `
+
 const Introduction: FunctionComponent<IntroductionProps> = function ({
   profileImage,
 }) {
   return (
-    <Background>
+    <Background className="bg">
       <Wrapper>
         <ProfileImage profileImage={profileImage} />
+        <MyComponent />
         <div>
           <SubTitle>
             posted by <b>Minter</b>
           </SubTitle>
-          <Title>Thank You for Visiting My Blog</Title>
-          <GithubBadge>
+          {/* <Title>Thank You for Visiting My Blog</Title> */}
+          <GithubBadge className="badge">
             <a href="https://github.com/imb96">
               <svg
                 role="img"

@@ -84,8 +84,8 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   const goBackPage = () => window.history.back()
 
   return (
-    <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goBackPage}>
+    <PostHeadInfoWrapper className="postHead">
+      <PrevPageIcon onClick={goBackPage} className="goBack">
         <FontAwesomeIcon icon={faArrowLeft} />
       </PrevPageIcon>
       <Title>{title}</Title>
