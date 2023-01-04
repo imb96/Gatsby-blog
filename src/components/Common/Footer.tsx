@@ -9,7 +9,7 @@ const FooterWrapper = styled.footer`
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
-  background: #fff9f0;
+  background: #e5e7eb;
 
   @media (max-width: 768px) {
     font-size: 13px;

@@ -13,7 +13,7 @@ const defaultStyle = css`
 
   html
   body.light {
-    background: #fff9f0;
+    background:#e5e7eb;
   },
   body.dark {
     background: #222831;
@@ -47,7 +47,7 @@ const defaultStyle = css`
       background: #f2a365;
     }
     p {
-      color: #fff9f0;
+      color: #e5e7eb;
     }
   }
 

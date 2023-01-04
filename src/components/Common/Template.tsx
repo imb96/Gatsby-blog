@@ -15,7 +15,7 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #fff9f0;
+  background: #e5e7eb;
 `
 
 const Template: FunctionComponent<TemplateProps> = function ({
