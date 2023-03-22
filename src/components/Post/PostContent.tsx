@@ -9,14 +9,14 @@ const MarkdownRenderer = styled.div`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 768px;
+  width: 668px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 0 0;
   word-break: break-all;
 
   // Markdown Style
   line-height: 1.8;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
 
   // Apply Padding Attribute to All Elements
