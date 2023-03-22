@@ -95,7 +95,7 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
     <PostItemWrapper to={link}>
       <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
       <PostItemContent>
-        <Title>{title}</Title>
+        <Title className='postTitle'>{title}</Title>
         <Date>{date}</Date>
         <Category>
           {categories.map(item => (

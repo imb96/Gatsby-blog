@@ -26,7 +26,7 @@ const defaultStyle = css`
   .dark {
     -webkit-font-smoothing: antialiased;
     background: ##222831;
-    color: #f2a365;
+    color: #e5e7eb;
     body {
       background: #222831;
     }
@@ -35,6 +35,7 @@ const defaultStyle = css`
     }
     footer {
       background: #222831;
+      color: #f2a365;
     }
     .bg {
       background: #222831;
@@ -43,11 +44,11 @@ const defaultStyle = css`
     .postHead {
       color: #f2a365;
     }
-    .goBack {
-      background: #f2a365;
-    }
     p {
       color: #e5e7eb;
+    }
+    .postTitle {
+      color: #f2a365;
     }
   }
 
