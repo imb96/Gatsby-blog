@@ -13,42 +13,46 @@ const defaultStyle = css`
 
   html
   body.light {
-    background:#e5e7eb;
-  },
+    background:#fff;
+  }
   body.dark {
-    background: #222831;
+    background: #2f2f2f;
   }
   
   #___gatsby {
     height: 100%;
   }
 
+  footer{
+    color: #27E1C1
+  }
+
   .dark {
     -webkit-font-smoothing: antialiased;
-    background: ##222831;
-    color: #e5e7eb;
+    background: #2f2f2f;
+    color: #fff;
     body {
-      background: #222831;
+      background: #2f2f2f;
     }
     main {
-      background: #222831;
+      background: #2f2f2f;
     }
     footer {
-      background: #222831;
-      color: #f2a365;
+      background: #2f2f2f;
+      color: #27E1C1;
     }
     .bg {
-      background: #222831;
-      color: #f2a365;
+      background: #2f2f2f;
+      color: #27E1C1;
     }
     .postHead {
-      color: #f2a365;
+      color: #fff;
     }
     p {
-      color: #e5e7eb;
+      color: #fff;
     }
     .postTitle {
-      color: #f2a365;
+      color: #fff;
     }
   }
 
