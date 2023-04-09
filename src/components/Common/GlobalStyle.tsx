@@ -54,6 +54,9 @@ const defaultStyle = css`
     .postTitle {
       color: #fff;
     }
+    .postItemContent {
+      background-color: #232323;
+    }
   }
 
   a,

@@ -7,6 +7,7 @@ import { PostFrontmatterType } from '../../types/PostItem.types'
 type PostItemProps = PostFrontmatterType & { link: string }
 
 const PostItemWrapper = styled(Link)`
+  
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -94,7 +95,7 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   return (
     <PostItemWrapper to={link}>
       <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
-      <PostItemContent>
+      <PostItemContent className="postItemContent">
         <Title className='postTitle'>{title}</Title>
         <Date>{date}</Date>
         <Category>
