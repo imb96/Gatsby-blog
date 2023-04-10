@@ -80,7 +80,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () // {
         </Block>
         <div>
           <SubTitle>
-            posted by <b>Minter</b>
+            posted by <b>Minjae</b>
           </SubTitle>
           {/* <Title>Thank You for Visiting My Blog</Title> */}
           <GithubBadge className="badge">

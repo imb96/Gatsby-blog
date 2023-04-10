@@ -19,7 +19,7 @@ const Footer: FunctionComponent = function () {
   return (
     <FooterWrapper>
       Thank You for Visiting My Blog, Have a Good Day 😁
-      <br />© 2022 Developer Minter, Powered By Gatsby.
+      <br />© 2022 Developer Minjae, Powered By Gatsby.
     </FooterWrapper>
   )
 }
