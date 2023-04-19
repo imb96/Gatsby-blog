@@ -24,7 +24,7 @@ const defaultStyle = css`
   }
 
   footer{
-    color: #27E1C1
+    color: #23272f
   }
 
   .dark {
@@ -39,11 +39,11 @@ const defaultStyle = css`
     }
     footer {
       background: #23272f;
-      color: #27E1C1;
+      color: #fff;
     }
     .bg {
       background: #23272f;
-      color: #27E1C1;
+      color: #fff;
     }
     .postHead {
       color: #fff;

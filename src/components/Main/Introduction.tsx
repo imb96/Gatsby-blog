@@ -12,7 +12,7 @@ const Background = styled.div`
   width: 100%;
   /* background-image: linear-gradient(60deg, #fff9f0 0%, #fff9f0 100%); */
   background: #fff;
-  color: #27E1C1;
+  color: #23272f;
 `
 
 const Wrapper = styled.div`
