@@ -3,7 +3,7 @@ date: '2023-06-02'
 title: '[Day 1] JavaScript 주요 문법 (1)'
 categories: ['DevCourse', 'TIL']
 summary: '프로그래머스 데브코스 TIL'
-thumbnail: './DeepDive.png'
+thumbnail: './til.jpg'
 ---
 # [Day 1] JavaScript 주요 문법 (1)
 > 몰랐던, 헷갈렸던 혹은 더 알고싶은 내용을 정리합니다. 😁
