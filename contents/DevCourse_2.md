@@ -140,3 +140,25 @@ String 객체의 함수
 - 브라우저를 닫는 순간 사라진다.
 - 같은 도메인이어도 세션이 다르면 데이터에 접근할 수 없다.
 - 쿠키와 마찬가지로 key-value 형태로 저장한다.
+```js
+// 쿠키 관리는 String으로 한다.
+document.cookie = "key=value; key2=value2";
+
+// 데이터 저장
+localStorage.setItem('name', '김민재');
+console.log(localStorage.getItem('name')); // 김민재
+
+// 데이터 삭제
+localStorage.removeItem('name');
+// 데이터 전부 삭제
+localStorage.clear();
+
+// 데이터 저장
+sessionStorage.setItem('name', '김민재');
+console.log(sessionStorage.getItem('name')); // 김민재
+
+// 데이터 삭제
+sessionStorage.removeItem('name');
+// 데이터 전부 삭제
+sessionStorage.clear();
+```
