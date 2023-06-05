@@ -82,18 +82,18 @@ const Block = styled.div`
   justify-content: right;
 `
 
-
 const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   title,
   date,
   categories,
 }) {
-  const goBackPage = () => window.history.back()
+
+  const goBackPage = () => window.location.href = "../"
 
   return (
     <PostHeadInfoWrapper className="postHead">
       <Block>
-      <MyComponent />
+        <MyComponent />
       </Block>
       <PrevPageIcon onClick={goBackPage} className="goBack">
         <FontAwesomeIcon icon={faArrowLeft} />
