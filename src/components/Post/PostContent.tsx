@@ -102,6 +102,8 @@ const MarkdownRenderer = styled.div`
       monospace;
     font-size: 1em;
     line-height: 2;
+    background: #ededeb;
+    color: #eb5758;
   }
 
   // Markdown Responsive Design
