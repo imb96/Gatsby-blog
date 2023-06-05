@@ -162,3 +162,5 @@ sessionStorage.removeItem('name');
 // 데이터 전부 삭제
 sessionStorage.clear();
 ```
+
+> ps. 블로그에 TIL을 작성하고 링크를 공유하다가 오류(?)를 발견했다. https://imb96.github.io/DevCourse_2/ 이런식으로 포스팅글을 공유하면 뒤로가기 버튼을 누르게되면 작동을 하지 않는 일이 발생했다. 그래서 뒤로가기 버튼 onCLick 이벤트 로직을 변경했다. 기존 history API로 구현한 `const goBackPage = () => window.history.back()` 부분을 `const goBackPage = () => window.location.href = "../"` 이렇게 바꾸었더니 잘 동작한다!👍
