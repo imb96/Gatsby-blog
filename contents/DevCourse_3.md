@@ -85,8 +85,8 @@ size() {
 }
 console.log(LinkedList.size())
 ```
-1. 예외가 발생해도 동작하도록 `예외처리` 하기.
-```jsx
+2. 예외가 발생해도 동작하도록 `예외처리` 하기.
+```js
 // find 메서드
 find(value) {
     let currNode = this.head;
@@ -158,7 +158,7 @@ Stack은 Array, Linked List로 구현할 수 있다.
 **실습**
 
 프로그래머스 코딩테스트 연습문제 - 올바른 괄호
-```jsx
+```js
 // 내 풀이
 function solution(s){
     const stack = [];
@@ -176,7 +176,7 @@ function solution(s){
     return stack.length > 0 ? false : true;
 }
 ```
-```jsx
+```js
 // 강사님 풀이1 - 스택 활용
 function solution(s) {
 	const stack = [];
@@ -194,7 +194,7 @@ function solution(s) {
 	return stack.length === 0;
 }
 ```
-```jsx
+```js
 // 강사님 풀이2 - 카운트 활용
 function solution(s) {
 	let count = 0;
