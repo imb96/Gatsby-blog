@@ -102,7 +102,7 @@ const MarkdownRenderer = styled.div`
       monospace;
     font-size: 1em;
     line-height: 2;
-    background: #ededeb;
+    background: #282c34;
     color: #eb5758;
   }
 
