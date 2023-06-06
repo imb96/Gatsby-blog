@@ -176,39 +176,18 @@ function solution(s){
     return stack.length > 0 ? false : true;
 }
 ```
+강사님의 풀이를 보았는데 stack을 사용해서 풀 수도있지만 이런식으로 count를 사용해서도 풀수 있었다.
 ```js
-// 강사님 풀이1 - 스택 활용
-function solution(s) {
-	const stack = [];
-	
-	for (const c of s) {
-		if (c === '(') {
-			stack.push(c);
-		} else {
-			if (stack.length === 0) {
-				return false;
-			}
-			stack.pop();
-		}
-	}
-	return stack.length === 0;
+let count = 0;
+for(char of s) {
+  if(char === '(') {
+    count += 1;
+  }else {
+    if(count === 0) {
+      return false;
+    }
+    count -= 1;
+  }
 }
-```
-```js
-// 강사님 풀이2 - 카운트 활용
-function solution(s) {
-	let count = 0;
-
-	for(const c of s) {
-		if(c === '(') {
-			count += 1;
-		}else {
-			if(count === 0) {
-				return false;
-			}
-			count -= 1;
-		}
-	}
-	return count === 0;
-}
+return count === 0;
 ```
