@@ -1,7 +1,7 @@
 ---
 date: '2023-06-02'
 title: '[Day 1] JavaScript 주요 문법 (1)'
-categories: ['DevCourse', 'TIL']
+categories: ['DevCourse', 'TIL', 'FE', 'JS']
 summary: '프로그래머스 데브코스 TIL'
 thumbnail: './til.jpg'
 ---

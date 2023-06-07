@@ -1,7 +1,7 @@
 ---
 date: '2023-06-06'
 title: '[Day 3] JavaScript 주요 문법 (3)'
-categories: ['DevCourse', 'TIL']
+categories: ['DevCourse', 'TIL', 'JS', 'Algorithm']
 summary: '프로그래머스 데브코스 TIL'
 thumbnail: './til.jpg'
 ---
