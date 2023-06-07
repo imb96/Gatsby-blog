@@ -5,7 +5,7 @@ categories: ['DevCourse', 'TIL', 'FE', 'JS']
 summary: '프로그래머스 데브코스 TIL'
 thumbnail: './til.jpg'
 ---
-# [Day 2] JavaScript 주요 문법 (2)
+
 > 프로그래머스 데브코스 프론트엔드 4기 과정중 몰랐던, 헷갈렸던 혹은 더 알고싶은 내용을 정리합니다. 😁
 ### 브라우저에 URL을 입력하면?
 1. URL을 해석한다.

@@ -5,7 +5,7 @@ categories: ['DevCourse', 'TIL', 'JS', 'Algorithm']
 summary: '프로그래머스 데브코스 TIL'
 thumbnail: './til.jpg'
 ---
-# [Day 3] JavaScript 주요 문법 (3)
+
 > 프로그래머스 데브코스 프론트엔드 4기 과정중 몰랐던, 헷갈렸던 혹은 더 알고싶은 내용을 정리합니다. 😁
 ### 자료구조와 알고리즘
 **자료구조**
