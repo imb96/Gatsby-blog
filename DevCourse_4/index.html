@@ -43,7 +43,7 @@ void function() {
 <p><strong>Linear Queue (선형 큐)</strong></p>
 <p>Array 혹은 Linked List로 구현할 수 있다.</p>
 <p><strong>Circular Queue (원형 큐)</strong></p>
-<p>Front와 Rear가 이어져있는 Queue.</p>
+<p><code class="language-text">Front</code>와 <code class="language-text">Rear</code>가 이어져있는 Queue.</p>
 <p>Circular Queue는 Linked List로 구현했을 때 이점이 없다.</p>
 <p><strong>실습 - 프로그래머스 연습문제 프린터</strong></p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Queue</span> <span class="token punctuation">{</span>
@@ -91,7 +91,7 @@ void function() {
     <span class="token keyword">return</span> count<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p><strong>해시 테이블</strong></p>
-<p>키와 값을 받아 키를 해싱하여 나온 index에 값을 저장하는 선형 자료구조이다.</p>
+<p>키와 값을 받아 키를 해싱하여 나온 <code class="language-text">index</code>에 값을 저장하는 선형 자료구조이다.</p>
 <p>삽입은 상수시간이 걸리며, 키를 알고 있다면 삭제, 탐색도 상수시간으로 수행한다.</p>
 <p><strong>해시 함수</strong></p>
 <p>입력받은 값을 특정 범위 내 숫자로 변경하는 함수</p>
@@ -105,7 +105,7 @@ void function() {
 <li>이중 해싱 - 충돌이 발생하면 기존 해시 함수가 아닌 다른 해시 함수를 이용하여 새로운 index를 만들어 낸다.</li>
 <li>분리 연결법 - 버킷의 값을 연결 리스트로 사용하여 충돌이 발생하면 리시트에 값을 추가한다.</li>
 </ol>
-<p>자바스크립트에서는 Array, Object, Map, Set 으로 사용할 수 있다.</p>
+<p>자바스크립트에서는 <code class="language-text">Array</code>, <code class="language-text">Object</code>, <code class="language-text">Map</code>, <code class="language-text">Set</code> 으로 사용할 수 있다.</p>
 <p><strong>실습 - 프로그래머스 연습문제 베스트 앨범</strong></p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span><span class="token parameter">genres<span class="token punctuation">,</span> plays</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -133,13 +133,13 @@ void function() {
 <span class="token punctuation">}</span></code></pre></div>
 <p><strong>그래프</strong></p>
 <p>정점과 정점 사이를 연결하는 간선으로 이루어진 비선형 자료구조로 정점 집합과 간선 집합으로 표현할 수 있다.</p>
-<p>정점은 Node, vertex 라고도 불리고 간선은 edge라고도 불림.</p>
+<p><code class="language-text">정점</code>은 Node, vertex 라고도 불리고 <code class="language-text">간선</code>은 edge라고도 불림.</p>
 <p><strong>그래프의 특징</strong></p>
 <ul>
 <li>정점은 여러 개의 간선을 가질 수 있다.</li>
-<li>크게 방향 그래프와 무방향 그래프로 나눌 수 있다.</li>
-<li>간선은 가중치를 가질 수 있다.</li>
-<li>사이클이 발생할 수 있다.</li>
+<li>크게 <code class="language-text">방향 그래프</code>와 <code class="language-text">무방향 그래프</code>로 나눌 수 있다.</li>
+<li>간선은 <code class="language-text">가중치</code>를 가질 수 있다.</li>
+<li><code class="language-text">사이클</code>이 발생할 수 있다.</li>
 </ul>
 <p><strong>무방향 그래프</strong></p>
 <p>간선으로 이어진 정점끼리는 양방향으로 이동이 가능하다. 표현하기에 같은 간선으로 취급된다. (A, B) = (B, A)</p>
@@ -156,8 +156,8 @@ void function() {
 <p>그래프의 정점과 간선의 부분 집합에서 순환이 되는 부분</p>
 <p><strong>그래프의 구현 방법</strong></p>
 <ol>
-<li>인접행렬 → 2차원 배열</li>
-<li>인접 리스트 → 연결 리스트</li>
+<li><code class="language-text">인접 행렬</code> → 2차원 배열</li>
+<li><code class="language-text">인접 리스트</code> → 연결 리스트</li>
 </ol>
 <p><strong>자바스크립트에서 구현</strong></p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// 인접행렬</span>
