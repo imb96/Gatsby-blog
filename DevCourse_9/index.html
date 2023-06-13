@@ -45,28 +45,18 @@ void function() {
 <span class="token keyword">const</span> pet <span class="token operator">=</span> <span class="token function">Dog</span><span class="token punctuation">(</span><span class="token string">'choco'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>pet<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p><strong>결과: 오류가 발생한다</strong></p>
-<p>Dog 함수 내부의 this는 전역객체 (window)를 가리킨다.</p>
+<p>Dog 함수 내부의 this는 전역객체(window 혹은 global)를 가리킨다.</p>
 <p>Dog 함수는 반환하는 값이 없기 때문에 변수 pet은 undefined 이다.</p>
 <p>console.log(pet.name)에서 undefined.name에 접근하는 것이기 때문에 오류가 발생한다.</p>
 <p>const pet =  new Dog(’choco’, 3); 이렇게 new를 붙여주면 this는 새로 생긴 객체를 가리킨다(인스턴스).</p>
 <blockquote>
-<blockquote>
 <p>자바스크립트에서 모든 함수는 실행될 때마다 함수 내부에 this 라는 객체가 추가됩니다. arguments라는 유사 배열 객체와 함께 함수 내부로 암묵적으로 전달되는 것입니다. 그렇기 때문에 자바스크립트에서의 this는 함수가 호출된 상황에 따라 그 모습을 달리합니다.</p>
-</blockquote>
-</blockquote>
-<blockquote>
 <p>1.객체의 메서드를 호출할 때</p>
 <p>객체의 프로퍼티가 함수일 때 메서드라고 부릅니다. this는 함수를 실행할 때 함수를 소유하고 있는 객체를 참조합니다. 즉 해당 메서드를 호출한 객체로 바인딩 됩니다.</p>
-</blockquote>
-<blockquote>
 <p>2.함수를 호출할 때</p>
 <p>특정 객체의 메서드가 아니라 함수를 호출하면, 해당 함수 내부 코드에서 사용된 this는 전역객체에 바인딩 됩니다.</p>
-</blockquote>
-<blockquote>
 <p>3.생성자 함수를 통해 객체를 생성할 때</p>
 <p>그냥 함수를 호출하는 것이 아니라 new키워드를 통해 생성자 함수를 호출할 때는 new 키워드를 통해서 호출된 함수 내부에서의 this는 객체 자신이 됩니다.</p>
-</blockquote>
-<blockquote>
 <p>4.bind, call, apply를 통한 호출</p>
 <p>this를 자바스크립트 코드로 주입 또는 설정할 수 있는 방법입니다.</p>
 <p>bind는 함수를 선언할 때, this와 파라미터를 지정해줄 수 있으며, call과 apply는 함수를 호출할 때, this와 파라미터를 지정해 줍니다.</p>
@@ -118,7 +108,7 @@ avengers<span class="token punctuation">.</span>members<span class="token punctu
 <span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 ironMan<span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>setTimeout 함수 안에 this.members 에서 this는 Avengers 함수를 가리키지 않고 setTimeout의 매개변수 함수를 가리키기 때문에 this.members는 undefined이다.</p>
+<p>setTimeout 함수 안에 this.members 에서 this는 Avengers 함수를 가리키지 않고 setTimeout의 첫번째 매개변수인 함수를 가리키기 때문에 this.members는 undefined이다.</p>
 <p><strong>해결법1 - arrow function을 사용한다.</strong></p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
 	<span class="token keyword">this</span><span class="token punctuation">.</span>members<span class="token operator">...</span>
