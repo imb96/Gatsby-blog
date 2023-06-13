@@ -1,6 +1,6 @@
 ---
 date: '2023-06-14'
-title: '[Day 9] VanillaJS를 통한 자바스크립트 기본 역량 강화 I (1)'
+title: '[Day 9] 자바스크립트 기본 역량 강화 I (1)'
 categories: ['DevCourse', 'TIL', 'JS']
 summary: '프로그래머스 데브코스 TIL'
 thumbnail: './til.jpg'
