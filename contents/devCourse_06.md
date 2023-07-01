@@ -66,6 +66,8 @@ thumbnail: './codingcat2.png'
 2주차 과제를 팀원들과 서로 코드리뷰를 하고 멘토님에게 코드리뷰를 받았다.
 다른 팀원들의 코드를 보기전에는 다들 코드가 거의 같지 않을까? 라는 생각을 했지만 다른점들이 꽤 있었다. 또한 코드리뷰를 어떻게 해야할까? 라는 생각을 했었다. 지적하는 느낌보다는 이렇게 하면 어떨까요? 처럼 질문식으로 많이 했었고 모르는 부분을 많이 물어봤었다.
 
+[PR링크](https://github.com/prgrms-fe-devcourse/FEDC4-2_JavaScript_ES6/pull/22)
+
 <br>
 
 ### 3주차
@@ -85,6 +87,8 @@ TodoCount 컴포넌트를 만들어서 TodoCount에서 TodoList에 직접 접근
 
 #### 3주차 과제 코드리뷰
 이번 코드리뷰에서 받은 피드백은 저번 과제보다 훨씬 많았고 코드리뷰를 하기위해 다른 팀원들의 코드를 보면서 저번 과제보다 다들 코드가 많이 깔끔해져서 놀랐다. 짧은 기간동안 다들 성장한것 같아서 동기부여가 되었다.
+
+[PR링크](https://github.com/prgrms-fe-devcourse/FEDC4-3_VanillaJS_1/pull/32)
 
 ### 4주차
 4주차는 비동기 다루기, fetch API, history API를 학습하고 TodoApp에 적용해보았다.
