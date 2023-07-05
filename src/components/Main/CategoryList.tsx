@@ -36,11 +36,11 @@ const CategoryListWrapper = styled.div`
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
-))<CategoryItemProps>`
+)) <CategoryItemProps>`
   margin-right: 20px;
   padding: 5px 0;
   font-size: 18px;
-  font-weight: ${({ active }) => (active ? '800' : '400')};
+  color: ${({ active }) => (active ? '#6584fb' : '')};
   cursor: pointer;
 
   &:last-of-type {
