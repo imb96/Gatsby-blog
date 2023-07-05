@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, ReactNode, useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import GlobalStyle from './GlobalStyle'
 import Footer from './Footer'
@@ -18,6 +18,26 @@ const Container = styled.main`
   background: #fff;
 `
 
+const ScrollToTopButton = styled.button<{ isVisible: boolean }>`
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  bottom: 10%;
+  right: 12%;
+  background-color: #6584fb;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transition: opacity 0.3s ease-in-out;
+`;
+
 const Template: FunctionComponent<TemplateProps> = function ({
   title,
   description,
@@ -25,6 +45,27 @@ const Template: FunctionComponent<TemplateProps> = function ({
   image,
   children,
 }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const shouldShowButton = scrollTop > 200
+
+    setIsVisible(shouldShowButton);
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <Container>
       <Helmet>
@@ -61,6 +102,14 @@ const Template: FunctionComponent<TemplateProps> = function ({
       </Helmet>
 
       <GlobalStyle />
+      <ScrollToTopButton isVisible={isVisible} onClick={scrollToTop}>
+        <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512">
+          <path
+            d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+            style={{ fill: '#fff' }}
+          />
+        </svg>
+      </ScrollToTopButton>
       {children}
       <Footer />
     </Container>
