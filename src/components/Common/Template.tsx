@@ -48,9 +48,7 @@ const Template: FunctionComponent<TemplateProps> = function ({
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const shouldShowButton = scrollTop > 200
-
+    const shouldShowButton = window.scrollY > 200
     setIsVisible(shouldShowButton);
   }
 
