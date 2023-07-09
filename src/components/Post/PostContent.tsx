@@ -86,9 +86,10 @@ const MarkdownRenderer = styled.div`
   // Adjust Code Style
   pre[class*='language-'] {
     margin: 30px 0;
-    padding: 5px;
+    padding: 1.3rem 1.5rem;
     font-size: 15px;
-
+    border-radius: 6px;
+    overflow: auto;
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
       border-radius: 3px;
@@ -98,12 +99,10 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
-    font-family: 'Inconsolata', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
-      monospace;
     font-size: 1em;
-    line-height: 2;
     background: #282c34;
     color: #eb5758;
+    line-height: 1.4;
   }
 
   // Markdown Responsive Design
