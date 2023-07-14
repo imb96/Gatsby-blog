@@ -58,3 +58,12 @@ Markup: 정적 생성기나 Webpack등을 이용하여 Markup을 미리 생성�
 JavaScript, API 및 마크업과 같은 구성 요소를 준수하고 HTML이 정적으로 제공된다.
 
 라고 한다면 JAM Stack 이다! 라고 말할 수 있을것 같다.
+
+### 참고자료
+[JAMstack 소개: 현대 웹의 아키텍처](https://medium.com/free-code-camp/an-introduction-to-the-jamstack-the-architecture-of-the-modern-web-c4a0d128d9ca)
+
+[What is the JAMstack and how do I get started?](https://www.freecodecamp.org/news/what-is-the-jamstack-and-how-do-i-host-my-website-on-it/)
+
+[netilfy/jamstack](https://www.netlify.com/jamstack/)
+
+[gatsby/jamstack](https://www.gatsbyjs.com/docs/glossary/jamstack/)
