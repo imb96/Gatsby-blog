@@ -16,7 +16,7 @@ const defaultStyle = css`
     background:#fff;
   }
   body.dark {
-    background: #23272f;
+    background: #262626;
   }
   
   #___gatsby {
@@ -24,25 +24,25 @@ const defaultStyle = css`
   }
 
   footer{
-    color: #23272f
+    color: #262626
   }
 
   .dark {
     -webkit-font-smoothing: antialiased;
-    background: #23272f;
+    background: #262626;
     color: #fff;
     body {
-      background: #23272f;
+      background: #262626;
     }
     main {
-      background: #23272f;
+      background: #262626;
     }
     footer {
-      background: #23272f;
+      background: #262626;
       color: #fff;
     }
     .bg {
-      background: #23272f;
+      background: #262626;
       color: #fff;
     }
     .postHead {

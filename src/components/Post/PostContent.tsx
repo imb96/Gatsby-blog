@@ -79,7 +79,8 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Link Element Style
   a {
-    color: #4263eb;
+    font-weight: bold;
+    color: #775fd5;
     text-decoration: underline;
   }
 
@@ -101,7 +102,7 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
     font-size: 1em;
     background: #282c34;
-    color: #eb5758;
+    color: #775fd5;
     line-height: 1.4;
   }
 

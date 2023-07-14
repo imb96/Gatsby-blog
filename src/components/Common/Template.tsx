@@ -24,7 +24,7 @@ const ScrollToTopButton = styled.button<{ isVisible: boolean }>`
   position: fixed;
   bottom: 10%;
   right: 12%;
-  background-color: #6584fb;
+  background-color: #775fd5;
   border: none;
   border-radius: 50%;
   cursor: pointer;
