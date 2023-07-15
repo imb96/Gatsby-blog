@@ -24,7 +24,7 @@ const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 768px;
-  margin: 50px auto 0;
+  margin: 0 auto 0;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -37,11 +37,13 @@ const CategoryListWrapper = styled.div`
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 )) <CategoryItemProps>`
+  border: 1.5px solid gray;
+  border-radius: 16px;
   margin-right: 20px;
-  padding: 5px 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: ${({ active }) => (active ? '#775fd5' : '')};
+  padding: 10px;
+  font-size: 12px;
+  color: ${({ active }) => (active ? '#775fd5' : 'gray')};
+  border: ${({ active }) => (active ? '1.5px solid #775fd5' : '')};
   cursor: pointer;
 
   &:last-of-type {
@@ -49,7 +51,12 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 8px;
+  }
+
+  :hover {
+    color: #775fd5;
+    border: 1.5px solid #775fd5
   }
 `
 
