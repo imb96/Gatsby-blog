@@ -60,8 +60,8 @@ const MarkdownRenderer = styled.div`
   blockquote {
     margin: 30px 0;
     padding: 5px 15px;
-    border-left: 2px solid #000000;
-    font-weight: 800;
+    border-left: 3px solid #775fd5;
+    font-weight: 400;
   }
 
   // Adjust List Element Style
@@ -91,19 +91,24 @@ const MarkdownRenderer = styled.div`
     font-size: 15px;
     border-radius: 6px;
     overflow: auto;
+    background: #232323;
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
       border-radius: 3px;
     }
   }
 
-  code[class*='language-'],
-  pre[class*='language-'] {
+  code[class*='language-'] {
     tab-size: 2;
     font-size: 1em;
-    background: #282c34;
+    background: #f0f0f0;
+    border: 1px solid #775fd5;
     color: #775fd5;
     line-height: 1.4;
+  }
+
+  pre[class*='language-'] code[class*='language-'] {
+    background: #232323;
   }
 
   // Markdown Responsive Design
