@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 // import ProfileImage from './ProfileImage'
-import MyComponent from './ThemeSwitch'
+import ThemeSwitch from './ThemeSwitch'
 
 type IntroductionProps = {
   profileImage: IGatsbyImageData
@@ -21,12 +21,11 @@ const Wrapper = styled.div`
   justify-content: center;
   /* align-items: flex-start; */
   width: 768px;
-  height: 300px;
+  height: 200px;
   margin: 0 auto;
-
   @media (max-width: 768px) {
     width: 100%;
-    height: 300px;
+    height: 200px;
     padding: 0 20px;
   }
 `
@@ -77,7 +76,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () // {
       <Wrapper>
         {/* <ProfileImage profileImage={profileImage} /> */}
         <Block>
-          <MyComponent />
+          <ThemeSwitch />
         </Block>
         <div>
           <SubTitle>

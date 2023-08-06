@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import DarkModeToggle from 'react-dark-mode-toggle'
 
-class MyComponent extends React.Component {
+class ThemeSwitch extends React.Component {
   render() {
     return (
       <ThemeToggler>
@@ -10,8 +10,8 @@ class MyComponent extends React.Component {
           <DarkModeToggle
             onChange={e => toggleTheme(e ? 'dark' : 'light')}
             checked={theme === 'dark'}
-            size={80}
-            speed={2}
+            size={60}
+            speed={3}
           />
         )}
       </ThemeToggler>
@@ -19,4 +19,4 @@ class MyComponent extends React.Component {
   }
 }
 
-export default MyComponent
+export default ThemeSwitch
