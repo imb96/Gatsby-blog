@@ -1,19 +1,18 @@
 ---
 date: '2022-07-30'
-title: 'var, let, const'
+title: '왜 let과 const를 추가했을까?'
 categories: ['JS']
-summary: '변수 선언 키워드 var, let, const에 대해'
+summary: 'var, let, const, hoisting'
 thumbnail: './codingcat2.png'
 ---
 
 # var, let, const
-
 JavaScript에서 변수를 선언하고 할당 받을 수 있는 키워드로 `var`, `let`, `const` 가 있다.
 ES5까지는 var 키워드가 유일한 변수를 선언할 수 있는 키워드였고 let과 const는 ES6에서 추가되었다.
-### var 키워드에 어떤 문제가 있기 떄문에 let과 const를 추가했을까?
+
 ### var
 var 키워드로 선언된 변수는 함수 스코프를 기준으로 동작한다.
-재할당과 재선언이 가능하다.
+`재할당`과 `재선언`이 가능하다.
 ```js
 var a = 3;
 var a = 5;
@@ -23,9 +22,9 @@ console.log(a); // 5;
 
 var 키워드를 함수 외부에서 선언할 경우에는 전역 변수로 취급된다.
 
-let과 const 키워드는 var 키워드와 다르게 블록 스코프를 기준으로 동작하고 재선언이 불가능하다. (블록은 중괄호 {} 로 이루어진 코드블록을 의미한다.)
+let과 const 키워드는 var 키워드와 다르게 블록 스코프를 기준으로 동작하고 재선언이 불가능하다.
 ### let
-let 키워드로 선언된 변수는 재할당이 가능하지만 중복 선언은 불가능 하다.
+let 키워드로 선언된 변수는 `재할당`이 가능하지만 중복 선언은 불가능 하다.
 재할당이 필요할 수 있는 변수에 사용한다.
 ```js
 // 재할당은 가능하다.
@@ -41,7 +40,7 @@ console.log(b); // SyntaxError
 ### const
 const키워드는 선언과 초기화를 동시에 해아하고 재선언과 재할당이 불가능하다.
 
-재할당이 필요없는 상수를 선언할 때 사용한다.
+재할당이 필요없는 `상수`를 선언할 때 사용한다.
 ```js
 // 선언후 초기화를 할 경우 에러가 발생한다.
 const a;
