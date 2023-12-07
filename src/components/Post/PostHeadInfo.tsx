@@ -5,7 +5,6 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import MyComponent from 'components/Main/ThemeSwitch'
 
 const Title = styled.div`
-  background-color: red;
   display: -webkit-box;
   text-overflow: ellipsis;
   overflow-x: hidden;
