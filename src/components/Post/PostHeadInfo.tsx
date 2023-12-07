@@ -5,16 +5,14 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import MyComponent from 'components/Main/ThemeSwitch'
 
 const Title = styled.div`
+  background-color: red;
   display: -webkit-box;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  margin-top: auto;
   text-overflow: ellipsis;
-  white-space: normal;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  overflow-x: hidden;
+  white-space: nowrap;
   font-size: 45px;
   font-weight: 800;
+  text-overflow: ellipsis;
 
   @media (max-width: 768px) {
     font-size: 30px;
@@ -87,8 +85,7 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   date,
   categories,
 }) {
-
-  const goBackPage = () => window.location.href = "../"
+  const goBackPage = () => (window.location.href = '../')
 
   return (
     <PostHeadInfoWrapper className="postHead">
