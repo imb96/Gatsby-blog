@@ -15,9 +15,9 @@ const MarkdownRenderer = styled.div`
   word-break: break-all;
 
   // Markdown Style
-  line-height: 1.8;
-  font-size: 14px;
-  font-weight: 400;
+  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 300;
 
   // Apply Padding Attribute to All Elements
   p {
@@ -61,7 +61,7 @@ const MarkdownRenderer = styled.div`
     margin: 30px 0;
     padding: 5px 15px;
     border-left: 3px solid #775fd5;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   // Adjust List Element Style
@@ -104,6 +104,7 @@ const MarkdownRenderer = styled.div`
     background: #f0f0f0;
     color: #775fd5;
     line-height: 1.4;
+    font-weight: 500;
   }
 
   pre[class*='language-'] code[class*='language-'] {
