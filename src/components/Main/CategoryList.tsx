@@ -3,15 +3,14 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 type CategoryItemProps = {
-  active: boolean;
+  active: boolean
 }
 
 type GatsbyLinkProps = {
-  children: ReactNode;
-  className?: string;
-  to: string;
+  children: ReactNode
+  className?: string
+  to: string
 } & CategoryItemProps
-
 
 export type CategoryListProps = {
   selectedCategory: string
@@ -28,7 +27,7 @@ const CategoryListWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     padding: 0 20px;
   }
 `
@@ -36,7 +35,7 @@ const CategoryListWrapper = styled.div`
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
-)) <CategoryItemProps>`
+))<CategoryItemProps>`
   border: 1.5px solid gray;
   border-radius: 24px;
   margin-right: 20px;
@@ -56,7 +55,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
 
   :hover {
     color: #775fd5;
-    border: 1.5px solid #775fd5
+    border: 1.5px solid #775fd5;
   }
 `
 
@@ -68,7 +67,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
     <CategoryListWrapper>
       {Object.entries(categoryList).map(([name, count]) => (
         <CategoryItem
-          className='categoryItem'
+          className="categoryItem"
           to={`/?category=${name}`}
           active={name === selectedCategory}
           key={name}

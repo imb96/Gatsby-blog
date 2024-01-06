@@ -15,8 +15,8 @@ const MarkdownRenderer = styled.div`
   word-break: break-all;
 
   // Markdown Style
-  line-height: 1.6;
-  font-size: 18px;
+  line-height: 1.8;
+  font-size: 15px;
   font-weight: 300;
 
   // Apply Padding Attribute to All Elements

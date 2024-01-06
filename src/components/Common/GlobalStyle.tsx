@@ -11,20 +11,19 @@ const defaultStyle = css`
     font-family: 'Noto Sans KR', sans-serif;
   }
 
-  html
-  body.light {
-    background:#fff;
+  html body.light {
+    background: #fff;
   }
   body.dark {
     background: #262626;
   }
-  
+
   #___gatsby {
     height: 100%;
   }
 
-  footer{
-    color: #262626
+  footer {
+    color: #262626;
   }
 
   .dark {
@@ -56,6 +55,12 @@ const defaultStyle = css`
     }
     .postItemContent {
       background-color: #232323;
+    }
+    .subtitle {
+      color: #fff;
+    }
+    .badge a svg path {
+      fill: white;
     }
   }
 
