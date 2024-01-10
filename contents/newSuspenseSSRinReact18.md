@@ -1,14 +1,11 @@
 ---
 date: '2023-10-10'
-title: '[번역] New Suspense SSR in React 18'
+title: 'New Suspense SSR in React 18'
 categories: ['React']
 summary: 'New Suspense SSR in React 18'
 thumbnail: './til.jpg'
 ---
 # New Suspense SSR in React 18
-
-> https://github.com/reactwg/react-18/discussions/37
-> 번역 및 요약
 
 SSR을 사용하면 서버의 React 컴포넌트에서 HTML을 생성하고 해당 HTML을 사용자에게 전송할 수 있다.
 HTML은 링크나 폼 입력과 같은 간단한 내장 웹 상호작용을 제외하고는 상호작용이 잘 되지 않는다
@@ -245,3 +242,6 @@ React는 가능한 빨리 모든 것에 hydration을 시작하고 사용자 inte
 이 예제에서는 초기 HTML에 `<NavBar>` 콘텐츠가 포함될 수 있지만, 나머지 관련 코드가 로드되는 즉시 스트리밍되어 사용자가 interaction한 부분에 우선순위를 두고 부분적으로 채워진다.
 
 >참고: hydration이 완전히 공급되지 않은 상태에서 어떻게 앱이 작동할 수 있을까? 디자인에 몇 가지 미묘한 디테일이 적용되어 작동한다. 예를 들어 각 개별 컴포넌트에 개별적으로 hydration 을 공급하는 대신 전체 `<Suspense>` 경계에 대해 hydration을 공급한다. `<Suspense>` 는 이미 즉시 나타나지 않는 콘텐츠에 사용되기 때문에, 코드가 그 자식들을 즉시 사용할 수 없어도 탄력적으로 작동한다. React는 항상 부모를 우선으로 hydrating 하기 때문에 컴포넌트에는 항상 프로퍼티가 설정되어 있다. React는 이벤트가 발생한 지점의 부모 트리 전체가 hydarted 될 때까지 이벤트 dispatch를 보류한다. 마지막으로 부모가 아직 hydrated되지 않은 HTMl을 부실하게 만드는 방식으로 업데이트하면 React는 코드를 숨기고 코드가 로드될 때까지 fallback으로 대체한다. 이렇게 하면 사용자에게 트리가 일관되게 표시된다.
+
+> https://github.com/reactwg/react-18/discussions/37
+> 번역 및 요약
