@@ -24,11 +24,11 @@ const CategoryListWrapper = styled.div`
   flex-wrap: wrap;
   width: 768px;
   margin: 0 auto 0;
+  padding-top: 40px;
 
   @media (max-width: 768px) {
     width: 100%;
-    /* margin-top: 50px; */
-    padding: 0 20px;
+    padding: 40px 20px 0 20px;
   }
 `
 

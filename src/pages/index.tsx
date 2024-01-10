@@ -2,7 +2,9 @@ import React, { FunctionComponent, useMemo } from 'react'
 // import styled from '@emotion/styled'
 // import GlobalStyle from '../components/Common/GlobalStyle'
 // import Footer from '../components/Common/Footer'
-import CategoryList, { CategoryListProps } from '../components/Main/CategoryList'
+import CategoryList, {
+  CategoryListProps,
+} from '../components/Main/CategoryList'
 import Introduction from '../components/Main/Introduction'
 import PostList, { PostType } from '../components/Main/PostList'
 import { graphql } from 'gatsby'
@@ -55,13 +57,13 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   },
 }) {
   const parsed: ParsedQuery<string> = queryString.parse(search)
-  const selectedCategory: string = 
+  const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
       : parsed.category
 
   const categoryList = useMemo(
-    () => 
+    () =>
       edges.reduce(
         (
           list: CategoryListProps['categoryList'],
@@ -72,13 +74,13 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
           }: PostType,
         ) => {
           categories.forEach(category => {
-            if (list[category] === undefined) list[category] = 1;
-            else list[category]++;
-          });
+            if (list[category] === undefined) list[category] = 1
+            else list[category]++
+          })
 
-          list['All']++;
+          list['All']++
 
-          return list;
+          return list
         },
         { All: 0 },
       ),
@@ -92,9 +94,9 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       url={siteUrl}
       image={publicURL}
     >
-      <Introduction profileImage={gatsbyImageData}/>
+      <Introduction profileImage={gatsbyImageData} />
       <CategoryList
-        selectedCategory={selectedCategory} 
+        selectedCategory={selectedCategory}
         categoryList={categoryList}
       />
       <PostList selectedCategory={selectedCategory} posts={edges} />

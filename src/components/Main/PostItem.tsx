@@ -19,12 +19,6 @@ const PostItemWrapper = styled(Link)`
   }
 `
 
-// const ThumbnailImage = styled(GatsbyImage)`
-//   width: 100%;
-//   height: 200px;
-//   border-radius: 10px 10px 0 0;
-// `
-
 const PostItemContent = styled.div`
   flex: 1;
   display: flex;
@@ -59,12 +53,10 @@ const Category = styled.div`
 `
 
 const CategoryItem = styled.div`
-  margin: 2.5px 5px;
   padding: 3px 5px;
   border-radius: 24px;
-  border: 1px solid #775fd5;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   color: #775fd5;
 `
 
@@ -93,13 +85,12 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
 }) {
   return (
     <PostItemWrapper to={link}>
-      {/* <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" /> */}
       <PostItemContent className="postItemContent">
         <Title className="postTitle">{title}</Title>
         <Date>{date}</Date>
         <Category>
           {categories.map(item => (
-            <CategoryItem key={item}>{item}</CategoryItem>
+            <CategoryItem key={item}>#{item}</CategoryItem>
           ))}
         </Category>
         <Summary>{summary}</Summary>

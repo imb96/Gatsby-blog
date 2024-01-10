@@ -11,15 +11,9 @@ const defaultStyle = css`
     font-family: 'Noto Sans KR', sans-serif;
   }
 
-  html body.light {
-    background: #fff;
-  }
-  body.dark {
-    background: #262626;
-  }
-
   #___gatsby {
     height: 100%;
+    background-color: red;
   }
 
   footer {
@@ -28,20 +22,20 @@ const defaultStyle = css`
 
   .dark {
     -webkit-font-smoothing: antialiased;
-    background: #262626;
+    background: #02040a;
     color: #fff;
     body {
-      background: #262626;
+      background: #02040a;
     }
     main {
-      background: #262626;
+      background: #02040a;
     }
     footer {
-      background: #262626;
+      background: #02040a;
       color: #fff;
     }
     .bg {
-      background: #262626;
+      background: #02040a;
       color: #fff;
     }
     .postHead {
@@ -54,13 +48,14 @@ const defaultStyle = css`
       color: #fff;
     }
     .postItemContent {
-      background-color: #232323;
+      background-color: #161b22;
+      border-radius: 10px;
     }
     .subtitle {
       color: #fff;
     }
-    .badge a svg path {
-      fill: white;
+    .wrapper {
+      background-color: #02040a;
     }
   }
 

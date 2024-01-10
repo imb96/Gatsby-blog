@@ -12,6 +12,7 @@ const Title = styled.div`
   font-size: 45px;
   font-weight: 800;
   text-overflow: ellipsis;
+  padding: 30px 30px 30px 0;
 
   @media (max-width: 768px) {
     font-size: 30px;
@@ -43,7 +44,7 @@ export type PostHeadInfoProps = {
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 768px;
+  width: 800px;
   height: 100%;
   margin: 0 auto;
   padding: 60px 0;
@@ -53,6 +54,13 @@ const PostHeadInfoWrapper = styled.div`
     width: 100%;
     padding: 40px 20px;
   }
+`
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 `
 
 const PrevPageIcon = styled.div`
@@ -74,11 +82,6 @@ const PrevPageIcon = styled.div`
   }
 `
 
-const Block = styled.div`
-  display: flex;
-  justify-content: right;
-`
-
 const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   title,
   date,
@@ -88,12 +91,12 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
 
   return (
     <PostHeadInfoWrapper className="postHead">
-      <Block>
+      <ButtonWrapper>
+        <PrevPageIcon onClick={goBackPage} className="goBack">
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </PrevPageIcon>
         <MyComponent />
-      </Block>
-      <PrevPageIcon onClick={goBackPage} className="goBack">
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
+      </ButtonWrapper>
       <Title>{title}</Title>
       <PostData>
         <div>{categories.join(' / ')}</div>
