@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
 import { PostFrontmatterType } from 'types/PostItem.types'
 import Template from 'components/Common/Template'
@@ -25,7 +25,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
 }) {
   const {
     node: {
-      html, 
+      html,
       frontmatter: {
         title,
         summary,
@@ -36,16 +36,16 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
           publicURL,
         },
       },
-    }, 
-  } = edges[0];
+    },
+  } = edges[0]
 
   return (
     <Template title={title} description={summary} url={href} image={publicURL}>
       <PostHead
-       title={title}
-       date={date}
-       categories={categories}
-       thumbnail={gatsbyImageData}
+        title={title}
+        date={date}
+        categories={categories}
+        thumbnail={gatsbyImageData}
       />
       <PostContent html={html} />
       <CommentWidget />

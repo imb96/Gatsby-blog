@@ -22,20 +22,20 @@ const defaultStyle = css`
 
   .dark {
     -webkit-font-smoothing: antialiased;
-    background: #02040a;
+    background: #282c35;
     color: #fff;
     body {
-      background: #02040a;
+      background: #282c35;
     }
     main {
-      background: #02040a;
+      background: #282c35;
     }
     footer {
-      background: #02040a;
+      background: #282c35;
       color: #fff;
     }
     .bg {
-      background: #02040a;
+      background: #282c35;
       color: #fff;
     }
     .postHead {
@@ -55,7 +55,7 @@ const defaultStyle = css`
       color: #fff;
     }
     .wrapper {
-      background-color: #02040a;
+      background-color: #282c35;
     }
   }
 

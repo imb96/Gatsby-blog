@@ -33,10 +33,10 @@ const ScrollToTopButton = styled.button<{ isVisible: boolean }>`
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
-`;
+`
 
 const Template: FunctionComponent<TemplateProps> = function ({
   title,
@@ -45,11 +45,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
   image,
   children,
 }) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   const handleScroll = () => {
     const shouldShowButton = window.scrollY > 200
-    setIsVisible(shouldShowButton);
+    setIsVisible(shouldShowButton)
   }
 
   const scrollToTop = () => {
@@ -60,9 +60,9 @@ const Template: FunctionComponent<TemplateProps> = function ({
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <Container>
@@ -101,7 +101,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
 
       <GlobalStyle />
       <ScrollToTopButton isVisible={isVisible} onClick={scrollToTop}>
-        <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="2rem"
+          viewBox="0 0 512 512"
+        >
           <path
             d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
             style={{ fill: '#fff' }}
