@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
-const defaultStyle = css`
+export const defaultStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
   * {
@@ -13,7 +13,7 @@ const defaultStyle = css`
 
   #___gatsby {
     height: 100%;
-    background-color: red;
+    background-color: #fff;
   }
 
   footer {
@@ -55,6 +55,10 @@ const defaultStyle = css`
       color: #fff;
     }
     .wrapper {
+      background-color: #282c35;
+    }
+    .info-wrapper {
+      color: #fff;
       background-color: #282c35;
     }
   }

@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import MyComponent from 'components/Main/ThemeSwitch'
+import Introduction from 'components/Main/Introduction'
 
 const Title = styled.div`
   display: -webkit-box;
@@ -90,19 +90,21 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   const goBackPage = () => (window.location.href = '../')
 
   return (
-    <PostHeadInfoWrapper className="postHead">
-      <ButtonWrapper>
-        <PrevPageIcon onClick={goBackPage} className="goBack">
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </PrevPageIcon>
-        <MyComponent />
-      </ButtonWrapper>
-      <Title>{title}</Title>
-      <PostData>
-        <div>{categories.join(' / ')}</div>
-        <div>{date}</div>
-      </PostData>
-    </PostHeadInfoWrapper>
+    <>
+      <Introduction />
+      <PostHeadInfoWrapper className="postHead">
+        <ButtonWrapper>
+          <PrevPageIcon onClick={goBackPage} className="goBack">
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </PrevPageIcon>
+        </ButtonWrapper>
+        <Title>{title}</Title>
+        <PostData>
+          <div>{categories.join(' / ')}</div>
+          <div>{date}</div>
+        </PostData>
+      </PostHeadInfoWrapper>
+    </>
   )
 }
 

@@ -1,18 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import { graphql } from 'gatsby'
-import { Global, css } from '@emotion/react'
+import { Link, graphql } from 'gatsby'
+import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
-
-const globalStyle = css`
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-size: 20px;
-  }
-`
-
+import { defaultStyle } from 'components/Common/GlobalStyle'
+import Introduction from 'components/Main/Introduction'
 
 type InfoPageProps = {
   data: {
@@ -26,37 +17,44 @@ type InfoPageProps = {
   }
 }
 
-const TextStyle = css`
-  font-size: 18px;
-  font-weight: 700;
-  color: gray;
-`
+const LinkWrapper = styled(Link)`
+  cursor: pointer;
+  font-size: 32px;
 
-const Text1 = styled.div<{ disable: boolean }>`
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: ${({ disable }) => (disable ? 'line-through' : 'none')};
+  &:hover {
+    color: #775fd5;
+  }
 `
-
-const Text2 = styled('div')<{ disable: boolean }>(({ disable })=> ({
-  fontSize: '15px',
-  color: 'blue',
-  textDecoration: disable ? 'line-through' : 'none',
-}))
 
 const InfoPage: FunctionComponent<InfoPageProps> = function ({
   data: {
     site: {
       siteMetadata: { title, description, author },
-    }
+    },
   },
 }) {
   return (
-    <div>
-      <Global styles={globalStyle} />
-      <div css={TextStyle}>{title}</div>
-      <Text1 disable={true}>{description}</Text1>
-      <Text2 disable={true}>{author}</Text2>
+    <div className="info-wrapper">
+      <Global styles={defaultStyle} />
+      <Introduction />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '50px',
+          gap: '50px',
+        }}
+      >
+        {title}
+        {/* {description} */}
+        {/* {author} */}
+        <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
+        <LinkWrapper to="http://imb96.notion.site/7339b6aa7021447cbe48ceb78d851414">
+          Resume
+        </LinkWrapper>
+      </div>
     </div>
   )
 }
