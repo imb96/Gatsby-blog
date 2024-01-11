@@ -1,9 +1,9 @@
 ---
 date: '2022-11-22'
 title: '우테코 프리코스 회고'
-categories: ['REMEMBRANCE']
+categories: ['회고']
 summary: '우아한 테크코스 프리코스 프론트엔드 회고'
-thumbnail: './codingcat2.png'
+thumbnail: './til.jpg'
 ---
 # 우아한 테크코스 프리코스 프론트엔드 회고
 ## 1주차

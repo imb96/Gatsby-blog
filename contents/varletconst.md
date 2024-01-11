@@ -3,7 +3,7 @@ date: '2022-07-30'
 title: 'var, let, const'
 categories: ['JS']
 summary: '변수를 선언하기 위한 키워드들과 hoisting'
-thumbnail: './codingcat2.png'
+thumbnail: './til.jpg'
 ---
 
 JavaScript에서 변수를 선언하고 할당 받을 수 있는 키워드로 `var`, `let`, `const` 가 있다.

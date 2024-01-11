@@ -25,6 +25,7 @@ const CategoryListWrapper = styled.div`
   width: 768px;
   margin: 0 auto 0;
   padding-top: 40px;
+  gap: 20px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -32,17 +33,11 @@ const CategoryListWrapper = styled.div`
   }
 `
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<CategoryItemProps>`
-  border: 1.5px solid gray;
-  border-radius: 24px;
-  margin-right: 20px;
-  padding: 10px;
-  font-size: 12px;
+  font-size: 16px;
   color: ${({ active }) => (active ? '#775fd5' : 'gray')};
-  border: ${({ active }) => (active ? '1.5px solid #775fd5' : '')};
   cursor: pointer;
 
   &:last-of-type {
@@ -50,12 +45,11 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 
   @media (max-width: 768px) {
-    font-size: 8px;
+    font-size: 16px;
   }
 
   :hover {
     color: #775fd5;
-    border: 1.5px solid #775fd5;
   }
 `
 
