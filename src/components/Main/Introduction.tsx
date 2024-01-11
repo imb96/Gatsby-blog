@@ -50,7 +50,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
           }}
         >
           <SubTitle className="subtitle">
-            <>imb96</>
+            <Link to={'/'}>imb96</Link>
           </SubTitle>
         </div>
       </Block>
