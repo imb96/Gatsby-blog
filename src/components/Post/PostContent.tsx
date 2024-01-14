@@ -102,9 +102,7 @@ const MarkdownRenderer = styled.div`
   }
 
   code[class*='text'] {
-    letter-spacing: 0;
-    word-spacing: 0;
-    font-style: italic;
+    background-color: #775fd53a;
     color: inherit;
   }
 
