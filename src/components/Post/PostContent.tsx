@@ -9,14 +9,13 @@ const MarkdownRenderer = styled.div`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 630px;
   margin: 0 auto;
   padding: 0 0;
-  word-break: break-all;
 
   // Markdown Style
   line-height: 1.8;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
 
   // Apply Padding Attribute to All Elements
@@ -57,12 +56,6 @@ const MarkdownRenderer = styled.div`
   }
 
   // Adjust Quotation Element Style
-  blockquote {
-    margin: 30px 0;
-    padding: 5px 15px;
-    border-left: 3px solid #775fd5;
-    font-weight: 500;
-  }
 
   // Adjust List Element Style
   ol,
@@ -86,12 +79,9 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Code Style
   pre[class*='language-'] {
-    margin: 30px 0;
-    padding: 1.3rem 1.5rem;
-    font-size: 15px;
-    border-radius: 6px;
+    border-radius: 12px;
     overflow: auto;
-    background: #232323;
+    background: #232936;
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
       border-radius: 3px;
@@ -99,16 +89,23 @@ const MarkdownRenderer = styled.div`
   }
 
   code[class*='language-'] {
-    tab-size: 2;
-    font-size: 1em;
-    background: #f0f0f0;
-    color: #775fd5;
+    font-size: 14px;
+    background: inherit;
     line-height: 1.4;
-    font-weight: 500;
+    font-weight: 400;
+    letter-spacing: 1px;
+    word-spacing: 0.5px;
   }
 
   pre[class*='language-'] code[class*='language-'] {
-    background: #232323;
+    background: inherit;
+  }
+
+  code[class*='text'] {
+    letter-spacing: 0;
+    word-spacing: 0;
+    font-style: italic;
+    color: inherit;
   }
 
   // Markdown Responsive Design

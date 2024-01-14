@@ -1,18 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import Introduction from 'components/Main/Introduction'
 
 const Title = styled.div`
   display: -webkit-box;
-  text-overflow: ellipsis;
-  overflow-x: hidden;
-  white-space: nowrap;
-  font-size: 45px;
-  font-weight: 800;
-  text-overflow: ellipsis;
-  padding: 30px 30px 30px 0;
+  font-size: 48px;
+  font-weight: 900;
+  padding-top: 30px;
 
   @media (max-width: 768px) {
     font-size: 30px;
@@ -44,7 +38,7 @@ export type PostHeadInfoProps = {
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 630px;
   height: 100%;
   margin: 0 auto;
   padding: 60px 0;
@@ -63,45 +57,18 @@ const ButtonWrapper = styled.div`
   align-items: center;
 `
 
-const PrevPageIcon = styled.div`
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #000000;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
-  @media (max-width: 768px) {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-  }
-`
-
 const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   title,
   date,
-  categories,
 }) {
-  const goBackPage = () => (window.location.href = '../')
-
   return (
     <>
       <Introduction />
       <PostHeadInfoWrapper className="postHead">
-        <ButtonWrapper>
-          <PrevPageIcon onClick={goBackPage} className="goBack">
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </PrevPageIcon>
-        </ButtonWrapper>
+        <ButtonWrapper></ButtonWrapper>
         <Title>{title}</Title>
         <PostData>
-          <div>{categories.join(' / ')}</div>
-          <div>{date}</div>
+          <div style={{ fontSize: '12px', fontWeight: '300' }}>{date}</div>
         </PostData>
       </PostHeadInfoWrapper>
     </>

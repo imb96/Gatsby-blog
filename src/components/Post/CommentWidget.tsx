@@ -12,7 +12,7 @@ type UtterancesAttributesType = {
   theme: string
   crossorigin: string
   async: string
-};
+}
 
 const UtterancesWrapper = styled.div`
   @media (max-width: 768px) {

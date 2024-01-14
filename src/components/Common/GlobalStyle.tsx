@@ -61,6 +61,9 @@ export const defaultStyle = css`
       color: #fff;
       background-color: #282c35;
     }
+    code.language-text {
+      color: #fff;
+    }
   }
 
   a,

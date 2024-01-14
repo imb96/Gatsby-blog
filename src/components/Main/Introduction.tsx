@@ -10,12 +10,10 @@ type IntroductionProps = {
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100%;
+  width: 630px;
   align-items: center;
   margin: 0 auto;
-  padding: 10px 40px;
-  background-color: #f6f8fa;
-  border-bottom: 1px solid #30363d;
+  padding: 30px 0 10px 0;
   justify-content: space-between;
   @media (max-width: 768px) {
     width: 100%;
@@ -24,7 +22,7 @@ const Wrapper = styled.div`
 
 const SubTitle = styled.div`
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
   color: black;
 
   @media (max-width: 768px) {
@@ -61,12 +59,12 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
         }}
       >
         <div style={{ width: '32px', height: '32px' }}>
-          <Link to={'/'} style={{ color: '#775fd5' }}>
+          <Link to={'/'} className="menu">
             Home
           </Link>
         </div>
         <div style={{ width: '32px', height: '32px' }}>
-          <Link to={'/info'} style={{ color: '#775fd5' }}>
+          <Link to={'/info'} className="menu">
             About
           </Link>
         </div>

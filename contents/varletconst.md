@@ -1,7 +1,7 @@
 ---
 date: '2022-07-30'
 title: 'var, let, const'
-categories: ['JS']
+categories: ['js']
 summary: '변수를 선언하기 위한 키워드들과 hoisting'
 thumbnail: './til.jpg'
 ---

@@ -1,7 +1,7 @@
 ---
 date: '2023-12-19'
 title: '자바스크립트 Event Loop'
-categories: ['JS']
+categories: ['js']
 summary: 'Event Loop와 비동기'
 thumbnail: './til.jpg'
 ---

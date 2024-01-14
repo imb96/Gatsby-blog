@@ -1,12 +1,10 @@
 ---
 date: '2023-10-10'
 title: 'New Suspense SSR in React 18'
-categories: ['React']
+categories: ['react']
 summary: 'New Suspense SSR in React 18'
 thumbnail: './til.jpg'
 ---
-# New Suspense SSR in React 18
-
 SSR을 사용하면 서버의 React 컴포넌트에서 HTML을 생성하고 해당 HTML을 사용자에게 전송할 수 있다.
 HTML은 링크나 폼 입력과 같은 간단한 내장 웹 상호작용을 제외하고는 상호작용이 잘 되지 않는다
 하지만 자바스크립트가 로딩되는 동안 사용자가 페이지의 콘텐츠를 볼 수 있다.
