@@ -8,59 +8,39 @@ thumbnail: './til.jpg'
 SSR을 사용하면 서버의 React 컴포넌트에서 HTML을 생성하고 해당 HTML을 사용자에게 전송할 수 있다.
 HTML은 링크나 폼 입력과 같은 간단한 내장 웹 상호작용을 제외하고는 상호작용이 잘 되지 않는다
 하지만 자바스크립트가 로딩되는 동안 사용자가 페이지의 콘텐츠를 볼 수 있다.
-
-<br>
-
+<br/><br/>
 SSR을 사용하지 않으면 자바스크립트가 로드되는 동안 사용자에게 표시되는 것은 빈 페이지 뿐이다.
-
-<br>
-
+<br/><br/>
 React의 SSR의 진행 단계
 - 서버에서 전체 앱의 데이터를 가져온다.  
 - 서버에서 전체 앱을 HTML로 렌더링하여 응답으로 전송한다.  
 - 클라이언트에서 전체 앱에 대한 JavaScript 코드를 로드한다.  
 - 클라이언트에서 자바스크립트 로직을 전체 앱에 대해 서버에서 생성된 HTML에 연결한다(이것이 '`hydration`').
-
-<br>
-
+<br/>
 중요한 부분은 각 단계가 전체 앱에 대해 한 번에 완료되어야 다음 단계를 시작할 수 있다는 것이다. 거의 모든 사소한 앱이 그렇듯이 앱의 일부가 다른 부분보다 느린 경우 이 방식은 효율적이지 않다.
+<br/><br/>
 
-<br>
-
-React 18을 사용하면 `<Suspense>`를 사용하여 앱을 더 작은 독립 단위로 분할할 수 있으며, 이러한 단계는 서로 독립적으로 진행되며 앱의 나머지 부분을 차단하지 않는다. 
+React 18을 사용하면 `<Suspense/>` 를 사용하여 앱을 더 작은 독립 단위로 분할할 수 있으며, 이러한 단계는 서로 독립적으로 진행되며 앱의 나머지 부분을 차단하지 않는다. 
 결과적으로 앱 사용자는 콘텐츠를 더 빨리 확인하고 훨씬 빠르게 상호 작용을 시작할 수 있다. 앱의 가장 느린 부분이 빠른 부분의 속도를 저하시키지 않는다. 이러한 개선 사항은 자동으로 적용되므로 특별한 조정 코드를 작성할 필요가 없다.
-
-<br>
-
+<br/><br/>
 React와 애플리케이션 코드가 모두 로드되면 이 HTML을 대화형으로 만들고 싶을 것이다. React에게 "여기 서버에서 이 HTML을 생성한 App 컴포넌트가 있다. 이 HTML에 이벤트 핸들러를 첨부하세요!"라고 말한다. React는 컴포넌트 트리를 메모리에 렌더링하지만, 이를 위한 DOM 노드를 생성하는 대신 모든 로직을 기존 HTML에 첨부한다.
-
-<br>
-
+<br/><br/>
 컴포넌트를 렌더링하고 이벤트 핸들러를 첨부하는 이 과정을 "Hydration"이라고 한다. 이는 '건조한' HTML에 상호작용과 이벤트 핸들러라는 '물'을 뿌리는 다는 의미이다.
 현재 React는 트리를 한 번에 hydrate 한다. 즉, 일단 hydrate(본질적으로 컴포넌트 함수를 호출하는 것)을 시작 하면 React는 전체 트리에 대해 이 작업이 끝날 때까지 멈추지 않기 때문에 모든 컴포넌트가 hydrate 될 떄까지 기다려야만 어떤 컴포넌트와 상호작용할 수 있다.
-
-<br>
-
+<br/><br/>
 SSR은 완전한 인터랙티브 앱을 더 빠르게 만들지는 못한다. 오히려 비대화형 버전의 앱을 더 빨리 표시하여 사용자가 JS 로드를 기다리는 동안 정적 콘텐츠를 볼 수 있도록 해준다. 하지만 이 트릭은 네트워크 연결 상태가 좋지 않은 사용자에게 큰 차이를 가져다주며 전반적으로 체감 성능을 향상시킨다. 또한 인덱싱이 더 쉬워지고 속도가 향상되어 검색 엔진 순위에도 도움이 된다.
-
-<br>
-
+<br/><br/>
 ### React 18: Streaming HTML and Selective Hydration
 
 `Streaming` - Suspense를 사용해 Hydration을 컴포넌트 단위로 수행. 데이터가 준비되는만큼 미리 그려둘 수 있다. 이전에는 SSR을 할 때 데이터가 모두 준비될 때까지 기다렸다가 전체 UI를 그려야했다. 이는 유저에게 의미있는 컨텐츠를 제공하는 속도를 단축하는 결과를 낳는다.
-
-<br>
-
+<br/><br/>
 Suspense를 통해 열린 React 18에는 두 가지 주요 SSR 기능이 있다.
-
-<br>
-
+<br/><br/>
 - Streaming HTML on the Server
 서버에서 HTML Streaming 기능을 사용하려면 여기에 설명된 대로 렌더링 문자열에서 new `renderToPipeableStream` 메서드로 전환해야 한다.
 - Selective Hydration on the client
 선택적 하이드레이션을 사용하려면 클라이언트에서 `hydrateRoot`로 전환한 다음 앱의 일부를 `<Suspense>`로 래핑하기 시작해야 한다.
-
-<br>
+<br/><br/>
 
 ### 모든 데이터를 fetching하기 전에 HTML streaming
 
@@ -77,33 +57,21 @@ Suspense를 통해 열린 React 18에는 두 가지 주요 SSR 기능이 있다.
   </RightPane>
 </Layout>
 ```
-
-<br>
-
+<br/><br/>
 `<Comments>`를 `<Suspense>` 로 감싸면, React가 페이지의 나머지 부분에 대한 HTML 스트리밍을 시작하기 위해 comments 을 기다릴 필요가 없다는 것을 알 수 있다. React는 comment대신 spinner를 전송한다.
-
-<br>
-
+<br/><br/>
 이렇게 하면 초기 HTML 렌더링에서 comments가 없다.
 서버에서 댓글에 대한 데이터가 준비되면 React는 동일한 스트림에 추가 HTML을 전송하고, 최소한의 인라인 script 태그를 사용하여 해당 HTML을 "올바른 위치" 에 배치핸다.
 그 결과로 클라이언트에서 React 자체가 로드되기 전에 comments용 HTML이 "팝업" 된다.
-
-<br>
-
+<br/><br/>
 이렇게 하면 이제 아무 것도 표시하기 전에 모든데이터를 가져올 필요가 없다.
 화면의 일부가 초기 HTML을 지연시키는 경우 모든 HTML을 지연시킬지 HTML에서 제외할지 선택할 필요가 없다. 해당 부분이 나중에 HTML stream에서 "팝업"되도록 허용하면 된다.
-
-<br>
-
+<br/><br/>
 ### 모든 코드가 로드되기 전에 페이지에 hydration하기
 초기 HTML을 더 일찍 전송할 수 있지만 여전히 문제가 있다. comment의 JS코드가 로드될 때까지 클라이언트에서 앱에 hydration을 시작할 수 없다. 코드 크기가 큰 경우 시간이 오래 걸릴 수 있다.
-
-<br>
-
+<br/><br/>
 큰 번들을 피하기 위해 일반적으로 "code splitting"을 사용한다. 코드 조각을 동기적으로 로드할 필요가 없도록 지정하면 번들러가 이를 별도의 script 태그로 분할한다.
-
-<br>
-
+<br/><br/>
 React.lazy로 코드 분할을 사용하여 메인 번들에서 comments 코드를 분리할 수 있다.
 
 ```jsx
@@ -116,59 +84,38 @@ const Comments = lazy(() => import('/Comments.js'));
 </Suspense>
 ```
 
-<br>
-
 이전에는 SSR에서 이 기능이 작동하지 않았다. 하지만 React 18에서는 comments가 로드되기 전에 앱에 hydration을 공급할 수 있는 `<Suspense>` 를 사용할 수 있다.
-
-<br>
-
+<br/><br/>
 사용자 입장에서는 처음에는 HTML로 스트리밍되는 비대화형 콘텐츠를 보게 된다.
 그런 다음 React에게 Hydration을 지시한다. 아직 comments가 없지만 괜찮다.
-
-<br>
-
+<br/><br/>
 이것이 선택적 hydration의 예시이다. `<Suspense>`로 Comments를 감싸서 페이지의 나머지 부분의 streaming을 차단해서는 안 되며, 결과적으로 hydrating도 차단해서는 안된다고 React에게 지시했다.
 더 이상 hydrating을 시작하기 위해 모든 코드가 로드될 때까지 기다릴 필요가 없다. React는 로드되는 동안 원하는 part를 hydrate할 수 있다.
-
-<br>
-
+<br/><br/>
 React는 코드 로딩이 완료된 후 comment section을 채우기 시작한다.
 선택적 hydration 덕분에 무거운 js 조각으로 인해 페이지의 나머지 부분이 interactive 해지는 것을 방해하지 않는다.
-
-<br>
-
+<br/><br/>
 ### 모든 HTML이 streamed되기 전에 page Hydration
 
 React는 이 모든 것을 자동으로 처리하므로 예기치 않은 순서에 대해 걱정할 필요가 없다.
 예를 들어, streaming 중인데도 HTML을 로드하는 데 시간이 걸리는 경우가 있다.
 
-<br>
-
 자바스크립트 코드가 모든 HTML보다 먼저 로드되면 React는 기다릴 이유가 없다. 페이지의 나머지 부분에 Hydration을 공급한다.
-
-<br>
 
 comments에 대한 HTML이 로드되면 JS가 아직 없기에 non-interactive 로 표시된다.
 
-<br>
-
 마지막으로 comment의 JS코드가 로드되면 페이지가 완전히 interactive 하게 바뀐다.
-
-<br>
-
+<br/><br/>
 ### 모든 컴포넌트가 hydrated되기 전에 페이지와 interacting하기
 comments를 `<Suspense>` 로 감싸는 과정에서 또 한가지 개선된 점이 있다.
 이제 comments의 hydration이 더이상 브라우저의 다른 작업을 방해하지 않는다.
+<br/><br/>
+예를 들어 comments가 hydrating 되는동안 사용자가  사이드바를 클릭한다고 가정해보자.
 
-<br>
-
-예를 들어 comments가 hydrating 되는동안 사용자가  사이드바를 클릭한다고 가정해보자.
-<img src="https://camo.githubusercontent.com/6cc4eeef439feb3c17d0ac09c701c0deffe170c60a039afa8c0b85d7d4b9c9ef/68747470733a2f2f717569702e636f6d2f626c6f622f5963474141416b314234322f5358524b357573725862717143534a3258396a4769673f613d77504c72596361505246624765344f4e305874504b356b4c566839384747434d774d724e5036374163786b61" alt="image" width="640" height="360"/>
+![](../static/ssr1.png)
 
 React 18 에서는 Suspense 경계 내에서 콘텐츠를 hydrating할 때 브라우저가 이벤트를 처리할 수 있는 작은 간격으로 발생한다. 덕분에 클릭이 즉시 처리되고 저사양 기기에서 장시간 hydration이 진행되는 동안 브라우저가 멈추는 현상이 발생하지 않는다. 예를 들어, 사용자가 더 이상 관심이 없는 페이지에서 다른 페이지로 이동할 수 있다.
-
-<br>
-
+<br/><br/>
 이 예제는 댓글만 Suspense로 래핑되었기 때문에 페이지의 나머지 부분을 한 번에 채우는 작업이 이루어진다. 하지만 더 많은 곳에서 Suspense를 사용하면 이 문제를 해결할 수 있다. 예를 들어 사이드바도 래핑해보자.
 
 ```jsx
@@ -199,7 +146,8 @@ React 18 에서는 Suspense 경계 내에서 콘텐츠를 hydrating할 때 브�
 하지만 사용자가 코드가 로드된 comments 와 interacting을 시도한다고 가정해보자.
 
 <br>
-<img src="https://camo.githubusercontent.com/af5a0db884da33ba385cf5f2a2b7ed167c4eaf7b1e28f61dac533a621c31414b/68747470733a2f2f717569702e636f6d2f626c6f622f5963474141416b314234322f443932634358744a61514f4157536f4e2d42523074413f613d3069613648595470325a6e4d6a6b774f75615533725248596f57754e3659534c4b7a49504454384d714d4561" alt="image" width="640" height="360"/>
+
+![](../static/ssr2.png)
 
 React는 클릭 이벤트의 캡쳐 단계에서 comments를 동기적으로 업데이트 한다.
 그 결과, 클릭을 처리하고 상호작용에 응답하기 위해 댓글이 제때에 채워질 것이다.
@@ -210,7 +158,7 @@ React는 클릭 이벤트의 캡쳐 단계에서 comments를 동기적으로 업
 선택적 hydration 덕분에 "interactive를 위해 모든 것에 hydration"할 필요가 없다.
 React는 가능한 빨리 모든 것에 hydration을 시작하고 사용자 interaction에 따라 화면에서 가장 시급한 부분의 우선순위를 정한다. 앱 전체에 Suspense를 적용하면 경계가 더욱 세분화되는 점을 고려하면 Hydration의 이점이 더욱 분명해 진다.
 
-<img src="https://camo.githubusercontent.com/dbbedbfe934b41a8b4e4ed663d66e94c3e748170df599c20e259680037bc506c/68747470733a2f2f717569702e636f6d2f626c6f622f5963474141416b314234322f6c5559557157304a38525634354a39505364315f4a513f613d39535352654f4a733057513275614468356f6932376e61324265574d447a775261393739576e566e52684561" alt="image" width="640" height="360"/>
+![](../static/ssr3.png)
 
 이 예시에서 사용자는 Hydration이 시작되자마자 첫 번째 comment를 클릭한다. React는 모든 부모 Suspense 경계의 콘텐츠에 우선순위를 두고 hydration 하지만 관련 없는 형제자매는 건너뛴다.
 이렇게 하면 interaction 경로에 있는 컴포넌트가 먼저 hydration되기 때문에 hydration이 즉각적으로 이루어지는 것처럼 착각하게 된다. React는 나머지 앱에 바로 hydration 한다.
@@ -238,7 +186,7 @@ React는 가능한 빨리 모든 것에 hydration을 시작하고 사용자 inte
 <br>
 
 이 예제에서는 초기 HTML에 `<NavBar>` 콘텐츠가 포함될 수 있지만, 나머지 관련 코드가 로드되는 즉시 스트리밍되어 사용자가 interaction한 부분에 우선순위를 두고 부분적으로 채워진다.
-
+<br/><br/>
 >참고: hydration이 완전히 공급되지 않은 상태에서 어떻게 앱이 작동할 수 있을까? 디자인에 몇 가지 미묘한 디테일이 적용되어 작동한다. 예를 들어 각 개별 컴포넌트에 개별적으로 hydration 을 공급하는 대신 전체 `<Suspense>` 경계에 대해 hydration을 공급한다. `<Suspense>` 는 이미 즉시 나타나지 않는 콘텐츠에 사용되기 때문에, 코드가 그 자식들을 즉시 사용할 수 없어도 탄력적으로 작동한다. React는 항상 부모를 우선으로 hydrating 하기 때문에 컴포넌트에는 항상 프로퍼티가 설정되어 있다. React는 이벤트가 발생한 지점의 부모 트리 전체가 hydarted 될 때까지 이벤트 dispatch를 보류한다. 마지막으로 부모가 아직 hydrated되지 않은 HTMl을 부실하게 만드는 방식으로 업데이트하면 React는 코드를 숨기고 코드가 로드될 때까지 fallback으로 대체한다. 이렇게 하면 사용자에게 트리가 일관되게 표시된다.
 
 > https://github.com/reactwg/react-18/discussions/37

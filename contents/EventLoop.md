@@ -18,7 +18,7 @@ thumbnail: './til.jpg'
 
 자바스크립트는 이벤트 루프를 이용해서 비동기 방식으로 동시성을 지원한다.
 
-<img alt="스크린샷 2023-12-19 오후 1 30 09" src="https://github.com/imb96/imb96.github.io/assets/71740032/8db3adba-67bb-4c16-91e2-5367e3235480">
+![](../static/eventloop.png)
 
 ### Heap
 메모리 할당이 되는 곳, 선언현 변수와 함수가 담겨져 있다.
