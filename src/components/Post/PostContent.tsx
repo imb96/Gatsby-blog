@@ -20,7 +20,7 @@ const MarkdownRenderer = styled.div`
 
   // Apply Padding Attribute to All Elements
   p {
-    padding: 3px 0;
+    padding: 16px 0;
   }
 
   // Adjust Heading Element Style
