@@ -1,7 +1,6 @@
 import React, { FunctionComponent, ReactNode, useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import GlobalStyle from './GlobalStyle'
-import Footer from './Footer'
 import { Helmet } from 'react-helmet'
 type TemplateProps = {
   title: string
@@ -113,7 +112,6 @@ const Template: FunctionComponent<TemplateProps> = function ({
         </svg>
       </ScrollToTopButton>
       {children}
-      <Footer />
     </Container>
   )
 }

@@ -17,6 +17,8 @@ const FooterWrapper = styled.footer`
 const Footer: FunctionComponent = function () {
   return (
     <FooterWrapper>
+      I am a web front-end engineer who likes JavaScript.
+      <br />
       Thank You for Visiting My Blog, Have a Good Day 😁
       <br />© 2022 Developer Minjae, Powered By Gatsby.
     </FooterWrapper>

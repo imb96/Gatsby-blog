@@ -4,7 +4,7 @@ import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { defaultStyle } from 'components/Common/GlobalStyle'
 import Introduction from 'components/Main/Introduction'
-
+import Footer from 'components/Common/Footer'
 type InfoPageProps = {
   data: {
     site: {
@@ -29,7 +29,7 @@ const LinkWrapper = styled(Link)`
 const InfoPage: FunctionComponent<InfoPageProps> = function ({
   data: {
     site: {
-      siteMetadata: { title, description, author },
+      siteMetadata: { title },
     },
   },
 }) {
@@ -48,13 +48,12 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
         }}
       >
         {title}
-        {/* {description} */}
-        {/* {author} */}
         <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
         <LinkWrapper to="http://imb96.notion.site/7339b6aa7021447cbe48ceb78d851414">
           Resume
         </LinkWrapper>
       </div>
+      <Footer />
     </div>
   )
 }
