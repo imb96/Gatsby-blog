@@ -106,6 +106,14 @@ const MarkdownRenderer = styled.div`
     color: inherit;
   }
 
+  blockquote {
+    margin-top: 30px;
+    padding: 0 15px;
+    border-left: 3px solid #775fd5;
+    font-weight: 500;
+    font-style: italic;
+  }
+
   // Markdown Responsive Design
   @media (max-width: 768px) {
     width: 100%;
