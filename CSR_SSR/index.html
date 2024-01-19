@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.7"/><meta data-react-helmet="true" name="description" content="CSR과 SSR, SPA와 MPA"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="CSR SSR"/><meta data-react-helmet="true" property="og:description" content="CSR과 SSR, SPA와 MPA"/><meta data-react-helmet="true" property="og:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="CSR SSR"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="CSR SSR"/><meta data-react-helmet="true" name="twitter:description" content="CSR과 SSR, SPA와 MPA"/><meta data-react-helmet="true" name="twitter:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><meta data-react-helmet="true" name="google-site-verification" content="2iQCD8mbMmwhEhQnrYibeMnJCMHXLcP8DgGNFr6cIcM"/><meta data-react-helmet="true" name="naver-site-verification" content="85439973861206f261be8e209d26b2215ded88be"/><style data-href="/styles.811b76fa2f764e4356d7.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><title data-react-helmet="true">CSR SSR</title><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="canonical" href="https://imb96.github.io/CSR_SSR/" data-baseprotocol="https:" data-basehost="imb96.github.io"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 1f6ddng">.css-1f6ddng{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;background:#fff;}</style><main class="css-1f6ddng e1strnqo1"><style data-emotion="css-global 8qvh1m">@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif;}#___gatsby{height:100%;background-color:#fff;}footer{color:#262626;}.dark{-webkit-font-smoothing:antialiased;background:#282c35;color:#fff;}.dark body{background:#282c35;}.dark main{background:#282c35;}.dark footer{background:#282c35;color:#fff;}.dark .bg{background:#282c35;color:#fff;}.dark .postHead{color:#fff;}.dark p{color:#fff;}.dark .postTitle{color:#fff;}.dark .postItemContent{background-color:#161b22;border-radius:10px;}.dark .subtitle{color:#fff;}.dark .wrapper{background-color:#282c35;}.dark .info-wrapper{color:#fff;background-color:#282c35;}.dark code.language-text{color:#fff;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css oeba0y">.css-oeba0y{width:48px;height:48px;position:fixed;bottom:10%;right:12%;background-color:#775fd5;border:none;border-radius:50%;cursor:pointer;z-index:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);opacity:0;-webkit-transition:opacity 0.3s ease-in-out;transition:opacity 0.3s ease-in-out;}</style><button class="css-oeba0y e1strnqo0"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" style="fill:#fff"></path></svg></button><style data-emotion="css pw7jst">.css-pw7jst{position:relative;width:100%;}</style><div class="css-pw7jst e1opi4mu0"><style data-emotion="css 1wn92gy">.css-1wn92gy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:630px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 auto;padding:30px 0 10px 0;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}@media (max-width: 768px){.css-1wn92gy{width:100%;}}</style><div class="wrapper css-1wn92gy e160b012"><style data-emotion="css 1eoy87d">.css-1eoy87d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}</style><div class="css-1eoy87d e160b010"><div style="display:flex;gap:14px;align-items:center"><style data-emotion="css 19mlsps">.css-19mlsps{font-size:24px;font-weight:700;color:black;}@media (max-width: 768px){.css-19mlsps{font-size:24px;}}</style><div class="subtitle css-19mlsps e160b011"><a href="/">imb96</a></div></div></div><div style="display:flex;align-items:center;gap:40px"><div style="width:32px;height:32px"><a class="menu" href="/">Home</a></div><div style="width:32px;height:32px"><a class="menu" href="/info">About</a></div><button style="cursor:pointer;overflow:hidden;width:60px;height:28.2px;appearance:none;-moz-appearance:none;-webkit-appearance:none;border:none;background-color:transparent;padding:0" aria-hidden="true"><div style="display:flex;align-items:center;justify-content:center;margin-top:-34.5px;margin-left:-19.2px;width:99px;height:99px"><div></div></div></button></div></div><style data-emotion="css fllgg1">.css-fllgg1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:630px;height:100%;margin:0 auto;padding:60px 0;color:black;}@media (max-width: 768px){.css-fllgg1{width:100%;padding:40px 20px;}}</style><div class="postHead css-fllgg1 e1st1jau1"><style data-emotion="css pgqmel">.css-pgqmel{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-pgqmel e1st1jau0"></div><style data-emotion="css 1vtwsk0">.css-1vtwsk0{display:-webkit-box;font-size:48px;font-weight:900;padding-top:30px;}@media (max-width: 768px){.css-1vtwsk0{font-size:30px;}}</style><div class="css-1vtwsk0 e1st1jau3">CSR SSR</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau2"><div style="font-size:12px;font-weight:300">2024.01.19</div></div></div></div><style data-emotion="css jkfyf">.css-jkfyf{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:630px;margin:0 auto;padding:0 0;line-height:1.8;font-size:16px;font-weight:300;}.css-jkfyf p{padding:16px 0;}.css-jkfyf h1,.css-jkfyf h2,.css-jkfyf h3{font-weight:800;margin-bottom:10px;}.css-jkfyf *+h1,.css-jkfyf *+h2,.css-jkfyf *+h3{margin-top:10px;}.css-jkfyf hr+h1,.css-jkfyf hr+h2,.css-jkfyf hr+h3{margin-top:0;}.css-jkfyf h1{font-size:35px;}.css-jkfyf h2{font-size:30px;}.css-jkfyf h3{font-size:25px;}.css-jkfyf ol,.css-jkfyf ul{margin-left:20px;padding:0px 0;}.css-jkfyf hr{border:1px solid #8f8f8f;margin:50px 0;}.css-jkfyf a{font-weight:bold;color:#775fd5;-webkit-text-decoration:underline;text-decoration:underline;}.css-jkfyf pre[class*='language-']{border-radius:12px;overflow:auto;background:#232936;}.css-jkfyf pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-jkfyf code[class*='language-']{font-size:14px;background:inherit;line-height:1.4;font-weight:400;letter-spacing:1px;word-spacing:0.5px;}.css-jkfyf pre[class*='language-'] code[class*='language-']{background:inherit;}.css-jkfyf code[class*='text']{background-color:#775fd53a;color:inherit;}.css-jkfyf blockquote{margin-top:30px;padding:0 15px;border-left:3px solid #775fd5;font-weight:500;font-style:italic;}@media (max-width: 768px){.css-jkfyf{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-jkfyf h1{font-size:23px;}.css-jkfyf h2{font-size:20px;}.css-jkfyf h3{font-size:17px;}.css-jkfyf img{width:100%;}.css-jkfyf hr{margin:50px 0;}}</style><div class="css-jkfyf e1ijh0y10"><p>과거 PHP나 JSP를 기반으로 대부분의 웹 애플리케이션은 대부분의 렌더링이 서버 사이드에서 이루어졌다. 페이지를 요청하면 서버에서 완성된 HTML을 내려받고, 페이지 전환시에는 새로운 페이지를 서버에서 내려받는 방식이었다. 여기서 자바스크립트는 어디까지나 사용자에게 추가적인 경험을 주기 위한 보조적인 수단이었다.</p>
+<p>그러나 웹페이지의 기능이 늘어나면서 점차 자바스크립트가 다양하고 많은 일을 수행하게 되면서 자바스크립트를 모듈화 하는 방안이 점차 논의되기 시작했고 그에 따라 등장한 것이 CommonJS와 AMD(Asynchronous Module Definition)이다. 이러한 자바스크립트 모듈화의 결실, 그리고 사용자의 기기 성능 향상과 인터넷 속도 발전 등으로 자바스크립트에서 할 수 있는 일이 점차 다양해지기 시작했다.</p>
+<p>UI에 대한 관리포인트가 많아질수록 과거의 SSR 방식이 발목을 잡았을 것이며, 웹에서 렌더링을 어떻게 빠르게 할 수 있을지, 정교하게 관리할 수 있을지 고민하기 시작했고 CSR 이란 개념과 함께 React같은 프레임워크가 등장하기 시작했다.</p>
+<p>그런데 최근들어서 CSR의 여러가지 단점과 한계 때문에 SSR이 다시 각광을 받고있다.</p>
+<hr>
+<p>CSR과 SSR을 알아보기 전에, Sing Page Application(SPA)과 Multi Page Application(MPA)에 대해 먼저 알아보자.</p>
+<h3>Sing Page Application</h3>
+<p>하나의 페이지로 구성된 애플리케이션이다.
+최초에 첫 페이지를 불러온 이후에는 페이지 전환을 위한 모든 작업이 자바스크립트와 브라우저에서 이뤄지기 때문에 페이지를 불러온 이후에는 서버에서 HTML을 내려받지 않고 하나의 페이지에서 모든 작업을 처리하므로 싱글 페이지 애플리케이션이라고 한다.</p>
+<h3>Multi Page Application</h3>
+<p>여러개의 페이지로 구성된 애플리케이션이다.
+여러개의 페이지로 구성되어 있기 때문에 페이지를 전환할 때마다 새롭게 페이지를 요청하고 HTML 페이지를 다운로드해 파싱해야한다. 이 과정은 페이지를 처음부터 새로 그려야 해서 화면이 깜빡이기 때문에 페이지가 전환될 때 SPA에 비해서 부자연스러운 모습을 보게 된다.</p>
+<p>일반적으로 SPA은 CSR 방식으로, MPA는 SSR 방식으로 렌더링을 한다. 그렇지만 SPA는 CSR, MPA는 SSR과 같다고는 할 수 없다. 이 두 개념은 페이지가 몇 개인지, 렌더링을 어디서 하는지를 구분하는 다른 개념이다.</p>
+<h3>CSR</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/de6d9d73ca005ad800ed4e00892112e8/d703b/csr.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61.979166666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABNUlEQVQoz4WT68qCQBCGvf/b6Dq8BEGCEMEIfyjiISvPmU08CyPbV/YNDHuaefadPTgiIs/nU7YsDENxXVd2u51UVbUZpwxHO9M0SdM0qzPGlmWRYRjk8XisiYzbtpWu66Tv+7c1hw4TCiGY9nq9moAkSYynaSqXy8WsAyFmHEe53+9mvCpUILvZBhDP89x4lmVSFIUpWxWp2RUY4DzPJpmW3SiT8d9ETNWxhkKd+wBSzvl8luPxKHVdy+12+wqkEoAojuPY5AL+AAKwDSgHzxkBoEU5Z63KNkv+doYkosLzPPF9Xw6HgwRBYCoB/hPIzgSWZbneJipQFkWRuRTm2YB5lFMRrk9nfTZ63afTSfb7vVEEBOiWIcB2ZbwBuVXOjWfB86CvycTY/vOn/Pp69s7/uSp8AdO7pudlrJcFAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/de6d9d73ca005ad800ed4e00892112e8/a59e9/csr.webp 192w,
+/static/de6d9d73ca005ad800ed4e00892112e8/0ca9f/csr.webp 384w,
+/static/de6d9d73ca005ad800ed4e00892112e8/dc9b9/csr.webp 768w,
+/static/de6d9d73ca005ad800ed4e00892112e8/f6aa4/csr.webp 786w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/de6d9d73ca005ad800ed4e00892112e8/3b721/csr.png 192w,
+/static/de6d9d73ca005ad800ed4e00892112e8/66595/csr.png 384w,
+/static/de6d9d73ca005ad800ed4e00892112e8/fe486/csr.png 768w,
+/static/de6d9d73ca005ad800ed4e00892112e8/d703b/csr.png 786w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/de6d9d73ca005ad800ed4e00892112e8/fe486/csr.png"
+            alt="csr"
+            title="csr"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>브라우저가 서버에 콘텐츠를 요청하고 서버는 빈 뼈대만있는 HTML을 응답으로 보내준다. 브라우저는 연결된 JS링크를 통해 JS를 다운로드를 받고 동적으로 DOM을 생성하여 브라우저에 화면을 출력한다.</p>
+<p>CSR은 SSR보다 초기 전송되는 페이지의 속도는 빠르지만 서비스에서 필요한 데이터를 클라이언트(브라우저)에서 추가로 요청하여 재구성해야 하기 때문에 전제적인 페이지 완료 시점은 SSR보다 느려진다.</p>
+<h3>SSR</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 735px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c13f5a5f474cc2694f4d49e29bb1c7f2/34128/ssr.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 71.35416666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYUlEQVQ4y5WT646CQAyFff+H8YdvQdSEECKiCQGC0RgFAQEF9WxON2UBL7s7Sekw0+l8bacjAHg8Hi+F43A4YLVawTAMpGmK3+xHOhkOXTdNE5PJBOPxGNvtFp8Gz4w4ud1uqOsal8tF5Hq9yv+7wb2u0P5+v38T8nM+n1FVVc8gjmPRy+USi8UC6/Uavu8jz3Ox555eXhSFSM/hMPTT6STrx+MR+/1ehHPmtGmani3pkiT5cchbGXbXqRq8CpdU3TzzAkb0FDJDcl1X6LIsw6uCMUwSseKO4wg57Z4ckrB7K50O80oSzd+QsBdyWZZPNDwYRRGm06mQzOdzWJYlmvTD58K09QjptPt0WDUS2raNIAjEOasdhqHYco9CWv1vHerzYA6ptZJKrW+Mmmt6sb5X6rZTtHJ0RBqGR5LZbNaG0W2td53V6xTSbDYbeJ6H3W4nlSMtKT717r96edjTfx1fMuY/6uNSDUgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/c13f5a5f474cc2694f4d49e29bb1c7f2/a59e9/ssr.webp 192w,
+/static/c13f5a5f474cc2694f4d49e29bb1c7f2/0ca9f/ssr.webp 384w,
+/static/c13f5a5f474cc2694f4d49e29bb1c7f2/c4c4c/ssr.webp 735w"
+              sizes="(max-width: 735px) 100vw, 735px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/c13f5a5f474cc2694f4d49e29bb1c7f2/3b721/ssr.png 192w,
+/static/c13f5a5f474cc2694f4d49e29bb1c7f2/66595/ssr.png 384w,
+/static/c13f5a5f474cc2694f4d49e29bb1c7f2/34128/ssr.png 735w"
+            sizes="(max-width: 735px) 100vw, 735px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/c13f5a5f474cc2694f4d49e29bb1c7f2/34128/ssr.png"
+            alt="ssr"
+            title="ssr"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>브라우저에서 서버로 콘텐츠를 요청하면 서버에서 즉시 페이지에 필요한 데이터를 삽입하고 CSS까지 적용하여 렌더링 준비를 마친 HTML과 JS코드를 브라우저에 응답한다. 브라우저는 바로 전달받은 페이지를 화면에 출력하고 이어 JS 코드를 다운로드하고 HTML에 JS를 연결한다.</p>
+<p>SSR을 사용하면 모든 데이터가 매핑된 서비스 페이지를 클라이언트(브라우저)에게 바로 보여줄 수 있다. 서버를 이용해서 페이지를 구성하기 때문에 클라이언트에서 구성하는 CSR보다 페이지를 구성하는 속도는 늦어지지만 전체적으로 사용자에게 보여주는 콘텐츠 구성이 완료되는 시점은 빨라진다는 장점이 있다. 더불어 SEO 또한 쉽게 구성할 수 있다.</p>
+<p>CSR과 SSR의 장단점을 표로 간단하게 비교해 보면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left">CSR</th>
+<th align="left">SSR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">장점</td>
+<td align="left">화면 깜빡임이 없다.<br>초기 로딩 이후 구동 속도가 빠르다.<br>TTV와 TTI 사이 간극이 없다.<br>서버 부하가 분산된다.</td>
+<td align="left">초기 구동 속도가 빠르다.<br>SEO에 유리하다.<br></td>
+</tr>
+<tr>
+<td align="center">단점</td>
+<td align="left">초기 로딩 속도가 느리다.<br>SEO에 불리하다.</td>
+<td align="left">화면 깜빡임이 있다.<br>TTV와 TTI 사이 간극이 있다.<br>서버 부하가 있다.</td>
+</tr>
+</tbody>
+</table>
+<h3>Static Site Generation(SSG)</h3>
+<p>Static Rendering으로도 불리는데, SSR처럼 서버에서 HTML을 보내준다는 방식에서는 비슷하지만 SSR은 요청시 즉시 HTML을 만들어서 응답하기 때문에 데이터가 달라지거나 미리 만들어두기 어려운 페이지에 적합하고 SSG는 서버에서 페이지를 미리만들어두고 요청시에 응답하기 떄문에 변화가 없는 캐싱해두기 좋은 페이지에 사용하면 적합합니다.</p>
+<h3>Incremental Static Regeneration(ISR)</h3>
+<p>빌드 시점에 페이지를 렌더링 한 후, 설정한 시간 마다 페이지를 새로 렌더링한다. 즉, ISR로 구분했지만 사실 SSG에 포함되는 개념이라고 할 수 있다. SSG는 빌드 시에 페이지를 생성하기 때문에 fetching 하는 데이터가 변경되면 다시 빌드해야 하지만 ISR은 일정 시간마다 알아서 페이지를 업데이트 해준다.</p>
+<blockquote>
+<p>참고<br>
+<a href="https://d2.naver.com/helloworld/7804182" target="_blank" rel="nofollow">https://d2.naver.com/helloworld/7804182</a>
+<a href="https://www.youtube.com/watch?v=YuqB8D6eCKE" target="_blank" rel="nofollow">https://www.youtube.com/watch?v=YuqB8D6eCKE</a><br>
+<a>모던 리액트 딥다이브</a>
+<a href="https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Rendering/#_4-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%89%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1-%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8-%E1%84%86%E1%85%B5%E1%86%BE-%E1%84%87%E1%85%AE%E1%86%AB%E1%84%85%E1%85%B5" target="_blank" rel="nofollow">https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Rendering/#_4-%E1%84%80%E1%85%AA%E1%86%AB%E1%84%89%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1-%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8-%E1%84%86%E1%85%B5%E1%86%BE-%E1%84%87%E1%85%AE%E1%86%AB%E1%84%85%E1%85%B5</a></p>
+</blockquote></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/CSR_SSR/";window.___webpackCompilationHash="a7dc72fd691a96ee48b7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c857dff8cba8f79dec61.js"],"app":["/app-ff8b4c7aeb9c37adcd3e.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-471ce91ba4ca4353cd44.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-248e0ea4b1d78a64a80f.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-7fffb222ab3e3cc6862e.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-59e342404ba14e13a892.js"]};/*]]>*/</script><script src="/polyfill-c857dff8cba8f79dec61.js" nomodule=""></script><script src="/app-ff8b4c7aeb9c37adcd3e.js" async=""></script><script src="/framework-6a525285796fb83f2864.js" async=""></script><script src="/webpack-runtime-ef67c44ac92cf98722c1.js" async=""></script></body></html>
