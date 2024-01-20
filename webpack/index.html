@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.7"/><meta data-react-helmet="true" name="description" content="webpack의 기본정리"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="webpack 알아보기"/><meta data-react-helmet="true" property="og:description" content="webpack의 기본정리"/><meta data-react-helmet="true" property="og:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="webpack 알아보기"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="webpack 알아보기"/><meta data-react-helmet="true" name="twitter:description" content="webpack의 기본정리"/><meta data-react-helmet="true" name="twitter:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><meta data-react-helmet="true" name="google-site-verification" content="2iQCD8mbMmwhEhQnrYibeMnJCMHXLcP8DgGNFr6cIcM"/><meta data-react-helmet="true" name="naver-site-verification" content="85439973861206f261be8e209d26b2215ded88be"/><style data-href="/styles.811b76fa2f764e4356d7.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><title data-react-helmet="true">webpack 알아보기</title><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="canonical" href="https://imb96.github.io/webpack/" data-baseprotocol="https:" data-basehost="imb96.github.io"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 1f6ddng">.css-1f6ddng{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;background:#fff;}</style><main class="css-1f6ddng e1strnqo1"><style data-emotion="css-global 8qvh1m">@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif;}#___gatsby{height:100%;background-color:#fff;}footer{color:#262626;}.dark{-webkit-font-smoothing:antialiased;background:#282c35;color:#fff;}.dark body{background:#282c35;}.dark main{background:#282c35;}.dark footer{background:#282c35;color:#fff;}.dark .bg{background:#282c35;color:#fff;}.dark .postHead{color:#fff;}.dark p{color:#fff;}.dark .postTitle{color:#fff;}.dark .postItemContent{background-color:#161b22;border-radius:10px;}.dark .subtitle{color:#fff;}.dark .wrapper{background-color:#282c35;}.dark .info-wrapper{color:#fff;background-color:#282c35;}.dark code.language-text{color:#fff;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css oeba0y">.css-oeba0y{width:48px;height:48px;position:fixed;bottom:10%;right:12%;background-color:#775fd5;border:none;border-radius:50%;cursor:pointer;z-index:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);opacity:0;-webkit-transition:opacity 0.3s ease-in-out;transition:opacity 0.3s ease-in-out;}</style><button class="css-oeba0y e1strnqo0"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" style="fill:#fff"></path></svg></button><style data-emotion="css pw7jst">.css-pw7jst{position:relative;width:100%;}</style><div class="css-pw7jst e1opi4mu0"><style data-emotion="css 1wn92gy">.css-1wn92gy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:630px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 auto;padding:30px 0 10px 0;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}@media (max-width: 768px){.css-1wn92gy{width:100%;}}</style><div class="wrapper css-1wn92gy e160b012"><style data-emotion="css 1eoy87d">.css-1eoy87d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}</style><div class="css-1eoy87d e160b010"><div style="display:flex;gap:14px;align-items:center"><style data-emotion="css 19mlsps">.css-19mlsps{font-size:24px;font-weight:700;color:black;}@media (max-width: 768px){.css-19mlsps{font-size:24px;}}</style><div class="subtitle css-19mlsps e160b011"><a href="/">imb96</a></div></div></div><div style="display:flex;align-items:center;gap:40px"><div style="width:32px;height:32px"><a class="menu" href="/">Home</a></div><div style="width:32px;height:32px"><a class="menu" href="/info">About</a></div><button style="cursor:pointer;overflow:hidden;width:60px;height:28.2px;appearance:none;-moz-appearance:none;-webkit-appearance:none;border:none;background-color:transparent;padding:0" aria-hidden="true"><div style="display:flex;align-items:center;justify-content:center;margin-top:-34.5px;margin-left:-19.2px;width:99px;height:99px"><div></div></div></button></div></div><style data-emotion="css fllgg1">.css-fllgg1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:630px;height:100%;margin:0 auto;padding:60px 0;color:black;}@media (max-width: 768px){.css-fllgg1{width:100%;padding:40px 20px;}}</style><div class="postHead css-fllgg1 e1st1jau1"><style data-emotion="css pgqmel">.css-pgqmel{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-pgqmel e1st1jau0"></div><style data-emotion="css 1vtwsk0">.css-1vtwsk0{display:-webkit-box;font-size:48px;font-weight:900;padding-top:30px;}@media (max-width: 768px){.css-1vtwsk0{font-size:30px;}}</style><div class="css-1vtwsk0 e1st1jau3">webpack 알아보기</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau2"><div style="font-size:12px;font-weight:300">2024.01.20</div></div></div></div><style data-emotion="css jkfyf">.css-jkfyf{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:630px;margin:0 auto;padding:0 0;line-height:1.8;font-size:16px;font-weight:300;}.css-jkfyf p{padding:16px 0;}.css-jkfyf h1,.css-jkfyf h2,.css-jkfyf h3{font-weight:800;margin-bottom:10px;}.css-jkfyf *+h1,.css-jkfyf *+h2,.css-jkfyf *+h3{margin-top:10px;}.css-jkfyf hr+h1,.css-jkfyf hr+h2,.css-jkfyf hr+h3{margin-top:0;}.css-jkfyf h1{font-size:35px;}.css-jkfyf h2{font-size:30px;}.css-jkfyf h3{font-size:25px;}.css-jkfyf ol,.css-jkfyf ul{margin-left:20px;padding:0px 0;}.css-jkfyf hr{border:1px solid #8f8f8f;margin:50px 0;}.css-jkfyf a{font-weight:bold;color:#775fd5;-webkit-text-decoration:underline;text-decoration:underline;}.css-jkfyf pre[class*='language-']{border-radius:12px;overflow:auto;background:#232936;}.css-jkfyf pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-jkfyf code[class*='language-']{font-size:14px;background:inherit;line-height:1.4;font-weight:400;letter-spacing:1px;word-spacing:0.5px;}.css-jkfyf pre[class*='language-'] code[class*='language-']{background:inherit;}.css-jkfyf code[class*='text']{background-color:#775fd53a;color:inherit;}.css-jkfyf blockquote{margin-top:30px;padding:0 15px;border-left:3px solid #775fd5;font-weight:500;font-style:italic;}@media (max-width: 768px){.css-jkfyf{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-jkfyf h1{font-size:23px;}.css-jkfyf h2{font-size:20px;}.css-jkfyf h3{font-size:17px;}.css-jkfyf img{width:100%;}.css-jkfyf hr{margin:50px 0;}}</style><div class="css-jkfyf e1ijh0y10"><p>웹팩은 Javascript <code class="language-text">모듈 번들러</code>다. 모듈 번들러는 웹 애플리케이션을 구성하는 자원 (HTML, CSS, Javascript, Images 등)을 모두 각각의 <code class="language-text">모듈</code>로 보고 이를 <code class="language-text">조합</code>해서 병합된 하나의 결과물을 만드는 도구를 의미한다.<br>
+웹팩을 설치해서 직접 사용해보자.</p>
+<p>webpack 설치, cli에서 웹팩을 사용할 수 있게 해준다.<br>
+<code class="language-text">npm i webpack webpack-cli --save-dev</code></p>
+<p>루트에 webpack.config.js 파일을 생성해서 설정해보자.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token string">"./src/index.js"</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">"main.js"</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"dist"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token comment">// 현재 경로 하위의 dist 폴더</span>
+		<span class="token literal-property property">clean</span><span class="token operator">:</span> <span class="token boolean">true</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>entry: 진입할 파일.<br>
+output: 만들어지는 최종 파일, 여러 옵션을 지정해 줄 수 있다.</p>
+<ul>
+<li>filename: 만들어지는 파일의 이름.</li>
+<li>path: 만들어지는 파일을 둘 경로.</li>
+<li>clean: build 시, dist 폴더를 지울지 여부.</li>
+</ul>
+<p>build를 위해 package.json의 build 명령어로 “webpack”을 넣어준다.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token comment">// package.json</span>
+<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>build 실행<br>
+<code class="language-text">npm run build</code></p>
+<p>빌드시 dist 폴더에 main.js 파일이 생성된다. 하지만 dist 폴더를 배포하기 위해선 html파일도 필요하다.<br>
+이를 위한 플러그인을 설치한다.<br>
+<code class="language-text">npm i html-webpack-plugin</code></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"html-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token string">"./src/index.js"</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">"main.js"</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"dist"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+	<span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+			<span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">"./index.html"</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>template: 지정한, 기존에 만들어둔 파일을 이용해서 html을 생성해준다.</p>
+<p>그런데 지금은 매번 빌드하면서 확인해 줘야한다.</p>
+<p>웹팩을 통해 개발 서버를 오픈한다. 코드를 수정해도 개발 서버에 바로 반영된다.<br>
+<code class="language-text">npm i -D webpack-dev-server</code></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+<span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token keyword">static</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">directory</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"dist"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8080</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token comment">// package.json</span>
+<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack serve --open --mode=development"</span><span class="token punctuation">,</span>
+	<span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack --mode=production"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>이번에는 css를 적용해보자.</p>
+<p><code class="language-text">npm i -D style-loader css-loader</code></p>
+<p>css loader: css를 읽어준다.<br>
+style-loader: css를 style태그로 만들어서 head에 넣어준다.<br>
+html webpack plugin은 plugin이고 css는 module로 작성해야 한다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+<span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">{</span>
+			<span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+			<span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"style-loader"</span><span class="token punctuation">,</span> <span class="token string">"css-loader"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>test: 확장자를 찾는다.<br>
+use: 확장자를 해석한다. 여러개일 경우 배열로 사용하고 뒤에서 부터 실행이된다.</p>
+<p>style-loader는 style태그를 만들어서 head에 넣어준다.
+이를 하나의 css 파일로 만들어보자.<br>
+<code class="language-text">npm i -D mini-css-extract-plugin</code></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+<span class="token keyword">const</span> MiniCssExtractPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"mini-css-extract-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">{</span>
+			<span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+			<span class="token comment">// use: ["style-loader", "css-loader"],</span>
+			<span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>MiniCssExtractPlugin<span class="token punctuation">.</span>loader<span class="token punctuation">,</span> <span class="token string">"css-loader"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+	<span class="token keyword">new</span> <span class="token class-name">MiniCssExtractPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		<span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">"common.css"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre></div>
+<p>이렇게 빌드하게 되면 dist 폴더에 common.css 파일이 생기고, index.html에 링크 태그로 common.css가 생긴다.</p>
+<p>다음으로는 이미지 파일을 불러와보자.
+이미지 파일을 불러오기 위해서 file-loader를 설치할 수 있다.<br>
+<code class="language-text">npm i -D file-loader</code></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+<span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">{</span>
+			<span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.jpeg$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+			<span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"file-loader"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>이전의 빌드파일이 깔끔하게 지워지지 않는 경우가 있다. 이 경우에는 사용하지 않는 파일 지우는 plugin을 사용할 수 있다.<br>
+<code class="language-text">npm i -D clean-webpack-plugin</code></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> CleanWebpackPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"clean-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+	<span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre></div></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/webpack/";window.___webpackCompilationHash="a7dc72fd691a96ee48b7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c857dff8cba8f79dec61.js"],"app":["/app-ff8b4c7aeb9c37adcd3e.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-471ce91ba4ca4353cd44.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-248e0ea4b1d78a64a80f.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-7fffb222ab3e3cc6862e.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-59e342404ba14e13a892.js"]};/*]]>*/</script><script src="/polyfill-c857dff8cba8f79dec61.js" nomodule=""></script><script src="/app-ff8b4c7aeb9c37adcd3e.js" async=""></script><script src="/framework-6a525285796fb83f2864.js" async=""></script><script src="/webpack-runtime-ef67c44ac92cf98722c1.js" async=""></script></body></html>
