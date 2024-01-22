@@ -9,14 +9,15 @@ const MarkdownRenderer = styled.div`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 630px;
+  width: 760px;
   margin: 0 auto;
   padding: 0 0;
 
   // Markdown Style
   line-height: 1.8;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 500;
+  color: #45403d;
 
   // Apply Padding Attribute to All Elements
   p {
@@ -73,8 +74,12 @@ const MarkdownRenderer = styled.div`
   // Adjust Link Element Style
   a {
     font-weight: bold;
-    color: #775fd5;
+    color: #ff9843;
     text-decoration: underline;
+  }
+
+  strong {
+    color: #c74c0a;
   }
 
   // Adjust Code Style
@@ -102,14 +107,18 @@ const MarkdownRenderer = styled.div`
   }
 
   code[class*='text'] {
-    background-color: #775fd53a;
-    color: inherit;
+    background-color: #fff;
+    border: 1px solid hsla(20, 6%, 90%, 0.7);
+    margin: 0 -1px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    color: #c74c0a;
   }
 
   blockquote {
     margin-top: 30px;
     padding: 0 15px;
-    border-left: 3px solid #775fd5;
+    border-left: 3px solid #ff9843;
     font-weight: 500;
     font-style: italic;
   }

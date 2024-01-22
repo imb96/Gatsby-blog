@@ -13,7 +13,7 @@ export const defaultStyle = css`
 
   #___gatsby {
     height: 100%;
-    background-color: #fff;
+    background-color: #fafaf9;
   }
 
   footer {
@@ -23,7 +23,7 @@ export const defaultStyle = css`
   .dark {
     -webkit-font-smoothing: antialiased;
     background: #282c35;
-    color: #fff;
+    color: #fafaf9;
     body {
       background: #282c35;
     }
@@ -32,37 +32,37 @@ export const defaultStyle = css`
     }
     footer {
       background: #282c35;
-      color: #fff;
+      color: #fafaf9;
     }
     .bg {
       background: #282c35;
-      color: #fff;
+      color: #fafaf9;
     }
     .postHead {
-      color: #fff;
+      color: #fafaf9;
     }
     p {
-      color: #fff;
+      color: #fafaf9;
     }
     .postTitle {
-      color: #fff;
+      color: #fafaf9;
     }
     .postItemContent {
       background-color: #161b22;
       border-radius: 10px;
     }
     .subtitle {
-      color: #fff;
+      color: #fafaf9;
     }
     .wrapper {
       background-color: #282c35;
     }
     .info-wrapper {
-      color: #fff;
+      color: #fafaf9;
       background-color: #282c35;
     }
     code.language-text {
-      color: #fff;
+      color: #fafaf9;
     }
   }
 

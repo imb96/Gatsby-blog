@@ -1,8 +1,8 @@
 ---
 date: '2024-01-20'
 title: 'webpack 알아보기'
-categories: ['webpack']
-summary: 'webpack의 기본정리'
+categories: ['webpack', 'js']
+summary: 'webpack, code splitting, tree-shaking'
 thumbnail: './til.jpg'
 ---
 
@@ -50,10 +50,10 @@ build를 위해 package.json의 build 명령어로 "webpack"을 넣어준다.
 ```
 
 build 실행  
-`npm run build`
+`$ npm run build`
 
 빌드시 dist에 main.js 파일이 생성된다. 하지만 dist 폴더를 배포하기 위해선 html파일도 필요하다.  
-`npm i html-webpack-plugin`  
+`$ npm i html-webpack-plugin`  
 번들 파일을 포함하는 HTML 파일을 자동으로 만들어준다.
 
 ```js
@@ -79,7 +79,7 @@ module.exports = {
 template: 지정한, 기존에 만들어둔 파일을 이용해서 html을 생성해준다.
 
 그런데 지금은 매번 빌드를 해줘야한다.  
-`npm i -D webpack-dev-server`  
+`$ npm i -D webpack-dev-server`  
 웹팩을 통해 개발 서버를 오픈한다. 코드를 수정해도 개발 서버에 바로 반영된다.
 
 ```js
@@ -104,7 +104,7 @@ devServer: {
 
 webpack은 기본적으로 자바스크립트 파일과 JSON파일만 이해한다. CSS나 이미지를 모듈 형태로 가져오려면 webpack의 loader 옵션을 사용하면 번들링 과정에서 loader가 이러한 자원들을 자바스크립트로 변환해준다.
 
-`npm i -D style-loader css-loader`  
+`$ npm i -D style-loader css-loader`  
 css loader: css를 읽어준다.  
 style-loader: css를 style태그로 만들어서 head에 넣어준다.  
 html webpack plugin은 plugin이고 css는 module로 작성해야 한다. 
@@ -126,7 +126,7 @@ module: {
 
 style-loader는 style태그를 만들어서 head에 넣어준다. 
 
-`npm i -D mini-css-extract-plugin`  
+`$ npm i -D mini-css-extract-plugin`  
 css를 하나의 파일로 만들어준다.
 
 ```js
@@ -152,7 +152,7 @@ plugins: [
 이렇게 빌드하게 되면 dist 폴더에 common.css 파일이 생기고, index.html에 링크 태그로 common.css가 생긴다.
 
 이미지 파일 불러오기  
-`npm i -D file-loader`
+`$ npm i -D file-loader`
 
 ```js
 // webpack.config.js
@@ -168,7 +168,7 @@ module: {
 
 이전의 빌드파일이 깔끔하게 지워지지 않는 경우가 있다. 이 경우에는 사용하지 않는 파일 지우는 plugin을 사용할 수 있다.
 
-`npm i -D clean-webpack-plugin`
+`$ npm i -D clean-webpack-plugin`
 
 ```js
 // webpack.config.js
@@ -223,3 +223,7 @@ bundle.js는 a.js와 b.js 그리고 a.js, b.js에서 의존하고 있는 공통�
 webpack5 이전까지는 tree-shaking을 적용하기 위해 ES2015의 import, export 했지만 webpack5부터는 완벽하진 않지만 CommonJS 모듈의 경우도 tree-shaking 가능하다.
 
 지금까지 알아본것 처럼 webpack은 단순한 번들러 역할을 넘어 code splitting, tree-shaking 등 최적화를 위한 다양한 기능을 제공한다. webpack 외에도 Parcel이나 Rollup 번들러도 많이 사용되고 있으며 esbuild 같은 모던 번들러도 주목 받고있다.
+
+> 참고  
+> https://www.youtube.com/watch?v=zal9HVgrMaQ  
+> 기초부터 완성까지, 프런트엔드

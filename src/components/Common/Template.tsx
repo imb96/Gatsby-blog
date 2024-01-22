@@ -14,7 +14,7 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #fff;
+  background: #fafaf9;
 `
 
 const ScrollToTopButton = styled.button<{ isVisible: boolean }>`
@@ -23,7 +23,7 @@ const ScrollToTopButton = styled.button<{ isVisible: boolean }>`
   position: fixed;
   bottom: 10%;
   right: 12%;
-  background-color: #775fd5;
+  background-color: #ff9843;
   border: none;
   border-radius: 50%;
   cursor: pointer;

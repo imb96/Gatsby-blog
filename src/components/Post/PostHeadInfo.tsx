@@ -7,6 +7,7 @@ const Title = styled.div`
   font-size: 48px;
   font-weight: 900;
   padding-top: 30px;
+  color: #45403d;
 
   @media (max-width: 768px) {
     font-size: 30px;
@@ -38,7 +39,7 @@ export type PostHeadInfoProps = {
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 630px;
+  width: 760px;
   height: 100%;
   margin: 0 auto;
   padding: 60px 0;
@@ -68,7 +69,9 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
         <ButtonWrapper></ButtonWrapper>
         <Title>{title}</Title>
         <PostData>
-          <div style={{ fontSize: '12px', fontWeight: '300' }}>{date}</div>
+          <div style={{ fontSize: '14px', fontWeight: '400', opacity: '0.7' }}>
+            {date}
+          </div>
         </PostData>
       </PostHeadInfoWrapper>
     </>

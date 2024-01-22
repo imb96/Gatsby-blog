@@ -22,7 +22,7 @@ const LinkWrapper = styled(Link)`
   font-size: 32px;
 
   &:hover {
-    color: #775fd5;
+    color: #ff9843;
   }
 `
 
@@ -34,7 +34,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
   },
 }) {
   return (
-    <div className="info-wrapper">
+    <div className="info-wrapper" style={{ height: '100vh' }}>
       <Global styles={defaultStyle} />
       <Introduction />
       <div

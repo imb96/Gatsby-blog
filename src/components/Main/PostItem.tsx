@@ -37,6 +37,7 @@ const Title = styled.div`
   -webkit-box-orient: vertical;
   font-size: 20px;
   font-weight: 700;
+  color: #45403d;
 `
 
 const Date = styled.div`
@@ -50,14 +51,16 @@ const Category = styled.div`
   flex-wrap: wrap;
   margin-top: 10px;
   margin: 10px -5px;
+  gap: 10px;
 `
 
 const CategoryItem = styled.div`
-  padding: 3px 5px;
-  border-radius: 24px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #775fd5;
+  background-color: #fff;
+  border: 1px solid hsla(20, 6%, 90%, 0.7);
+  margin: 0 -1px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  color: #c74c0a;
 `
 
 const Summary = styled.div`
@@ -90,7 +93,7 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
         <Date>{date}</Date>
         <Category>
           {categories.map(item => (
-            <CategoryItem key={item}>#{item}</CategoryItem>
+            <CategoryItem key={item}>{item}</CategoryItem>
           ))}
         </Category>
         <Summary>{summary}</Summary>

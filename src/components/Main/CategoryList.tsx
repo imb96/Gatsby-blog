@@ -22,7 +22,7 @@ export type CategoryListProps = {
 const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 630px;
+  width: 760px;
   margin: 0 auto 0;
   padding-top: 40px;
   gap: 20px;
@@ -37,7 +37,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<CategoryItemProps>`
   font-size: 16px;
-  color: ${({ active }) => (active ? '#775fd5' : 'gray')};
+  color: ${({ active }) => (active ? '#ff8827' : 'gray')};
   cursor: pointer;
 
   &:last-of-type {
@@ -49,7 +49,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 
   :hover {
-    color: #775fd5;
+    color: #ff9843;
   }
 `
 

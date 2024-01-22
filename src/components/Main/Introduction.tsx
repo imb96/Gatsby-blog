@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import ThemeSwitch from './ThemeSwitch'
 import { Link } from 'gatsby'
 
 type IntroductionProps = {
@@ -10,8 +9,8 @@ type IntroductionProps = {
 
 const Wrapper = styled.div`
   display: flex;
-  width: 630px;
-  align-items: center;
+  width: 760px;
+  align-items: end;
   margin: 0 auto;
   padding: 30px 0 10px 0;
   justify-content: space-between;
@@ -21,9 +20,9 @@ const Wrapper = styled.div`
 `
 
 const SubTitle = styled.div`
-  font-size: 24px;
-  font-weight: 700;
-  color: black;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ea5807;
 
   @media (max-width: 768px) {
     font-size: 24px;
@@ -47,29 +46,17 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
           }}
         >
           <SubTitle className="subtitle">
-            <Link to={'/'}>imb96</Link>
+            <Link to={'/'}>Minjae's Blog</Link>
           </SubTitle>
         </div>
       </Block>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '40px',
-        }}
+      <Link
+        to={'/info'}
+        className="menu"
+        style={{ color: '#ea5807', fontWeight: '700' }}
       >
-        <div style={{ width: '32px', height: '32px' }}>
-          <Link to={'/'} className="menu">
-            Home
-          </Link>
-        </div>
-        <div style={{ width: '32px', height: '32px' }}>
-          <Link to={'/info'} className="menu">
-            About
-          </Link>
-        </div>
-        <ThemeSwitch />
-      </div>
+        About
+      </Link>
     </Wrapper>
   )
 }
