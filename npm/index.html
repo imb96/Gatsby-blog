@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.7"/><meta data-react-helmet="true" name="description" content="react로 만든 컴포넌트를 npm에 배포해보자"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="npm에 react 컴포넌트 배포하기"/><meta data-react-helmet="true" property="og:description" content="react로 만든 컴포넌트를 npm에 배포해보자"/><meta data-react-helmet="true" property="og:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="npm에 react 컴포넌트 배포하기"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="npm에 react 컴포넌트 배포하기"/><meta data-react-helmet="true" name="twitter:description" content="react로 만든 컴포넌트를 npm에 배포해보자"/><meta data-react-helmet="true" name="twitter:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><meta data-react-helmet="true" name="google-site-verification" content="2iQCD8mbMmwhEhQnrYibeMnJCMHXLcP8DgGNFr6cIcM"/><meta data-react-helmet="true" name="naver-site-verification" content="85439973861206f261be8e209d26b2215ded88be"/><style data-href="/styles.811b76fa2f764e4356d7.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><title data-react-helmet="true">npm에 react 컴포넌트 배포하기</title><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="canonical" href="https://imb96.github.io/npm/" data-baseprotocol="https:" data-basehost="imb96.github.io"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 1f6ddng">.css-1f6ddng{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;background:#fff;}</style><main class="css-1f6ddng e1strnqo1"><style data-emotion="css-global 8qvh1m">@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif;}#___gatsby{height:100%;background-color:#fff;}footer{color:#262626;}.dark{-webkit-font-smoothing:antialiased;background:#282c35;color:#fff;}.dark body{background:#282c35;}.dark main{background:#282c35;}.dark footer{background:#282c35;color:#fff;}.dark .bg{background:#282c35;color:#fff;}.dark .postHead{color:#fff;}.dark p{color:#fff;}.dark .postTitle{color:#fff;}.dark .postItemContent{background-color:#161b22;border-radius:10px;}.dark .subtitle{color:#fff;}.dark .wrapper{background-color:#282c35;}.dark .info-wrapper{color:#fff;background-color:#282c35;}.dark code.language-text{color:#fff;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css oeba0y">.css-oeba0y{width:48px;height:48px;position:fixed;bottom:10%;right:12%;background-color:#775fd5;border:none;border-radius:50%;cursor:pointer;z-index:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);opacity:0;-webkit-transition:opacity 0.3s ease-in-out;transition:opacity 0.3s ease-in-out;}</style><button class="css-oeba0y e1strnqo0"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" style="fill:#fff"></path></svg></button><style data-emotion="css pw7jst">.css-pw7jst{position:relative;width:100%;}</style><div class="css-pw7jst e1opi4mu0"><style data-emotion="css 1wn92gy">.css-1wn92gy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:630px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 auto;padding:30px 0 10px 0;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}@media (max-width: 768px){.css-1wn92gy{width:100%;}}</style><div class="wrapper css-1wn92gy e160b012"><style data-emotion="css 1eoy87d">.css-1eoy87d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}</style><div class="css-1eoy87d e160b010"><div style="display:flex;gap:14px;align-items:center"><style data-emotion="css 19mlsps">.css-19mlsps{font-size:24px;font-weight:700;color:black;}@media (max-width: 768px){.css-19mlsps{font-size:24px;}}</style><div class="subtitle css-19mlsps e160b011"><a href="/">imb96</a></div></div></div><div style="display:flex;align-items:center;gap:40px"><div style="width:32px;height:32px"><a class="menu" href="/">Home</a></div><div style="width:32px;height:32px"><a class="menu" href="/info">About</a></div><button style="cursor:pointer;overflow:hidden;width:60px;height:28.2px;appearance:none;-moz-appearance:none;-webkit-appearance:none;border:none;background-color:transparent;padding:0" aria-hidden="true"><div style="display:flex;align-items:center;justify-content:center;margin-top:-34.5px;margin-left:-19.2px;width:99px;height:99px"><div></div></div></button></div></div><style data-emotion="css fllgg1">.css-fllgg1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:630px;height:100%;margin:0 auto;padding:60px 0;color:black;}@media (max-width: 768px){.css-fllgg1{width:100%;padding:40px 20px;}}</style><div class="postHead css-fllgg1 e1st1jau1"><style data-emotion="css pgqmel">.css-pgqmel{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-pgqmel e1st1jau0"></div><style data-emotion="css 1vtwsk0">.css-1vtwsk0{display:-webkit-box;font-size:48px;font-weight:900;padding-top:30px;}@media (max-width: 768px){.css-1vtwsk0{font-size:30px;}}</style><div class="css-1vtwsk0 e1st1jau3">npm에 react 컴포넌트 배포하기</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau2"><div style="font-size:12px;font-weight:300">2024.01.22</div></div></div></div><style data-emotion="css jkfyf">.css-jkfyf{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:630px;margin:0 auto;padding:0 0;line-height:1.8;font-size:16px;font-weight:300;}.css-jkfyf p{padding:16px 0;}.css-jkfyf h1,.css-jkfyf h2,.css-jkfyf h3{font-weight:800;margin-bottom:10px;}.css-jkfyf *+h1,.css-jkfyf *+h2,.css-jkfyf *+h3{margin-top:10px;}.css-jkfyf hr+h1,.css-jkfyf hr+h2,.css-jkfyf hr+h3{margin-top:0;}.css-jkfyf h1{font-size:35px;}.css-jkfyf h2{font-size:30px;}.css-jkfyf h3{font-size:25px;}.css-jkfyf ol,.css-jkfyf ul{margin-left:20px;padding:0px 0;}.css-jkfyf hr{border:1px solid #8f8f8f;margin:50px 0;}.css-jkfyf a{font-weight:bold;color:#775fd5;-webkit-text-decoration:underline;text-decoration:underline;}.css-jkfyf pre[class*='language-']{border-radius:12px;overflow:auto;background:#232936;}.css-jkfyf pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-jkfyf code[class*='language-']{font-size:14px;background:inherit;line-height:1.4;font-weight:400;letter-spacing:1px;word-spacing:0.5px;}.css-jkfyf pre[class*='language-'] code[class*='language-']{background:inherit;}.css-jkfyf code[class*='text']{background-color:#775fd53a;color:inherit;}.css-jkfyf blockquote{margin-top:30px;padding:0 15px;border-left:3px solid #775fd5;font-weight:500;font-style:italic;}@media (max-width: 768px){.css-jkfyf{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-jkfyf h1{font-size:23px;}.css-jkfyf h2{font-size:20px;}.css-jkfyf h3{font-size:17px;}.css-jkfyf img{width:100%;}.css-jkfyf hr{margin:50px 0;}}</style><div class="css-jkfyf e1ijh0y10"><p>최근 오픈소스에 관심을 가지면서, 오픈소스는 어떻게 만들어져 있는지에 대한 궁금증이 생겨서 직접 배포해보려고 한다.</p>
+<p>CRA로 기본적인 프로젝트 설정을 해준다.
+<code class="language-text">npx create-react-app my-App</code></p>
+<p>필요한 의존성을 설치해준다. 기본적으로 react jsx 트랜스파일은 필요하다.<br>
+<code class="language-text">npm i -D @babel/cli @babel/preset-react</code></p>
+<p>이제 리액트 컴포넌트를 가져오자.
+src/lib 경로에 폴더를 만들어서 넣어준다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">src/lib/Component
+├── Component.hook.js
+├── Component.jsx
+├── Component.styles.css
+└── index.js</code></pre></div>
+<p>Component.jsx같은 jsx 파일은 React.createElement로 엘리먼트를 생성하기 때문에 React가 필요하다.<br>
+<code class="language-text">import React from "react"</code> 로 react를 import 해주어야 한다.</p>
+<p>다음으로는 진입할 파일을 만들어준다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// src/index.js </span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./lib/Component"</span><span class="token punctuation">;</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Component <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>이제 배포를 위한 package.json을 다음을 참고해서 작성해준다.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token comment">// package.json</span>
+<span class="token punctuation">{</span>
+	<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"프로젝트 이름"</span><span class="token punctuation">,</span>
+	<span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.1.0"</span><span class="token punctuation">,</span>
+	<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"프로젝트 설명"</span><span class="token punctuation">,</span>
+	<span class="token property">"repository"</span><span class="token operator">:</span> <span class="token string">"깃 허브 저장소"</span><span class="token punctuation">,</span>
+	<span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token string">"연관 검색어 단어"</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token property">"author"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"name"</span><span class="token punctuation">,</span>
+		<span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"email@email.com"</span><span class="token punctuation">,</span>
+		<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"깃 허브 프로필 주소"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"MIT"</span><span class="token punctuation">,</span>
+	<span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"dist/index.js"</span><span class="token punctuation">,</span>
+	<span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"dist/index.js"</span><span class="token punctuation">,</span>
+	<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"react-scripts start"</span><span class="token punctuation">,</span>
+		<span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"react-scripts build"</span><span class="token punctuation">,</span>
+		<span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"react-scripts test"</span><span class="token punctuation">,</span>
+		<span class="token property">"eject"</span><span class="token operator">:</span> <span class="token string">"react-scripts eject"</span><span class="token punctuation">,</span>
+		<span class="token property">"publish:npm"</span><span class="token operator">:</span> <span class="token string">"rm -rf dist &amp;&amp; mkdir dist &amp;&amp; babel src/lib -d dist --copy-files"</span>
+
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"babel"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+			<span class="token string">"@babel/preset-react"</span>
+		<span class="token punctuation">]</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>특별한점은 scripts안에 publish:npm이라는 명령어다. 이 명령어를 사용하게 되면 기존에 있던 dist폴더를 삭제후 다시 만들고 src/lib내부의 파일을 트랜스파일후 dist에 복사해준다.</p>
+<p>root에 gitignore파일을 만들어 저장소에 올리지 않을 폴더나 파일을 지정해준다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// .gitignore
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/public
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*</code></pre></div>
+<p>npm도 마찬가지로 npmignore파일을 만들어 npm에 올리지 않을 폴더나 파일을 지정해줄 수 있다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// .npmignore
+/node_modules
+/build
+/public
+/test</code></pre></div>
+<p>다음으로는 다른 개발자들이 오픈소스에 기여할 수 있게 License를 파일을 만들어준다. MIT License를 사용한다면 root에 LICENSE 파일을 만들고 다음과 같이 작성할 수 있다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// LICENSE
+
+MIT License
+Copyright (c) 2023 Minjae Kim &lt;kimminje7810@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<p>다음으로는 프로젝트의 README 파일을 작성한다.
+프로젝트의 이름, 설명, 설치 방법, 예제, 라이센스, 컨튜리뷰팅 등을 적어준다.<br>
+원한다면 license나 version, download수 를 뱃지로 달아줄 수도있다.
+꺽쇠 ’&#x3C;>’ 안의 내용을 내 프로젝트에 맞게 넣어주자.</p>
+<div class="gatsby-highlight" data-language="md"><pre class="language-md"><code class="language-md"><span class="token url">[<span class="token content">![GitHub license</span>](<span class="token url">https://img.shields.io/badge/license-MIT-blue.svg</span>)</span>](https://github.com/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>username</span><span class="token punctuation">></span></span>/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>projectname</span><span class="token punctuation">></span></span>/blob/main/LICENSE) 
+<span class="token url">[<span class="token content">![npm version</span>](<span class="token url">https://img.shields.io/npm/v/&lt;projectname>.svg?style=flat</span>)</span>](https://www.npmjs.com/package/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>projectname</span><span class="token punctuation">></span></span>) 
+<span class="token url"><span class="token operator">!</span>[<span class="token content">npm downloads</span>](<span class="token url">https://img.shields.io/npm/dt/&lt;projectname></span>)</span></code></pre></div>
+<p>이제 npm에 배포하기 위해 회원가입 혹은 로그인을 해야한다.
+터미널에서 <code class="language-text">npm login</code> 을 사용하면 바로 로그인할 수 있고
+<code class="language-text">npm whoami</code> 를 사용하면 로그인 되어있는 계정을 볼 수 있다.</p>
+<p>이제 배포를 하기 위해 <code class="language-text">npm publish:npm</code> 명령어를 사용하고 <code class="language-text">npm publish</code> 로 npm에 배포해주면 배포가 완료된다.</p>
+<p>깃허브 저장소에서도 마찬가지로 프로젝트를 올려주고, 현재 프로젝트의 버전을 git tag로 현재 릴리즈된 버전을 명시해 줄 수 있다.</p>
+<p>버전같은 경우는 보통 다음과 같은 Semantic Versioning 규칙을 따를 수 있다.</p>
+<p><code class="language-text">version: "major.minor.patch"</code><br>
+major: 기존 버전과 호환되지 않는 버전<br>
+minor: 기존 버전과 호환되는 새로운 기능을 추가한 버전<br>
+patch: 기존 버전과 호환되는 버그를 수정한 버전</p>
+<p>앞으로 프로젝트를 업데이트 해 나가면서 재배포를 할 경우에는 version을 올려주어야 배포가 성공적으로 된다.</p>
+<blockquote>
+<p>결과물은 여기서 볼 수 있습니다. <a href="https://github.com/imb96/react-hook-scroll" target="_blank" rel="nofollow">https://github.com/imb96/react-hook-scroll</a></p>
+</blockquote></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/npm/";window.___webpackCompilationHash="a7dc72fd691a96ee48b7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c857dff8cba8f79dec61.js"],"app":["/app-ff8b4c7aeb9c37adcd3e.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-471ce91ba4ca4353cd44.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-248e0ea4b1d78a64a80f.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-7fffb222ab3e3cc6862e.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-59e342404ba14e13a892.js"]};/*]]>*/</script><script src="/polyfill-c857dff8cba8f79dec61.js" nomodule=""></script><script src="/app-ff8b4c7aeb9c37adcd3e.js" async=""></script><script src="/framework-6a525285796fb83f2864.js" async=""></script><script src="/webpack-runtime-ef67c44ac92cf98722c1.js" async=""></script></body></html>
