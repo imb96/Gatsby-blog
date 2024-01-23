@@ -58,7 +58,7 @@ const CategoryItem = styled.div`
   background-color: #fff;
   border: 1px solid hsla(20, 6%, 90%, 0.7);
   margin: 0 -1px;
-  padding: 0.25rem 0.5rem;
+  padding: 0rem 0.5rem 0.25rem 0.5rem;
   border-radius: 10px;
   color: #c74c0a;
 `

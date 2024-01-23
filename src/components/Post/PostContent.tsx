@@ -109,7 +109,7 @@ const MarkdownRenderer = styled.div`
   code[class*='text'] {
     background-color: #fff;
     border: 1px solid hsla(20, 6%, 90%, 0.7);
-    margin: 0 -1px;
+    margin: 0 1px;
     padding: 0.25rem 0.5rem;
     border-radius: 9999px;
     color: #c74c0a;

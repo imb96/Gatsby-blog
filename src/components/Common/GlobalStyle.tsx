@@ -61,9 +61,6 @@ export const defaultStyle = css`
       color: #fafaf9;
       background-color: #282c35;
     }
-    code.language-text {
-      color: #fafaf9;
-    }
     .md {
       color: #c74c0a;
     }
