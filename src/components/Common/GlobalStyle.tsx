@@ -52,7 +52,7 @@ export const defaultStyle = css`
       border-radius: 10px;
     }
     .subtitle {
-      color: #fafaf9;
+      color: #ea5807;
     }
     .wrapper {
       background-color: #282c35;
@@ -63,6 +63,9 @@ export const defaultStyle = css`
     }
     code.language-text {
       color: #fafaf9;
+    }
+    .md {
+      color: #c74c0a;
     }
   }
 

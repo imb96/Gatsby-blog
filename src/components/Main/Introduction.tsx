@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
-
 type IntroductionProps = {
   profileImage?: IGatsbyImageData
 }

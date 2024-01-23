@@ -67,7 +67,7 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
       <Introduction />
       <PostHeadInfoWrapper className="postHead">
         <ButtonWrapper></ButtonWrapper>
-        <Title>{title}</Title>
+        <Title className="postTitle">{title}</Title>
         <PostData>
           <div style={{ fontSize: '14px', fontWeight: '400', opacity: '0.7' }}>
             {date}

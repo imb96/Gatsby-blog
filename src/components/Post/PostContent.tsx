@@ -153,7 +153,12 @@ const MarkdownRenderer = styled.div`
 `
 
 const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
+  return (
+    <MarkdownRenderer
+      dangerouslySetInnerHTML={{ __html: html }}
+      className="md"
+    />
+  )
 }
 
 export default PostContent
