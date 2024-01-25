@@ -10,7 +10,7 @@ thumbnail: './til.jpg'
 ### useState
 함수형 컴포넌트 내부에서 상태를 정의하고 관리할 수 있게 해주는 훅이다. 클로저를 사용함으로써 외부에 해당 값을 노출시키지 않고 오직 리액트에서만 쓸 수 있고 함수형 컴포넌트가 매번 실행되더라도 useState에서 이전의 값을 정확하게 꺼내 쓸 수 있다.
 
-```jsx
+```js
 const [count, setCount] = useState(0)
 return (
 	<>
@@ -29,7 +29,7 @@ useState의 인수로는 초기화 값을 넘겨주고 반환값으로 배열을
 리액트에서 리렌더링이 일어나는 상황은 여러가지가 있지만 대표적으로 state가 변할 때 리렌더링이 발생한다.
 만약 useState를 사용하지 않고 일반 변수의 값을 변화시키면 값은 변화하지만 리렌더링은 발생하지 않는다.
 
-```jsx
+```js
 let count = 0;
 function handleClick() {
 	count += 1;
@@ -47,7 +47,7 @@ return (
 
 useState는 **비동기**적으로 동작한다.
 
-```jsx
+```js
 const [count, setCount] = useState(0);
 
 function handleClick() {
@@ -71,7 +71,7 @@ useState는 비동기적으로 동작한다. 보다 정확히는 setState가 비
 
 일반적으로는 상태값을 초기화 하기위해 useState의 인수로 원시값을 사용하지만, useState의 인수로 특정한 값을 넘기는 함수를 인수로 넣어줄 수 있다. 이를 **게으른 초기화(lazy initialization)** 라고 한다. 
 
-```jsx
+```js
 // 일반적인 initialization
 const [count, setCount] = useState(
 	Number.parseInt(window.localStorage.getItem(key))
@@ -95,7 +95,7 @@ useEffect는 클래스형 컴포넌트의 라이프 사이클 메서드처럼 �
   
 렌더링을 할 때마다 의존성에 있는 값을 보면서 이 의존성의 값이 이전과 다른 게 하나라도 있으면 부수효과를 실행하는 함수이다. 
 
-```jsx
+```js
 const [count, setCount] = useState(0);
 
 function handleClick() {
@@ -161,7 +161,7 @@ useState와 동일하게 컴포넌트 내부에서 렌더링이 일어나도 변
 useRef는 컴포넌트가 렌더링될 때만 생성되며, 컴포넌트 인스턴스가 여러 개라도 각각 별개의 값을 바라본다.
 일반적으로 DOM에 접근할 때 사용한다.
 
-```jsx
+```js
 function RefComponent() {
 	const inputRef = useRef()
 
@@ -183,7 +183,7 @@ context란 props drilling을 해결하기 위해 등장한 개념이다. props �
 여기서 props drilling이란 컴포넌트가 여러번 중첩되어 있을 때, 부모 컴포넌트에서 자식 컴포넌트로 컴포넌트리에서 여러 단계를 거쳐야 하는 것을 의미한다. 여러 컴포넌트를 거치면서 데이터를 전달하는 것이기 때문에, 앱이 복잡해질수록 관리가 어려워질 수 있다.
 
 useContext는 다음과 같이 사용할 수 있다.
-```jsx
+```js
 const Context = createContext();
 
 function ParentComponent() {
@@ -224,7 +224,7 @@ useContext를 사용하면 provider에 의존성을 가진 셈이 되므로 아�
 ### useReducer
 useState Hook의 심화 버전으로 볼 수 있다. useState와 비슷한 형태를 띄지만 좀 더 복잡한 상태값을 미리 정의해 놓은 시나리오에 따라 관리할 수 있다.
 
-```jsx
+```js
 function reducer(state, action) {...}
 
 function Component() {
@@ -244,7 +244,7 @@ useReducer에서 사용되는 용어
 
 <br/>
 
-```tsx
+```ts
 import { useReducer } from "react";
 
 type State = {
@@ -314,7 +314,7 @@ ref는 useRef에서 반환한 객체로, 리액트 컴포넌트의 props인 ref�
 만약 ref를 상위 컴포넌트에서 하위 컴포넌트로 전달하고 싶다면 어떻게 해야할까?
 단순히 알고있는 ref와 props에 대한 상식으로 본다면 이렇게 할 수 있다.
 
-```jsx
+```js
 function ChildComponent({ ref }) {
 	useEffect(() => {
 		console.log(ref);
@@ -339,7 +339,7 @@ function ParentComponent() {
 리액트에서는 ref를 props로 쓸 수 없고 접근을 시도할 경우 undefined를 반환한다고 경고메시지를 출력한다.
 지정된 예약어인 ref 대신 다른 이름을 사용한다면 정상적으로 작동한다.
 
-```jsx
+```js
 function ChildComponent({ parentRef }) {
 	useEffect(() => {
 		console.log(parentRef);
@@ -361,7 +361,7 @@ function ParentComponent() {
 
 forwardRef는 위의 코드와 동일한 작업을 하는 리액트 API다. 그럼에도 forwardRef가 탄생한 배경은 ref를 전달하는 데 있어서 일관성을 제공하기 위해서다. 어떤 props 명으로 전달할지 모르고, 이에 대한 완전한 네이밍의 자유가 주어진 props보다는 forwardRef를 사용하면 좀 더 확실하게 ref를 전달할 것임을 예측할 수 있고, 또 사용하는 쪽에서도 확실히 안정적으로 받아서 사용할 수 있다.
 
-```jsx
+```js
 const ChildComponent = forwardRef((props, ref) => {
 	useEffect(() => {
 		console.log(ref);
@@ -385,7 +385,7 @@ function ParentComponent() {
 
 useImperativeHandle은 부모에게서 넘겨받은 ref를 원하는 대로 수정할 수 있는 훅이다.
 
-```jsx
+```js
 const Input = forwardRef((props, ref) => {
 	useImperativeHandle(
 		ref,
@@ -427,7 +427,7 @@ function App() {
 <br />
 
 
-```jsx
+```js
 function App() {
 	const [count, setCount] = useState(0);
 	
@@ -467,7 +467,7 @@ useLayoutEffect의 특징상 DOM은 계산됐지만 이것이 화면에 반영�
 ### useDebugValue
 일반적으로 프로덕션 웹 서비스에서 사용하는 훅이 아닌 개발하는 과정에서 사용되는데, 디버깅하고 싶은 정보를 이 훅에다 사용하면 리액트 개발자 도구에서 볼 수 있다.
 
-```jsx
+```js
 function useDate() {
 	const date = new Date();
 	useDebugValue(date, (date) => `현재 시간: ${date.toISOString()}`);
@@ -484,7 +484,7 @@ function useDate() {
 훅에 대한 정보는 리액트 어딘가에 있는 index와 같은 키를 기반으로 구현되어 있다. (객체 기반 링크드 리스트)
 즉, useState나 useEffect는 모두 순서에 영향을 받는다.
 
-```jsx
+```js
 function Component() {
 	const [count, setCount] = useState(0)
 	const [required, setRequired] = useState(false)
