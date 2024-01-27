@@ -30,24 +30,16 @@ const SubTitle = styled.div`
 
 const Block = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `
 
 const Introduction: FunctionComponent<IntroductionProps> = function () {
   return (
     <Wrapper className="wrapper">
       <Block>
-        <div
-          style={{
-            display: 'flex',
-            gap: '14px',
-            alignItems: 'center',
-          }}
-        >
-          <SubTitle className="subtitle">
-            <Link to={'/'}>Minjae's Blog</Link>
-          </SubTitle>
-        </div>
+        <SubTitle className="subtitle">
+          <Link to={'/'}>Minjae's Blog</Link>
+        </SubTitle>
       </Block>
       <Link
         to={'/info'}
