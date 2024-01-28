@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 30px 0 10px 0;
   justify-content: space-between;
+  color: #ea5807;
   @media (max-width: 768px) {
     width: 90%;
   }
@@ -21,7 +22,6 @@ const Wrapper = styled.div`
 const SubTitle = styled.div`
   font-size: 48px;
   font-weight: 900;
-  color: #ea5807;
 
   @media (max-width: 768px) {
     font-size: 24px;
@@ -41,11 +41,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
           <Link to={'/'}>Minjae's Blog</Link>
         </SubTitle>
       </Block>
-      <Link
-        to={'/info'}
-        className="menu"
-        style={{ color: '#ea5807', fontWeight: '700' }}
-      >
+      <Link to={'/info'} className="menu" style={{ fontWeight: '700' }}>
         About
       </Link>
     </Wrapper>

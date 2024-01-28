@@ -12,8 +12,8 @@ export const defaultStyle = css`
   }
 
   #___gatsby {
-    height: 100vh;
     background-color: #fafaf9;
+    height: 100vh;
   }
 
   footer {
@@ -21,48 +21,54 @@ export const defaultStyle = css`
   }
 
   .dark {
+    #___gatsby {
+      background: #1b1917;
+    }
     -webkit-font-smoothing: antialiased;
-    background: #282c35;
+    background: #1b1917;
     color: #fafaf9;
     body {
-      background: #282c35;
+      background: #1b1917;
     }
     main {
-      background: #282c35;
+      background: #1b1917;
     }
     footer {
-      background: #282c35;
+      background: #1b1917;
       color: #fafaf9;
     }
     .bg {
-      background: #282c35;
+      background: #1b1917;
       color: #fafaf9;
     }
     .postHead {
       color: #fafaf9;
     }
     p {
-      color: #fafaf9;
+      color: #d5d3d1;
     }
     .postTitle {
       color: #fafaf9;
     }
     .postItemContent {
-      background-color: #161b22;
+      background-color: #292524;
       border-radius: 10px;
     }
     .subtitle {
-      color: #ea5807;
+      color: #fb923c;
     }
     .wrapper {
-      background-color: #282c35;
+      background-color: #1b1917;
     }
     .info-wrapper {
       color: #fafaf9;
-      background-color: #282c35;
+      background-color: #1b1917;
     }
     .md {
-      color: #c74c0a;
+      color: #fb923c;
+    }
+    .menu {
+      color: #fb923c;
     }
   }
 

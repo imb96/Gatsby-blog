@@ -9,13 +9,13 @@ type PostItemProps = PostFrontmatterType & { link: string }
 const PostItemWrapper = styled(Link)`
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  background-color: #fff;
   transition: 0.3s box-shadow;
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   }
 `
 
@@ -55,7 +55,6 @@ const Category = styled.div`
 `
 
 const CategoryItem = styled.div`
-  background-color: #fff;
   border: 1px solid hsla(20, 6%, 90%, 0.7);
   margin: 0 -1px;
   padding: 0rem 0.5rem 0.25rem 0.5rem;

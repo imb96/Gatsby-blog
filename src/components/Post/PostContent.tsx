@@ -21,7 +21,7 @@ const MarkdownRenderer = styled.div`
 
   // Apply Padding Attribute to All Elements
   p {
-    padding: 16px 0;
+    padding: 10px 0;
   }
 
   // Adjust Heading Element Style
@@ -126,7 +126,7 @@ const MarkdownRenderer = styled.div`
   // Markdown Responsive Design
   @media (max-width: 768px) {
     width: 100%;
-    padding: 80px 20px;
+    padding: 0 20px;
     line-height: 1.6;
     font-size: 14px;
 

@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
-import Introduction from 'components/Main/Introduction'
 
 const Title = styled.div`
   display: -webkit-box;
@@ -64,7 +63,6 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
 }) {
   return (
     <>
-      <Introduction />
       <PostHeadInfoWrapper className="postHead">
         <ButtonWrapper></ButtonWrapper>
         <Title className="postTitle">{title}</Title>
