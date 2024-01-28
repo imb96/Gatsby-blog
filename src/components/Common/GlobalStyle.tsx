@@ -12,7 +12,7 @@ export const defaultStyle = css`
   }
 
   #___gatsby {
-    height: 100%;
+    height: 100vh;
     background-color: #fafaf9;
   }
 
