@@ -52,6 +52,12 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
         <LinkWrapper to="http://imb96.notion.site/7339b6aa7021447cbe48ceb78d851414">
           Resume
         </LinkWrapper>
+        <span>
+          I am a Front-end engineer based in South Korea, who loves JavaScript.{' '}
+          <br />
+          This blog serves as a space to document my thoughts <br />
+          and learning as I strive to become a skilled web developer.
+        </span>
       </div>
       <Footer />
     </div>
