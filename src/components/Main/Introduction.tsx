@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import DarkModeButton from 'components/Common/DarkTheme'
 type IntroductionProps = {
   profileImage?: IGatsbyImageData
 }
@@ -31,16 +32,21 @@ const Block = styled.div`
 
 const Introduction: FunctionComponent<IntroductionProps> = function () {
   return (
-    <Wrapper className="wrapper">
-      <Block>
-        <SubTitle className="subtitle">
-          <Link to={'/'}>Minjae's Blog</Link>
-        </SubTitle>
-      </Block>
-      <Link to={'/info'} className="menu" style={{ fontWeight: '700' }}>
-        About
-      </Link>
-    </Wrapper>
+    <>
+      <Wrapper className="wrapper">
+        <Block>
+          <SubTitle className="subtitle">
+            <Link to={'/'}>Minjae's Blog</Link>
+          </SubTitle>
+        </Block>
+        <div style={{ display: 'flex', gap: '2rem' }}>
+          <Link to={'/info'} className="menu" style={{ fontWeight: '700' }}>
+            About
+          </Link>
+          <DarkModeButton />
+        </div>
+      </Wrapper>
+    </>
   )
 }
 
