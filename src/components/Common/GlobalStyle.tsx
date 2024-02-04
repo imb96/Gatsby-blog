@@ -70,6 +70,10 @@ export const defaultStyle = css`
     .menu {
       color: #fb923c;
     }
+    .navigation {
+      color: #fafaf978;
+      border-bottom: 1px dotted #fafaf978;
+    }
   }
 
   a,

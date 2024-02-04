@@ -1,44 +1,43 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
-type IntroductionProps = {
-  profileImage?: IGatsbyImageData
-}
 
 const Wrapper = styled.div`
   display: flex;
   width: 760px;
   align-items: end;
   margin: 0 auto;
-  padding: 30px 0 10px 0;
+  padding: 1rem 0 0.5rem 0;
   justify-content: space-between;
-  color: #ea5807;
+  color: #00000072;
+  border-bottom: 1px dotted #00000072;
   @media (max-width: 768px) {
     width: 90%;
   }
 `
 
 const SubTitle = styled.div`
-  font-size: 3rem;
+  font-size: 1.2rem;
   font-weight: 900;
 `
+
+const About = styled.div``
 
 const Block = styled.div`
   display: flex;
   justify-content: space-around;
 `
 
-const Introduction: FunctionComponent<IntroductionProps> = function () {
+const Introduction: FunctionComponent = function () {
   return (
-    <Wrapper className="wrapper">
+    <Wrapper className="navigation">
       <Block>
-        <SubTitle className="subtitle">
+        <SubTitle>
           <Link to={'/'}>Minjae's Blog</Link>
         </SubTitle>
       </Block>
-      <Link to={'/info'} className="menu" style={{ fontWeight: '700' }}>
-        About
+      <Link to={'/info'} style={{ fontWeight: '700' }}>
+        <About>About</About>
       </Link>
     </Wrapper>
   )

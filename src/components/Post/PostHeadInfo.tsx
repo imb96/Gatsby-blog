@@ -1,16 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
+import Navigation from './Navigation'
 
 const Title = styled.div`
   display: -webkit-box;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 900;
   padding-top: 30px;
   color: #45403d;
-
-  @media (max-width: 768px) {
-    font-size: 30px;
-  }
 `
 
 const PostData = styled.div`
@@ -41,7 +38,7 @@ const PostHeadInfoWrapper = styled.div`
   width: 760px;
   height: 100%;
   margin: 0 auto;
-  padding: 60px 0;
+  /* padding: 60px 0; */
   color: black;
 
   @media (max-width: 768px) {
@@ -63,8 +60,8 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
 }) {
   return (
     <>
+      <Navigation />
       <PostHeadInfoWrapper className="postHead">
-        <ButtonWrapper></ButtonWrapper>
         <Title className="postTitle">{title}</Title>
         <PostData>
           <div style={{ fontSize: '14px', fontWeight: '400', opacity: '0.7' }}>

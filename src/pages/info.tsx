@@ -3,8 +3,8 @@ import { Link, graphql } from 'gatsby'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { defaultStyle } from 'components/Common/GlobalStyle'
-import Introduction from 'components/Main/Introduction'
 import Footer from 'components/Common/Footer'
+import Navigation from 'components/Post/Navigation'
 type InfoPageProps = {
   data: {
     site: {
@@ -36,7 +36,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
   return (
     <div className="info-wrapper" style={{ height: '100vh' }}>
       <Global styles={defaultStyle} />
-      <Introduction />
+      <Navigation />
       <div
         style={{
           display: 'flex',
@@ -47,7 +47,6 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
           gap: '50px',
         }}
       >
-        {title}
         <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
         <LinkWrapper to="http://imb96.notion.site/7339b6aa7021447cbe48ceb78d851414">
           Resume
