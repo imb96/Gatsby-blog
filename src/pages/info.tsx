@@ -47,10 +47,20 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
           gap: '50px',
         }}
       >
-        <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
-        <LinkWrapper to="http://imb96.notion.site/7339b6aa7021447cbe48ceb78d851414">
-          Resume
-        </LinkWrapper>
+        <div
+          style={{
+            display: 'flex',
+            gap: '2rem',
+          }}
+        >
+          <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
+          <LinkWrapper to="https://www.linkedin.com/in/%EB%AF%BC%EC%9E%AC-%EA%B9%80-0415a1246/">
+            Linkedin
+          </LinkWrapper>
+          <LinkWrapper to="http://imb96.notion.site/7339b6aa7021447cbe48ceb78d851414">
+            Resume
+          </LinkWrapper>
+        </div>
         <span>
           I am a Front-end engineer based in South Korea, who loves JavaScript.{' '}
           <br />
