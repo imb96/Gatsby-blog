@@ -9,21 +9,20 @@ type PostItemProps = PostFrontmatterType & { link: string }
 const PostItemWrapper = styled(Link)`
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
-  background-color: #fff;
-  transition: 0.3s box-shadow;
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    text-decoration-line: underline;
   }
 `
 
 const PostItemContent = styled.div`
   flex: 1;
   display: flex;
-  flex-direction: column;
-  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #c6c4c4;
 `
 
 const Title = styled.div`
@@ -79,7 +78,7 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   title,
   date,
   categories,
-  summary,
+  // summary,
   // thumbnail: {
   //   childImageSharp: { gatsbyImageData },
   // },
@@ -90,12 +89,6 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
       <PostItemContent className="postItemContent">
         <Title className="postTitle">{title}</Title>
         <Date>{date}</Date>
-        <Category>
-          {categories.map(item => (
-            <CategoryItem key={item}>{item}</CategoryItem>
-          ))}
-        </Category>
-        <Summary>{summary}</Summary>
       </PostItemContent>
     </PostItemWrapper>
   )
