@@ -127,7 +127,7 @@ export const getPostList = graphql`
           frontmatter {
             title
             summary
-            date(formatString: "MMMM d, yyyy")
+            date
             categories
             thumbnail {
               childImageSharp {

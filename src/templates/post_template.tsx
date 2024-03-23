@@ -64,7 +64,7 @@ export const queryMarkdownDataBySlug = graphql`
           frontmatter {
             title
             summary
-            date(formatString: "MMMM d, yyyy")
+            date
             categories
             thumbnail {
               childImageSharp {
