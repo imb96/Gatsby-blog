@@ -22,23 +22,23 @@ export const defaultStyle = css`
 
   .dark {
     #___gatsby {
-      background: #1b1917;
+      background: #202020;
     }
     -webkit-font-smoothing: antialiased;
-    background: #1b1917;
+    background: #202020;
     color: #fafaf9;
     body {
-      background: #1b1917;
+      background: #202020;
     }
     main {
-      background: #1b1917;
+      background: #202020;
     }
     footer {
-      background: #1b1917;
+      background: #202020;
       color: #fafaf9;
     }
     .bg {
-      background: #1b1917;
+      background: #202020;
       color: #fafaf9;
     }
     .postHead {
@@ -50,29 +50,32 @@ export const defaultStyle = css`
     .postTitle {
       color: #fafaf9;
     }
-    .postItemContent {
+    /* .postItemContent {
       background-color: #292524;
       border-radius: 10px;
-    }
+    } */
     .subtitle {
-      color: #fb923c;
+      color: #fafaf9;
     }
     .wrapper {
-      background-color: #1b1917;
+      background-color: #202020;
     }
     .info-wrapper {
       color: #fafaf9;
-      background-color: #1b1917;
+      background-color: #202020;
     }
     .md {
-      color: #fb923c;
+      color: #fafaf9;
     }
     .menu {
-      color: #fb923c;
+      color: #fafaf9;
     }
     .navigation {
       color: #fafaf978;
       border-bottom: 1px dotted #fafaf978;
+    }
+    .badge {
+      fill: #fafaf9;
     }
   }
 
