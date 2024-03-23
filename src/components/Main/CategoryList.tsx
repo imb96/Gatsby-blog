@@ -37,7 +37,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<CategoryItemProps>`
   font-size: 16px;
-  color: ${({ active }) => (active ? '#ff8827' : 'gray')};
+  font-weight: ${({ active }) => (active ? '900' : '300')};
   cursor: pointer;
 
   &:last-of-type {
@@ -49,7 +49,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 
   :hover {
-    color: #ff9843;
+    text-decoration-line: underline;
   }
 `
 
