@@ -78,10 +78,6 @@ const MarkdownRenderer = styled.div`
     text-decoration: underline;
   }
 
-  strong {
-    color: #c74c0a;
-  }
-
   // Adjust Code Style
   pre[class*='language-'] {
     border-radius: 12px;
