@@ -5,6 +5,8 @@ categories: ['error', 'next']
 summary: 'Next.js에서 CORS 대응하기'
 thumbnail: './til.jpg'
 ---
+![](../static/cors.webp)
+
 Next.js를 사용해서 개인 프로젝트를 하면서 여러 open api를 사용하며 CORS 에러들을 만났고 해결했던 방법을 기록하려고 한다.
 
 ![](../static/cors.png)
