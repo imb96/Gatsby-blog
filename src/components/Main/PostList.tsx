@@ -29,7 +29,7 @@ export type PostType = {
 const PostListWrapper = styled.div`
   display: grid;
   grid-gap: 20px;
-  width: 760px;
+  width: 620px;
   margin: 0 auto;
   padding: 50px 0 100px;
 

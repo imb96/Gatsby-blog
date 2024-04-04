@@ -8,7 +8,7 @@ type IntroductionProps = {
 
 const Wrapper = styled.div`
   display: flex;
-  width: 760px;
+  width: 620px;
   align-items: end;
   margin: 0 auto;
   padding: 30px 0 10px 0;

@@ -4,7 +4,7 @@ import Navigation from './Navigation'
 
 const Title = styled.div`
   display: -webkit-box;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 900;
   padding-top: 30px;
   color: #45403d;
@@ -35,7 +35,7 @@ export type PostHeadInfoProps = {
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 760px;
+  width: 620px;
   height: 100%;
   margin: 0 auto;
   padding-bottom: 80px;
