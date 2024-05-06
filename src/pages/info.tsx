@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { defaultStyle } from 'components/Common/GlobalStyle'
-import Footer from 'components/Common/Footer'
 import Navigation from 'components/Post/Navigation'
 type InfoPageProps = {
   data: {
@@ -19,11 +18,21 @@ type InfoPageProps = {
 
 const LinkWrapper = styled(Link)`
   cursor: pointer;
-  font-size: 32px;
+  font-size: 16px;
+  text-decoration: underline;
 
   &:hover {
-    color: #ff9843;
+    text-decoration: underline;
   }
+`
+
+const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 50px;
 `
 
 const InfoPage: FunctionComponent<InfoPageProps> = function ({
@@ -37,38 +46,30 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
     <div className="info-wrapper" style={{ height: '100vh' }}>
       <Global styles={defaultStyle} />
       <Navigation />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '50px',
-          gap: '50px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            gap: '2rem',
-          }}
-        >
-          <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
-          <LinkWrapper to="https://www.linkedin.com/in/%EB%AF%BC%EC%9E%AC-%EA%B9%80-0415a1246/">
-            Linkedin
-          </LinkWrapper>
-          <LinkWrapper to="http://imb96.notion.site/7339b6aa7021447cbe48ceb78d851414">
-            Resume
-          </LinkWrapper>
-        </div>
+      <InfoWrapper>
         <span>
-          I am a Front-end engineer based in South Korea, who loves JavaScript.{' '}
-          <br />
-          This blog serves as a space to document my thoughts <br />
-          and learning as I strive to become a skilled web developer.
+          <h2>
+            안녕하세요! 프론트엔드 개발자{' '}
+            <span style={{ color: '#ff9843' }}>김민재</span> 입니다.
+          </h2>
+          <div
+            style={{
+              display: 'flex',
+              paddingTop: '1rem',
+              gap: '1rem',
+            }}
+          >
+            <LinkWrapper to="https://imb96.notion.site/CV-5f3080b82b7049b4823cd9ce36fb562a">
+              CV
+            </LinkWrapper>
+            <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
+            <LinkWrapper to="https://www.linkedin.com/in/%EB%AF%BC%EC%9E%AC-%EA%B9%80-0415a1246/">
+              Linkedin
+            </LinkWrapper>
+            <span>💌 kimminje7810@gmail.com</span>
+          </div>
         </span>
-      </div>
-      <Footer />
+      </InfoWrapper>
     </div>
   )
 }
