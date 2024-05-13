@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 const SubTitle = styled.div`
   font-size: 1.2rem;
   font-weight: 900;
+  color: #6210cc;
 `
 
 const Block = styled.div`

@@ -50,7 +50,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
         <span>
           <h2>
             안녕하세요! 프론트엔드 개발자{' '}
-            <span style={{ color: '#ff9843' }}>김민재</span> 입니다.
+            <span style={{ color: '#6210cc' }}>김민재</span> 입니다.
           </h2>
           <div
             style={{

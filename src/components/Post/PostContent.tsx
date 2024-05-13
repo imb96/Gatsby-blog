@@ -74,7 +74,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Link Element Style
   a {
     font-weight: bold;
-    color: #ff9843;
+    color: #6210cc;
     text-decoration: underline;
   }
 
@@ -108,13 +108,13 @@ const MarkdownRenderer = styled.div`
     margin: 0 1px;
     padding: 0.25rem 0.5rem;
     border-radius: 9999px;
-    color: #c74c0a;
+    color: #6210cc;
   }
 
   blockquote {
     margin-top: 30px;
     padding: 0 15px;
-    border-left: 3px solid #ff9843;
+    border-left: 3px solid #6210cc;
     font-weight: 500;
     font-style: italic;
   }

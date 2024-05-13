@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 30px 0 10px 0;
   justify-content: space-between;
-  color: #ea5807;
+  color: #6210cc;
   @media (max-width: 768px) {
     width: 90%;
   }
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 const SubTitle = styled.div`
   font-size: 2rem;
   font-weight: 900;
-  color: black;
+  color: #6210cc;
 `
 
 const Block = styled.div`
