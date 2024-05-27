@@ -60,7 +60,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
             }}
           >
             <LinkWrapper to="https://imb96.notion.site/db986aacffd94996ba9ca8dd63dff8c5">
-              CV
+              Resume
             </LinkWrapper>
             <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
             <LinkWrapper to="https://www.linkedin.com/in/%EB%AF%BC%EC%9E%AC-%EA%B9%80-0415a1246/">
