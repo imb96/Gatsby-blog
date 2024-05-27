@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.7"/><meta data-react-helmet="true" name="description" content="Mac 설정"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="Mac 개발환경 설정, 앱, 툴"/><meta data-react-helmet="true" property="og:description" content="Mac 설정"/><meta data-react-helmet="true" property="og:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="Mac 개발환경 설정, 앱, 툴"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="Mac 개발환경 설정, 앱, 툴"/><meta data-react-helmet="true" name="twitter:description" content="Mac 설정"/><meta data-react-helmet="true" name="twitter:image" content="/static/2df6bd11efdc8de0ac54d805ca1ba1ab/til.jpg"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><meta data-react-helmet="true" name="google-site-verification" content="2iQCD8mbMmwhEhQnrYibeMnJCMHXLcP8DgGNFr6cIcM"/><meta data-react-helmet="true" name="naver-site-verification" content="85439973861206f261be8e209d26b2215ded88be"/><style data-href="/styles.811b76fa2f764e4356d7.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><title data-react-helmet="true">Mac 개발환경 설정, 앱, 툴</title><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="canonical" href="https://imb96.github.io/Mac/" data-baseprotocol="https:" data-basehost="imb96.github.io"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 1dxmf2s">.css-1dxmf2s{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;background:#fafaf9;}</style><main class="css-1dxmf2s e1strnqo1"><style data-emotion="css-global mlpmr1">@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif;}#___gatsby{background-color:#fafaf9;height:100vh;}footer{color:#262626;}.dark{-webkit-font-smoothing:antialiased;background:#202020;color:#fafaf9;}.dark #___gatsby{background:#202020;}.dark body{background:#202020;}.dark main{background:#202020;}.dark footer{background:#202020;color:#fafaf9;}.dark .bg{background:#202020;color:#fafaf9;}.dark .postHead{color:#fafaf9;}.dark p{color:#d5d3d1;}.dark .postTitle{color:#fafaf9;}.dark .subtitle{color:#fafaf9;}.dark .wrapper{background-color:#202020;}.dark .info-wrapper{color:#fafaf9;background-color:#202020;}.dark .md{color:#fafaf9;}.dark .menu{color:#fafaf9;}.dark .navigation{color:#fafaf978;border-bottom:1px dotted #fafaf978;}.dark .badge{fill:#fafaf9;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css eob116">.css-eob116{width:48px;height:48px;position:fixed;bottom:10%;right:12%;background-color:#6210cc;border:none;border-radius:50%;cursor:pointer;z-index:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);opacity:0;-webkit-transition:opacity 0.3s ease-in-out;transition:opacity 0.3s ease-in-out;}</style><button class="css-eob116 e1strnqo0"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" style="fill:#fff"></path></svg></button><style data-emotion="css pw7jst">.css-pw7jst{position:relative;width:100%;}</style><div class="css-pw7jst e1opi4mu0"><style data-emotion="css 2x7h4f">.css-2x7h4f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:620px;-webkit-align-items:end;-webkit-box-align:end;-ms-flex-align:end;align-items:end;margin:0 auto;padding:1rem 0 0.5rem 0;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;color:#00000072;border-bottom:1px dotted #00000072;}@media (max-width: 768px){.css-2x7h4f{width:90%;}}</style><div class="navigation css-2x7h4f e113i1yz3"><style data-emotion="css sw0n2m">.css-sw0n2m{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:space-around;-ms-flex-pack:space-around;-webkit-justify-content:space-around;justify-content:space-around;}</style><div class="css-sw0n2m e113i1yz1"><style data-emotion="css 1p9gllf">.css-1p9gllf{font-size:1.2rem;font-weight:900;color:#6210cc;}</style><div class="css-1p9gllf e113i1yz2"><a href="/">Minjae&#x27;s Blog</a></div></div><div style="display:flex;gap:1rem"><a href="/info"><style data-emotion="css 1a38sei">.css-1a38sei{border:none;background-color:inherit;width:72px;height:24px;font-size:16px;cursor:pointer;}.css-1a38sei:hover{-webkit-text-decoration:underline;text-decoration:underline;}</style><button class="css-1a38sei e113i1yz0">About</button></a></div></div><style data-emotion="css 1xcghsf">.css-1xcghsf{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:620px;height:100%;margin:0 auto;padding-bottom:80px;color:black;}@media (max-width: 768px){.css-1xcghsf{width:100%;padding:40px 20px;}}</style><div class="postHead css-1xcghsf e1st1jau1"><style data-emotion="css a564z0">.css-a564z0{display:-webkit-box;font-size:2.5rem;font-weight:900;padding-top:30px;color:#45403d;}</style><div class="postTitle css-a564z0 e1st1jau3">Mac 개발환경 설정, 앱, 툴</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau2"><div style="font-size:14px;font-weight:400;opacity:0.7">2024-05-27</div></div></div></div><style data-emotion="css 1dblksl">.css-1dblksl{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:620px;margin:0 auto;padding:0 0;line-height:1.8;font-size:14px;font-weight:300;color:#45403d;}.css-1dblksl p{padding:10px 0;}.css-1dblksl h1,.css-1dblksl h2,.css-1dblksl h3{font-weight:700;margin-bottom:10px;}.css-1dblksl *+h1,.css-1dblksl *+h2,.css-1dblksl *+h3{margin-top:10px;}.css-1dblksl hr+h1,.css-1dblksl hr+h2,.css-1dblksl hr+h3{margin-top:0;}.css-1dblksl h1{font-size:35px;}.css-1dblksl h2{font-size:30px;}.css-1dblksl h3{font-size:25px;}.css-1dblksl ol,.css-1dblksl ul{margin-left:20px;padding:0px 0;}.css-1dblksl hr{border:1px solid #8f8f8f;margin:50px 0;}.css-1dblksl a{font-weight:bold;color:#6210cc;-webkit-text-decoration:underline;text-decoration:underline;}.css-1dblksl pre[class*='language-']{border-radius:12px;overflow:auto;background:#232936;}.css-1dblksl pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-1dblksl code[class*='language-']{font-size:14px;background:inherit;line-height:1.4;font-weight:400;letter-spacing:1px;word-spacing:0.5px;}.css-1dblksl pre[class*='language-'] code[class*='language-']{background:inherit;}.css-1dblksl code[class*='text']{background-color:#fff;border:1px solid hsla(20, 6%, 90%, 0.7);margin:0 1px;padding:0.25rem 0.5rem;border-radius:9999px;color:#6210cc;}.css-1dblksl blockquote{margin-top:30px;padding:0 15px;border-left:3px solid #6210cc;font-weight:500;font-style:italic;}@media (max-width: 768px){.css-1dblksl{width:100%;padding:0 20px;line-height:1.6;font-size:14px;}.css-1dblksl h1{font-size:23px;}.css-1dblksl h2{font-size:20px;}.css-1dblksl h3{font-size:17px;}.css-1dblksl img{width:100%;}.css-1dblksl hr{margin:50px 0;}}</style><div class="md css-1dblksl e1ijh0y10"><blockquote>
+<p>M1 Macbook pro 에서 사용 중인 개발 환경, 자주 사용하는 앱과 서비스들을 기록</p>
+</blockquote>
+<br />
+<h3>[VSCode 확장]</h3>
+<ul>
+<li>Auto Rename Tag</li>
+<li>Bracket Pair Colorization Toggler</li>
+<li>Code Runner</li>
+<li>Code Spell Checker</li>
+<li>Codeium</li>
+<li>Color Highlight</li>
+<li>Dracula Official</li>
+<li>Error Lens</li>
+<li>ESLint</li>
+<li>Git Graph</li>
+<li>Git History</li>
+<li>GitLens</li>
+<li>Korean Language Pack</li>
+<li>Live Server</li>
+<li>Live Share</li>
+<li>PowerShell</li>
+<li>Prettier</li>
+<li>Pretty TypeScript Errors</li>
+<li>Python</li>
+<li>Todo Tree</li>
+</ul>
+<h3>[브라우저 확장]</h3>
+<ul>
+<li>Google 번역</li>
+<li>Image Downloader</li>
+<li>React Developer Tools</li>
+<li>lighthouse</li>
+</ul>
+<h3>[개발]</h3>
+<ul>
+<li><strong>VScode</strong></li>
+<li><strong>iterm2</strong></li>
+<li>oh my zsh</li>
+<li>warp</li>
+<li>GitKraken</li>
+<li><strong>Postman</strong></li>
+<li>nvm</li>
+</ul>
+<h3>[디자인, 그림]</h3>
+<ul>
+<li>Figma</li>
+<li>Excalidraw</li>
+<li>tldraw</li>
+<li>draw.io</li>
+<li>Freeform</li>
+<li>ColorPicker</li>
+<li>Giphy Capture</li>
+<li>Screen brush</li>
+</ul>
+<h3>[노트, 도서]</h3>
+<ul>
+<li>Heynote</li>
+<li>Obsidian</li>
+<li>Notion</li>
+<li>Yes24 ebook crema</li>
+<li>Aladin ebook</li>
+</ul>
+<h3>[기타]</h3>
+<ul>
+<li>Aldente</li>
+<li>RunningCat</li>
+<li>eul</li>
+<li><strong>Raycast</strong></li>
+<li>Rectangle</li>
+<li>kakao talk</li>
+<li>zoom.us</li>
+<li><strong>Slack</strong></li>
+<li>Discord</li>
+<li><strong>Arc</strong></li>
+<li>Brave</li>
+<li>ChatGPT</li>
+</ul></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Mac/";window.___webpackCompilationHash="5a981bda34daccc14ce1";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c857dff8cba8f79dec61.js"],"app":["/app-599a3ea4960bcf0e4975.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-d82cdeaaddfe8ac76fd3.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-32a965f23b6751480320.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-88155cdb6658689f8cc8.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-48dcf92279229e70be8c.js"]};/*]]>*/</script><script src="/polyfill-c857dff8cba8f79dec61.js" nomodule=""></script><script src="/app-599a3ea4960bcf0e4975.js" async=""></script><script src="/framework-6a525285796fb83f2864.js" async=""></script><script src="/webpack-runtime-187dd6dac16b8036c89a.js" async=""></script></body></html>
