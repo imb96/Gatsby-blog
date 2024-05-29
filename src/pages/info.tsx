@@ -59,7 +59,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
               gap: '1rem',
             }}
           >
-            <LinkWrapper to="https://www.rallit.com/resumes/24900@kimminje7810/%EA%B9%80%EB%AF%BC%EC%9E%AC?theme=MINT_SORBET">
+            <LinkWrapper to="https://imb96.notion.site/db986aacffd94996ba9ca8dd63dff8c5?pvs=74">
               Resume
             </LinkWrapper>
             <LinkWrapper to="https://github.com/imb96">GitHub</LinkWrapper>
