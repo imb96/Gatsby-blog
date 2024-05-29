@@ -45,6 +45,7 @@ thumbnail: './til.jpg'
 - GitKraken
 - **Postman**
 - nvm
+- chatGPT desktop (https://persistent.oaistatic.com/sidekick/public/ChatGPT_Desktop_public_latest.dmg)
 
 ### [디자인, 그림]
 - Figma
