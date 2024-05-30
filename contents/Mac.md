@@ -9,6 +9,11 @@ thumbnail: './til.jpg'
 > M1 Macbook pro 에서 사용 중인 개발 환경, 자주 사용하는 앱과 서비스들을 기록
 <br />
 
+### [Editor 설정]
+- Font: Jetbrain Mono
+- FontSize: 15
+- 줄간격: 1
+
 ### [VSCode 확장]
 - Auto Rename Tag
 - Bracket Pair Colorization Toggler
