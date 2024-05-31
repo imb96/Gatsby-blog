@@ -9,12 +9,18 @@ thumbnail: './til.jpg'
 > M1 Macbook pro 에서 사용 중인 개발 환경, 자주 사용하는 앱과 서비스들을 기록
 <br />
 
-### [Editor 설정]
+### [Editor 공통 설정]
 - Font: Jetbrain Mono
 - FontSize: 15
 - 줄간격: 1
 
-### [VSCode 확장]
+### [WebStorm 설정]
+- 프로젝트 -> 미리보기 탭 활성화
+- GitToolBox
+- Atom Material Icon
+- Rainbow Bracket
+
+### [VSCode 설정]
 - Auto Rename Tag
 - Bracket Pair Colorization Toggler
 - Code Runner
@@ -44,6 +50,7 @@ thumbnail: './til.jpg'
 
 ### [개발]
 - **VScode**
+- WebStorm
 - **iterm2**
 - oh my zsh
 - warp
