@@ -15,7 +15,12 @@ thumbnail: './til.jpg'
 - 줄간격: 1
 
 ### [WebStorm 설정]
-- 프로젝트 -> 미리보기 탭 활성화
+- 프로젝트 > 미리보기 탭 활성화
+- 설정 > 도구 > 저장 시 액션
+  - 코드 서식 다시 지정
+  - import 문 최적화
+- 설정 > 에디터 > 일반
+  - 모든 저장된 파일이 줄 바꿈으로 끝나도록 함
 - GitToolBox
 - Atom Material Icon
 - Rainbow Bracket
@@ -32,7 +37,7 @@ thumbnail: './til.jpg'
 - ESLint
 - Git Graph
 - Git History
-- GitLens
+- GitLens****
 - Korean Language Pack
 - Live Server
 - Live Share
