@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 const SubTitle = styled.div`
   font-size: 2rem;
   font-weight: 900;
-  color: #6210cc;
+  color: #282728;
 `
 
 const Block = styled.div`
@@ -36,6 +36,7 @@ const AboutButton = styled.button`
   width: 72px;
   height: 24px;
   font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
 
   &:hover {
