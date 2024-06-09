@@ -12,7 +12,7 @@ export const defaultStyle = css`
   }
 
   #___gatsby {
-    background-color: #fafaf9;
+    background-color: #fcfefb;
     height: 100vh;
   }
 
@@ -26,7 +26,7 @@ export const defaultStyle = css`
     }
     -webkit-font-smoothing: antialiased;
     background: #202020;
-    color: #fafaf9;
+    color: #fcfefb;
     body {
       background: #202020;
     }
@@ -35,47 +35,47 @@ export const defaultStyle = css`
     }
     footer {
       background: #202020;
-      color: #fafaf9;
+      color: #fcfefb;
     }
     .bg {
       background: #202020;
-      color: #fafaf9;
+      color: #fcfefb;
     }
     .postHead {
-      color: #fafaf9;
+      color: #fcfefb;
     }
     p {
       color: #d5d3d1;
     }
     .postTitle {
-      color: #fafaf9;
+      color: #fcfefb;
     }
     /* .postItemContent {
       background-color: #292524;
       border-radius: 10px;
     } */
     .subtitle {
-      color: #fafaf9;
+      color: #fcfefb;
     }
     .wrapper {
       background-color: #202020;
     }
     .info-wrapper {
-      color: #fafaf9;
+      color: #fcfefb;
       background-color: #202020;
     }
     .md {
-      color: #fafaf9;
+      color: #fcfefb;
     }
     .menu {
-      color: #fafaf9;
+      color: #fcfefb;
     }
     .navigation {
-      color: #fafaf978;
-      border-bottom: 1px dotted #fafaf978;
+      color: #fcfefb78;
+      border-bottom: 1px dotted #fcfefb78;
     }
     .badge {
-      fill: #fafaf9;
+      fill: #fcfefb;
     }
   }
 
