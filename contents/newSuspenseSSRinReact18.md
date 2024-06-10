@@ -1,7 +1,7 @@
 ---
 date: '2023-10-10'
 title: 'New Suspense SSR in React 18'
-categories: ['react']
+categories: ['React']
 summary: 'New Suspense SSR in React 18'
 thumbnail: './til.jpg'
 ---

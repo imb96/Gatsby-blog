@@ -1,7 +1,7 @@
 ---
 date: '2024-01-19'
 title: 'CSR SSR'
-categories: ['fe']
+categories: ['FE', 'React']
 summary: 'CSR과 SSR, SPA와 MPA'
 thumbnail: './til.jpg'
 ---

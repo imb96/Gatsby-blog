@@ -1,7 +1,7 @@
 ---
 date: '2024-05-27'
 title: 'Mac 개발환경 설정, 앱, 툴'
-categories: ['person']
+categories: ['Person']
 summary: 'Mac 설정'
 thumbnail: './til.jpg'
 ---

@@ -1,7 +1,7 @@
 ---
 date: '2024-01-16'
 title: 'React Memoization'
-categories: ['react']
+categories: ['React']
 summary: 'react 성능 최적화를 위한 메모이제이션 방법'
 thumbnail: './til.jpg'
 ---

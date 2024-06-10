@@ -1,7 +1,7 @@
 ---
 date: '2024-01-20'
 title: 'webpack 알아보기'
-categories: ['webpack', 'js']
+categories: ['JS']
 summary: 'webpack, code splitting, tree-shaking'
 thumbnail: './til.jpg'
 ---

@@ -1,7 +1,7 @@
 ---
 date: '2022-11-22'
 title: '우테코 프리코스 회고'
-categories: ['person']
+categories: ['Person']
 summary: '우아한 테크코스 프리코스 프론트엔드 회고'
 thumbnail: './til.jpg'
 ---

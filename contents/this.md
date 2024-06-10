@@ -1,7 +1,7 @@
 ---
 date: '2023-08-04'
 title: '자바스크립트에서의 this'
-categories: ['js']
+categories: ['JS']
 summary: '자바스크립트에서의 this는 어떻게 동작할까?'
 thumbnail: './til.jpg'
 ---

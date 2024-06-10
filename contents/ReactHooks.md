@@ -1,7 +1,7 @@
 ---
 date: '2024-01-18'
 title: 'React Hooks'
-categories: ['react']
+categories: ['React']
 summary: 'React에서 자주 사용되는 훅들 파보기'
 thumbnail: './til.jpg'
 ---

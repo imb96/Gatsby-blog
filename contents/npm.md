@@ -1,7 +1,7 @@
 ---
 date: '2024-01-22'
 title: 'npm에 react 컴포넌트 배포하기'
-categories: ['npm', 'react']
+categories: ['JS', 'React']
 summary: 'react로 만든 컴포넌트를 npm에 배포해보자'
 thumbnail: './til.jpg'
 ---
