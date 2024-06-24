@@ -50,7 +50,7 @@ const Introduction: FunctionComponent = function () {
       </Block>
       <div style={{ display: 'flex', gap: '1rem' }}>
         <Link to="/info">
-          <AboutButton>About</AboutButton>
+          <AboutButton className="about">About</AboutButton>
         </Link>
       </div>
     </Wrapper>

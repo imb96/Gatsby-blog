@@ -77,6 +77,15 @@ export const defaultStyle = css`
     .badge {
       fill: #fcfefb;
     }
+    .about {
+      color: #fcfefb;
+    }
+    .categoryItem {
+      color: #fcfefb;
+    }
+    .icon {
+      fill: #fcfefb;
+    }
   }
 
   a,
