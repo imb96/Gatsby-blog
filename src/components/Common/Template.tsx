@@ -14,7 +14,7 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #fcfefb;
+  background: #ffffff;
 `
 
 const ScrollToTopButton = styled.button<{ isVisible: boolean }>`

@@ -12,7 +12,7 @@ export const defaultStyle = css`
   }
 
   #___gatsby {
-    background-color: #fcfefb;
+    background-color: #ffffff;
     height: 100vh;
   }
 
@@ -26,7 +26,7 @@ export const defaultStyle = css`
     }
     -webkit-font-smoothing: antialiased;
     background: #202020;
-    color: #fcfefb;
+    color: #ffffff;
     body {
       background: #202020;
     }
@@ -35,56 +35,56 @@ export const defaultStyle = css`
     }
     footer {
       background: #202020;
-      color: #fcfefb;
+      color: #ffffff;
     }
     .bg {
       background: #202020;
-      color: #fcfefb;
+      color: #ffffff;
     }
     .postHead {
-      color: #fcfefb;
+      color: #ffffff;
     }
     p {
       color: #d5d3d1;
     }
     .postTitle {
-      color: #fcfefb;
+      color: #ffffff;
     }
     /* .postItemContent {
       background-color: #292524;
       border-radius: 10px;
     } */
     .subtitle {
-      color: #fcfefb;
+      color: #ffffff;
     }
     .wrapper {
       background-color: #202020;
     }
     .info-wrapper {
-      color: #fcfefb;
+      color: #ffffff;
       background-color: #202020;
     }
     .md {
-      color: #fcfefb;
+      color: #ffffff;
     }
     .menu {
-      color: #fcfefb;
+      color: #ffffff;
     }
     .navigation {
-      color: #fcfefb78;
-      border-bottom: 1px dotted #fcfefb78;
+      color: #ffffff78;
+      border-bottom: 1px dotted #ffffff78;
     }
     .badge {
-      fill: #fcfefb;
+      fill: #ffffff;
     }
     .about {
-      color: #fcfefb;
+      color: #ffffff;
     }
     .categoryItem {
-      color: #fcfefb;
+      color: #ffffff;
     }
     .icon {
-      fill: #fcfefb;
+      fill: #ffffff;
     }
   }
 
