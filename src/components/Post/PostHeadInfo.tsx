@@ -35,7 +35,7 @@ export type PostHeadInfoProps = {
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 620px;
+  width: 680px;
   height: 100%;
   margin: 0 auto;
   padding-bottom: 80px;

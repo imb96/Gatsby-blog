@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
   display: flex;
-  width: 620px;
+  width: 680px;
   align-items: end;
   margin: 0 auto;
   padding: 1rem 0 0.5rem 0;

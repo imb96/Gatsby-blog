@@ -8,13 +8,13 @@ type IntroductionProps = {
 
 const Wrapper = styled.div`
   display: flex;
-  width: 620px;
+  width: 680px;
   align-items: end;
   margin: 0 auto;
   padding: 30px 0 10px 0;
   justify-content: space-between;
   color: #6210cc;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 90%;
   }
 `
@@ -77,7 +77,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
         style={{
           display: 'flex',
           gap: '0.5rem',
-          width: '620px',
+          width: '680px',
           margin: '0 auto',
         }}
       >
