@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const SubTitle = styled.div`
   font-size: 1.2rem;
   font-weight: 900;
-  color: #6210cc;
+  color: #45403d;
 `
 
 const Block = styled.div`
@@ -44,7 +44,7 @@ const Introduction: FunctionComponent = function () {
   return (
     <Wrapper className="navigation">
       <Block>
-        <SubTitle>
+        <SubTitle className="postTitle">
           <Link to={'/'}>Minjae's Blog</Link>
         </SubTitle>
       </Block>
