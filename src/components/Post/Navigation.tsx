@@ -45,7 +45,7 @@ const Introduction: FunctionComponent = function () {
     <Wrapper className="navigation">
       <Block>
         <SubTitle className="postTitle">
-          <Link to={'/'}>Minjae's Blog</Link>
+          <Link to={'/'}>Geurim's Blog</Link>
         </SubTitle>
       </Block>
       <div style={{ display: 'flex', gap: '1rem' }}>

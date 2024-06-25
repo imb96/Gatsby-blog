@@ -64,7 +64,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
       <Wrapper className="wrapper">
         <Block>
           <SubTitle className="subtitle">
-            <Link to={'/'}>Minjae's Blog</Link>
+            <Link to={'/'}>Geurim's Blog</Link>
           </SubTitle>
         </Block>
         <div>

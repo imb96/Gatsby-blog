@@ -120,7 +120,7 @@ npm도 마찬가지로 npmignore파일을 만들어 npm에 올리지 않을 폴�
 // LICENSE
 
 MIT License
-Copyright (c) 2023 Minjae Kim <kimminje7810@gmail.com>
+Copyright (c) 2024 Geurim <kimminje7810@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
