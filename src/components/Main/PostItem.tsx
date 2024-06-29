@@ -8,11 +8,13 @@ type PostItemProps = PostFrontmatterType & { link: string }
 
 const PostItemWrapper = styled(Link)`
   display: flex;
+  border-radius: 10px;
   flex-direction: column;
+  padding: 4px 2px;
   cursor: pointer;
 
   &:hover {
-    text-decoration-line: underline;
+    background-color: #f5f5f5;
   }
 `
 
@@ -22,7 +24,6 @@ const PostItemContent = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  border-bottom: 1px solid #c6c4c4;
 `
 
 const Title = styled.div`
@@ -35,12 +36,12 @@ const Title = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 16px;
-  font-weight: 700;
-  color: #45403d;
+  font-weight: 500;
 `
 
 const Date = styled.div`
-  font-size: 14px;
+  width: 70px;
+  font-size: 12px;
   font-weight: 400;
   opacity: 0.7;
 `
@@ -70,15 +71,16 @@ const Summary = styled.div`
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 16px;
-  opacity: 0.8;
+  font-size: 12px;
+  opacity: 0.5;
+  font-weight: 400;
 `
 
 const PostItem: FunctionComponent<PostItemProps> = function ({
   title,
   date,
   categories,
-  // summary,
+  summary,
   // thumbnail: {
   //   childImageSharp: { gatsbyImageData },
   // },
@@ -87,7 +89,10 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   return (
     <PostItemWrapper to={link}>
       <PostItemContent className="postItemContent">
-        <Title className="postTitle">{title}</Title>
+        <div>
+          <Title className="postTitle">{title}</Title>
+          <Summary className="postSummary">{summary}</Summary>
+        </div>
         <Date>{date}</Date>
       </PostItemContent>
     </PostItemWrapper>
