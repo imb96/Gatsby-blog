@@ -1,4 +1,4 @@
-# [Minlog](https://imb96.github.io)
+# [Geurimlog](https://geurim.dev/)
 ## Tools
 - Gatsby
 - TypeScript
