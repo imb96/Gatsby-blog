@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
 export const defaultStyle = css`
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
 
   * {
     padding: 0;
