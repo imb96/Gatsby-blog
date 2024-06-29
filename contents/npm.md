@@ -2,7 +2,7 @@
 date: '2024-01-22'
 title: 'npm에 react 컴포넌트 배포하기'
 categories: ['JS', 'React']
-summary: 'react로 만든 컴포넌트를 npm에 배포해보자'
+summary: 'react로 만든 자식같은 컴포넌트를 이제는 사회로 내보내자'
 thumbnail: './til.jpg'
 ---
 최근 오픈소스에 관심을 가지면서, 오픈소스는 어떻게 만들어져 있는지에 대한 궁금증이 생겨서 직접 배포해보려고 한다.

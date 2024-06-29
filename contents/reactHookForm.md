@@ -2,7 +2,7 @@
 date: '2024-01-14'
 title: 'React-Hook-Form으로 폼 관리하기'
 categories: ['React']
-summary: 'React-Hook-Form을 사용하여 리액트 프로젝트의 폼 관리하기'
+summary: '리액트 훅 폼 미쳤다'
 thumbnail: './til.jpg'
 ---
 ### React-Hook-Form을 사용한 이유 

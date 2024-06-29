@@ -2,14 +2,12 @@
 date: '2024-06-29'
 title: 'github page에 도메인 이름 달기'
 categories: ['Person']
-summary: '블로그에 dns 달기'
+summary: '태어난지 2년만에 이름을 갖는 블로그'
 thumbnail: './til.jpg'
 ---
 
-github page로 배포한 사이트에 도메인을 달려고 한다.
-
-먼저 도메인을 구매해야하는데, [SquareSapce](https://domains.squarespace.com/?_gl=1*13b284t*_up*MQ..&gclid=CjwKCAjw4f6zBhBVEiwATEHFVnQVKEM2nb3ye7rfEEY0eC9KgTi1KjrvtKq7NbmN-5hG3UVV27llKRoCPuAQAvD_BwE&gclsrc=aw.ds) 에서 1년간 사용에 30달러로 구매하였다.
-
+github page로 배포한 사이트에 도메인을 달려고 한다.<br />
+먼저 도메인을 구매해야하는데, [SquareSapce](https://domains.squarespace.com/?_gl=1*13b284t*_up*MQ..&gclid=CjwKCAjw4f6zBhBVEiwATEHFVnQVKEM2nb3ye7rfEEY0eC9KgTi1KjrvtKq7NbmN-5hG3UVV27llKRoCPuAQAvD_BwE&gclsrc=aw.ds) 에서 1년간 사용에 30달러로 구매하였다.<br/>
 도메인을 구매하고 나면 몇가지 설정을 해주어야 한다.
 
 ### github 설정

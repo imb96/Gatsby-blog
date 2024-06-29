@@ -2,7 +2,7 @@
 date: '2023-10-10'
 title: 'New Suspense SSR in React 18'
 categories: ['React']
-summary: 'New Suspense SSR in React 18'
+summary: '댄 선생님의 discussion을 살펴보자'
 thumbnail: './til.jpg'
 ---
 SSR을 사용하면 서버의 React 컴포넌트에서 HTML을 생성하고 해당 HTML을 사용자에게 전송할 수 있다.

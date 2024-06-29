@@ -2,7 +2,7 @@
 date: '2024-05-27'
 title: 'Mac 개발환경 설정, 앱, 툴'
 categories: ['Person']
-summary: 'Mac 설정'
+summary: '내 맥이 수상하다... 언제 바뀔지 모르는 장비에 대비하여 정리해놓는 글'
 thumbnail: './til.jpg'
 ---
 

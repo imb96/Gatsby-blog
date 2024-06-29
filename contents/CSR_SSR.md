@@ -2,7 +2,7 @@
 date: '2024-01-19'
 title: 'CSR SSR'
 categories: ['FE', 'React']
-summary: 'CSR과 SSR, SPA와 MPA'
+summary: 'CSR과 SSR, SPA와 MPA 혼용해서 사용들 하시지만 다르다'
 thumbnail: './til.jpg'
 ---
 

@@ -2,7 +2,7 @@
 date: '2023-12-19'
 title: '자바스크립트 Event Loop'
 categories: ['JS']
-summary: 'Event Loop와 비동기'
+summary: '자바스크립트가 비동기를 처리하는 법'
 thumbnail: './til.jpg'
 ---
 
