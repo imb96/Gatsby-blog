@@ -14,10 +14,10 @@ const MarkdownRenderer = styled.div`
   padding: 0 0;
 
   // Markdown Style
-  line-height: 1.8;
-  font-size: 14px;
-  font-weight: 300;
-  color: #45403d;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
 
   // Apply Padding Attribute to All Elements
   p {
