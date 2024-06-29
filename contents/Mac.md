@@ -25,7 +25,7 @@ thumbnail: './til.jpg'
 - Atom Material Icon
 - Rainbow Bracket
 
-### [VSCode 설정]
+### [VSCode Plugin]
 - Auto Rename Tag
 - Bracket Pair Colorization Toggler
 - Code Runner
@@ -46,6 +46,7 @@ thumbnail: './til.jpg'
 - Pretty TypeScript Errors
 - Python
 - Todo Tree
+- Code Snap
 
 ### [브라우저 확장]
 - Google 번역
