@@ -3,7 +3,7 @@ module.exports = {
     title: `Geurim's Blog`,
     description: `Front End Engineer Geurim's Blog`,
     author: `Geurim`,
-    siteUrl: `https://imb96.github.io/`,
+    siteUrl: `https://geurim.dev`,
   },
   plugins: [
     {
@@ -84,7 +84,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://imb96.github.io/`,
+        siteUrl: `https://geurim.dev`,
         stripQueryString: true,
       },
     },
