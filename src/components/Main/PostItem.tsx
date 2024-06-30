@@ -28,8 +28,7 @@ const PostItemContent = styled.div`
 
 const Title = styled.div`
   display: -webkit-box;
-  overflow: hidden;
-  margin-bottom: 3px;
+  margin-bottom: 6px;
   text-overflow: ellipsis;
   white-space: normal;
   overflow-wrap: break-word;
@@ -40,7 +39,7 @@ const Title = styled.div`
 `
 
 const Date = styled.div`
-  width: 70px;
+  width: 80px;
   font-size: 12px;
   font-weight: 400;
   opacity: 0.7;

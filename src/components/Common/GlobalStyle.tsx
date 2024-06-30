@@ -2,13 +2,33 @@ import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
 export const defaultStyle = css`
-  /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
+  @font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2')
+      format('woff2');
+    font-weight: 300;
+    font-style: thin;
+  }
+  @font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2')
+      format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2')
+      format('woff2');
+    font-weight: 700;
+    font-style: bold;
+  }
 
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'MangoDdobak-B', sans-serif;
   }
 
   #___gatsby {
