@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import { AboutIcon } from 'components/icons'
 type IntroductionProps = {
   profileImage?: IGatsbyImageData
 }
@@ -37,7 +38,7 @@ const AboutButton = styled.button`
   width: 72px;
   height: 24px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 900;
   cursor: pointer;
 
   &:hover {
@@ -69,7 +70,9 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
         </Block>
         <div>
           <Link to="/info">
-            <AboutButton className="about">About</AboutButton>
+            <AboutButton className="about">
+              <AboutIcon />
+            </AboutButton>
           </Link>
         </div>
       </Wrapper>

@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 // import { GatsbyImage } from 'gatsby-plugin-image'
 import { PostFrontmatterType } from '../../types/PostItem.types'
-
+import { Icon } from 'components/icons'
 type PostItemProps = PostFrontmatterType & { link: string }
 
 const PostItemWrapper = styled(Link)`
@@ -87,11 +87,14 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   link,
 }) {
   return (
-    <PostItemWrapper to={link}>
+    <PostItemWrapper to={link} className="postItem">
       <PostItemContent className="postItemContent">
-        <div>
-          <Title className="postTitle">{title}</Title>
-          <Summary className="postSummary">{summary}</Summary>
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'start' }}>
+          <Icon category={categories[0]} />
+          <div>
+            <Title className="postTitle">{title}</Title>
+            <Summary className="postSummary">{summary}</Summary>
+          </div>
         </div>
         <Date>{date}</Date>
       </PostItemContent>

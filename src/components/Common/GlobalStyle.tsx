@@ -86,6 +86,11 @@ export const defaultStyle = css`
     .icon {
       fill: #ffffff;
     }
+    .postItem {
+      &:hover {
+        background-color: #454545;
+      }
+    }
   }
 
   a,
