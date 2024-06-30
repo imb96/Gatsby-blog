@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import { AboutIcon } from 'components/icons'
+import { DarkModeSwitch } from 'react-toggle-dark-mode'
 type IntroductionProps = {
   profileImage?: IGatsbyImageData
 }
@@ -10,7 +11,7 @@ type IntroductionProps = {
 const Wrapper = styled.div`
   display: flex;
   width: 680px;
-  align-items: end;
+  align-items: center;
   margin: 0 auto;
   padding: 30px 0 10px 0;
   justify-content: space-between;
@@ -59,7 +60,32 @@ const Badge = styled.button`
   }
 `
 
+const BadgeWrapper = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  width: 680px;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
+`
+
 const Introduction: FunctionComponent<IntroductionProps> = function () {
+  const [isDarkMode, setIsDarkMode] = React.useState(() => {
+    const savedTheme = localStorage.getItem('theme')
+    return savedTheme === 'dark'
+  })
+
+  useEffect(() => {
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
+    document.documentElement.classList.toggle('dark', isDarkMode)
+  }, [isDarkMode])
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prev => !prev)
+  }
+
   return (
     <>
       <Wrapper className="wrapper">
@@ -69,6 +95,11 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
           </SubTitle>
         </Block>
         <div>
+          <DarkModeSwitch
+            checked={isDarkMode}
+            onChange={toggleDarkMode}
+            size={24}
+          />
           <Link to="/info">
             <AboutButton className="about">
               <AboutIcon />
@@ -76,14 +107,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
           </Link>
         </div>
       </Wrapper>
-      <div
-        style={{
-          display: 'flex',
-          gap: '0.5rem',
-          width: '680px',
-          margin: '0 auto',
-        }}
-      >
+      <BadgeWrapper>
         <Link to="https://github.com/imb96">
           <Badge>
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -149,7 +173,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function () {
             </svg>
           </Badge>
         </Link>
-      </div>
+      </BadgeWrapper>
     </>
   )
 }
