@@ -2,33 +2,13 @@ import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
 export const defaultStyle = css`
-  @font-face {
-    font-family: 'MangoDdobak-B';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2')
-      format('woff2');
-    font-weight: 300;
-    font-style: thin;
-  }
-  @font-face {
-    font-family: 'MangoDdobak-B';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2')
-      format('woff2');
-    font-weight: 500;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'MangoDdobak-B';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2')
-      format('woff2');
-    font-weight: 700;
-    font-style: bold;
-  }
+  @import url('https://statics.goorm.io/fonts/GoormSans/v1.0.0/GoormSans.min.css');
 
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'MangoDdobak-B', sans-serif;
+    font-family: 'Goorm Sans', sans-serif;
   }
 
   #___gatsby {
@@ -52,6 +32,7 @@ export const defaultStyle = css`
     }
     main {
       background: #202020;
+      padding-bottom: 100px;
     }
     footer {
       background: #202020;
