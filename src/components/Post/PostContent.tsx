@@ -11,7 +11,7 @@ const MarkdownRenderer = styled.div`
   flex-direction: column;
   width: 680px;
   margin: 0 auto;
-  padding: 0 0;
+  padding: 0 0 5rem 0;
 
   // Markdown Style
   line-height: 1.5;
