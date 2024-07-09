@@ -6,7 +6,7 @@ export type useInfiniteScrollType = {
   postList: PostListItemType[]
 }
 
-const NUMBER_OF_ITEMS_PER_PAGE = 10
+const NUMBER_OF_ITEMS_PER_PAGE = 20
 
 const useInfiniteScroll = function (
   selectedCategory: string,
