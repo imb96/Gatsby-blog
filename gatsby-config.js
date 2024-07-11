@@ -95,15 +95,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingIds: [
-          "G-5GWQCDBJ72", // Google Analytics / GA
-        ],
-        pluginConfig: {
-          head: true,
-        },
-      },
-    }
+        id: 'GTM-THQ43ZWV', // 컨테이너 ID
+        includeInDevelopment: true,  // 개발 서버로 Google Tag Assistant 사용하려면 true로 설정.
+      }
+    },
   ],
 }
