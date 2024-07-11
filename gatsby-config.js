@@ -94,5 +94,16 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-5GWQCDBJ72", // Google Analytics / GA
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    }
   ],
 }
