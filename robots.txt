@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://geurim.dev/sitemap-index.xml
-Host: https://geurim.dev
+Sitemap: https://imb96.github.io/sitemap-index.xml
+Host: https://imb96.github.io
