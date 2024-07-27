@@ -3,7 +3,7 @@ module.exports = {
     title: `Geurim's Blog`,
     description: `Front End Engineer Geurim's Blog`,
     author: `Geurim`,
-    siteUrl: `https://geurim.dev`,
+    siteUrl: `https://imb96.github.io/Geurimlog/`,
   },
   plugins: [
     {
@@ -84,7 +84,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://geurim.dev`,
+        siteUrl: `https://imb96.github.io/Geurimlog/`,
         stripQueryString: true,
       },
     },
@@ -98,8 +98,8 @@ module.exports = {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         id: 'GTM-THQ43ZWV', // 컨테이너 ID
-        includeInDevelopment: true,  // 개발 서버로 Google Tag Assistant 사용하려면 true로 설정.
-      }
+        includeInDevelopment: true, // 개발 서버로 Google Tag Assistant 사용하려면 true로 설정.
+      },
     },
   ],
 }
